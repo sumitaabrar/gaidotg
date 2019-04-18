@@ -1,0 +1,33 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Owl Carousel
+@import 'css/owl.carousel.css';
+@import 'css/owl.carousel.min.css';
+@import 'css/owl.theme.default.css';
+@import 'css/owl.theme.default.min.css';
+@import 'css/owl.theme.green.css';
+@import 'css/owl.theme.green.min.css';
+
+//Extra Stuff
+@import 'css/magnific-popup.css';
+@import 'css/nice-select.css';
+@import 'css/hexagons.min.css';								
+@import 'css/animate.min.css';
+
+//Custom CSS
+@import 'main';  //for mainpage
+@import 'pagelayout';  //for normal pages
+@import 'bo-profile';  //for BO's profile page
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
