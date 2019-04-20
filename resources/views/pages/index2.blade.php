@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
+    <title>Gaido</title>								<!-- Site Title -->
+	<link rel="shortcut icon" href="img/fav.png">		<!-- Favicon-->
     <!-- Bootstrap Core CSS -->
     <link href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" rel="stylesheet">
     <!-- chartist CSS -->
@@ -29,11 +28,6 @@
 
 
 
-
-    <!-- You can change the theme colors from here -->
-    <link href="{{  URL::asset('css/colors/blue.css')  }}" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,16 +35,13 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
-    <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
     
+    <!-- Main wrapper - style you can find in pages.scss -->
     <div id="main-wrapper">
         
         @include('inc.header')          <!-- Topbar header -->
@@ -63,16 +54,16 @@
             <div class="container-fluid">
                 <!-- Row  -->
                 <div class="row">
-                    <!-- Column -->
+                    <!-- Column - Left Panels-->
                     <div class="col-lg-4 col-xlg-3 col-md-5">
-                        <!-- Column -->
+                        <!-- Card - Upper Panel - Brand Info -->
                         <div class="card">
                             <img class="card-img-top" src="assets/images/background/profile-bg-01.jpg" alt="Card image cap">
                             <div class="card-block little-profile text-center">
                                 <div class="pro-img"><img src="assets/images/users/01.png" alt="user" /></div>
                                 <h3 class="m-b-0">Burger King</h3>
                                 <p>Fast Food Chain</p>
-                                <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded">Review</a>
+                                <a href="javascript:void(0)" class="primary-btn text-uppercase">Review</a>
                                 <div class="row text-center m-t-20">
                                     <div class="col-lg-4 col-md-4 m-t-20">
                                         <h3 class="m-b-0 font-light">4 <small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
@@ -83,39 +74,39 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Column -->
+                        <!-- Card - Lower Panel - Brand Announcements -->
                         <div class="card">
-                            <div class="card-block bg-info">
-                                <h4 class="text-white card-title">My Contacts</h4>
-                                <h6 class="card-subtitle text-white m-b-0 op-5">Checkout my contacts here</h6>
+                            <div class="card-block bgg-info">
+                                <h4 class="text-white card-title">Announcements</h4>
+                                <h6 class="card-subtitle text-white m-b-0 op-5">Check out our latest offers</h6>
                             </div>
                             <div class="card-block">
                                 <div class="message-box contact-box">
-                                    <h2 class="add-ct-btn"><button type="button" class="btn btn-circle btn-lg btn-success waves-effect waves-dark">+</button></h2>
+                                    <h2 class="add-ct-btn"></h2>
                                     <div class="message-widget contact-widget">
-                                        <!-- Message -->
+                                        <!-- Announcement -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Pavan kumar</h5> <span class="mail-desc">info@wrappixel.com</span></div>
+                                            <div class="ann-img"> <img src="assets/images/ann/bk-01.jpg" alt="user"> </div>
+                                            <div class="ann-contnet">
+                                                <h5>50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                                         </a>
-                                        <!-- Message -->
+                                        <!-- Announcement -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Sonu Nigam</h5> <span class="mail-desc">pamela1987@gmail.com</span></div>
+                                            <div class="ann-img"> <img src="assets/images/ann/bk-02.jpg" alt="user"> </div>
+                                            <div class="ann-contnet">
+                                                <h5>Flat 50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card.</p></div>
                                         </a>
-                                        <!-- Message -->
+                                        <!-- Announcement -->
                                         <a href="#">
-                                            <div class="user-img"> <span class="round">A</span> <span class="profile-status away pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Arijit Sinh</h5> <span class="mail-desc">cruise1298.fiplip@gmail.com</span></div>
+                                            <div class="ann-img"> <img src="assets/images/ann/bk-03.jpg" alt="user"> </div>
+                                            <div class="ann-contnet">
+                                                <h5>Discount</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                                         </a>
-                                        <!-- Message -->
+                                        <!-- Announcement -->
                                         <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Pavan kumar</h5> <span class="mail-desc">kat@gmail.com</span></div>
+                                            <div class="ann-img"> <img src="assets/images/ann/bk-04.jpg" alt="user"> </div>
+                                            <div class="ann-contnet">
+                                                <h5>Special Offer</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                                         </a>
                                     </div>
                                 </div>
@@ -138,10 +129,19 @@
 
 
                                     <!-- Branch Menu Filter-->
-                                    <div class="sl-item">
-                                        <h5>Gulshan Branch</h5>
-                                    </div>
-                                    <hr>
+                                    <form id="branch-form" class="form-horizontal form-material">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <select class="form-control form-control-line">
+                                                    <option>All</option>
+                                                    <option>Gulshan Branch</option>
+                                                    <option>Hyderi Branch</option>
+                                                    <option>Defence Branch</option>
+                                                    <option>Bahadurabad Branch</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
                                     <!--Branch Menu Filter-->
 
 
@@ -281,32 +281,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
+                </div>                
+            </div>            
+            
             <!-- footer -->
-            <!-- ============================================================== -->
             <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
+        </div>        
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+    
+    
+    <!-- Jquery -->
+    
     <script src="{{  URL::asset('assets/plugins/jquery/jquery.min.js')  }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{  URL::asset('assets/plugins/bootstrap/js/tether.min.js')  }}"></script>
@@ -321,9 +307,9 @@
     <script src="{{  URL::asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js')  }}"></script>
     <!--Custom JavaScript -->
     <script src="{{  URL::asset('js/custom.min.js')  }}"></script>
-    <!-- ============================================================== -->
+    
     <!-- This page plugins -->
-    <!-- ============================================================== -->
+    
     <!-- chartist chart -->
     <script src="{{  URL::asset('assets/plugins/chartist-js/dist/chartist.min.js')  }}"></script>
     <script src="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js')  }}"></script>

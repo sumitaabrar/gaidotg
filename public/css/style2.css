@@ -470,58 +470,58 @@ html body .text-themecolor {
 /*******************
 Background Colors
 *******************/
-.bg-primary {
-  background-color: #7460ee !important; }
+.bgg-primary {
+  background-color: #525252; }
 
-.bg-success {
+.bgg-success {
   background-color: #26c6da !important; }
 
-.bg-info {
-  background-color: #1e88e5 !important; }
+.bgg-info {
+  background-color: #525252; }
 
-.bg-warning {
+.bgg-warning {
   background-color: #ffb22b !important; }
 
-.bg-danger {
+.bgg-danger {
   background-color: #fc4b6c !important; }
 
-html body .bg-megna {
+html body .bgg-megna {
   background-color: #00897b; }
 
-html body .bg-theme {
+html body .bgg-theme {
   background-color: #009efb; }
 
-html body .bg-inverse {
+html body .bgg-inverse {
   background-color: #2f3d4a; }
 
-html body .bg-purple {
+html body .bgg-purple {
   background-color: #7460ee; }
 
-html body .bg-light-primary {
+html body .bgg-light-primary {
   background-color: #f1effd; }
 
-html body .bg-light-success {
+html body .bgg-light-success {
   background-color: #e8fdeb; }
 
-html body .bg-light-info {
+html body .bgg-light-info {
   background-color: #cfecfe; }
 
-html body .bg-light-extra {
+html body .bgg-light-extra {
   background-color: #ebf3f5; }
 
-html body .bg-light-warning {
+html body .bgg-light-warning {
   background-color: #fff8ec; }
 
-html body .bg-light-danger {
+html body .bgg-light-danger {
   background-color: #f9e7eb; }
 
-html body .bg-light-inverse {
+html body .bgg-light-inverse {
   background-color: #f6f6f6; }
 
-html body .bg-light {
+html body .bgg-light {
   background-color: #f2f4f8; }
 
-html body .bg-white {
+html body .bgg-white {
   background-color: #ffffff; }
 
 /*******************
@@ -1922,7 +1922,7 @@ File: scss
     display: none; }
 
 .page-wrapper {
-  background: #eef5f9;
+ 
   padding-bottom: 60px; }
 
 .container-fluid {
@@ -5972,6 +5972,46 @@ File: scss
         overflow: hidden;
         color: #67757c;
         white-space: nowrap; }
+
+
+
+
+
+/* Announcements */
+.message-box .message-widget a .ann-contnet {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle; }
+
+.message-box .message-widget a .ann-contnet .ann-desc,
+.message-box .message-widget a .ann-contnet .time {
+  font-size: 12px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  display: block;
+  margin: 1px 0;
+  text-align: justify;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  }
+  .message-box .message-widget a .ann-img {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 15px 0;
+    text-align: center; 
+  }
+  .message-box .message-widget a .ann-img img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+
+
+
+
 
 /*******************/
 /*Calendar widget*/
