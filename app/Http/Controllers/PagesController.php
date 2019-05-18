@@ -9,6 +9,14 @@ class PagesController extends Controller
     public function index(){
         return view ('pages.index');
     }
+    public function bProfile(){
+        return view ('pages.bProfile');
+    }
+    public function userProfile(){
+        return view('pages.userProfile');
+    }
+
+
 
     public function page2(){
         return view('pages.page2');
@@ -18,14 +26,7 @@ class PagesController extends Controller
         return view('pages.timeline');
     }
 
-
-    public function index2(){
-        return view ('pages.index2');
-    }
-
-    public function userProfile(){
-        return view('pages.userProfile');
-    }
+    
 
 
 

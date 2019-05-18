@@ -14,7 +14,7 @@
 Route::get('/','PagesController@index');
 Route::get('/timeline','PagesController@timeline');
 
-Route::get('/index2','PagesController@index2');
+Route::get('/bProfile','PagesController@bProfile');
 Route::get('/userProfile','PagesController@userProfile');
 
 

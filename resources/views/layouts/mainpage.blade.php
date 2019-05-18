@@ -4,16 +4,21 @@
 		<meta charset="UTF-8">								<!-- meta character set -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		<!-- Mobile Specific Meta -->
-		<meta name="author" content="codepixer">			<!-- Author Meta -->
+		<meta name="author" content="">						<!-- Author Meta -->
 		<meta name="description" content="">				<!-- Meta Description -->
 		<meta name="keywords" content="">					<!-- Meta Keyword -->
 		
 		<title>Gaido</title>								<!-- Site Title -->
 		<link rel="shortcut icon" href="img/fav.png">		<!-- Favicon-->
 
+		<!--Main Stylesheets compiled-->
+		<link rel="stylesheet" href="{{ asset('css/app.css')}}">
+
+		<!--Extra stylesheet links-->
 		<link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
 		<link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
-		<link rel="stylesheet" href="{{ asset('css/app.css')}}">	
+		
+			
 			
 	</head>
 
