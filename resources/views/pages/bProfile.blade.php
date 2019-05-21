@@ -1,6 +1,6 @@
 @extends('layouts.page')
 
-@section('content')
+@section('content') 
     <!-- Row BrandProfile -->
     <div class="row">
         <!-- Column - Left Panels-->
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <!-- Card - Lower Panel - Brand Announcements -->
-            <div class="card">
+            <div class="card stickyPanel">
                 <div class="card-block bgg-info">
                     <h4 class="text-white card-title">Announcements</h4>
                     <h6 class="card-subtitle text-white m-b-0 op-5">Check out our latest offers</h6>
@@ -94,53 +94,32 @@
                         <!--Branch Menu Filter-->
 
 
+                        <!--Actual reviews start form here--> 
+                        <div class="card-block p-t-0">
+                            <div class="profiletimeline simpleFont">
 
-                        <div class="card-block">
-                            <div class="profiletimeline">
-
-                                <div class="sl-item">
-                                    <div class="sl-left"> <img src="assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="sl-right">
-                                        <div><a href="#" class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
+                                @if ( count($allRev) > 0)     <!--If the brand has reviews to view, then dispaly them-->
+                                    @foreach ($allRev as $rev)
+                                        <div class="sl-item">
+                                            <div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
+                                            <div class="sl-right">
+                                                <div><a href="#" class="link">{{ $rev->userName }}</a> <span class="sl-date">{{ $rev->created_at }}</span>
+                                                    <p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
+                                                </div>
+                                                <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> <i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</div>
+                                            </div>
                                         </div>
-                                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="sl-item">
-                                    <div class="sl-left"> <img src="assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="sl-right">
-                                        <div><a href="#" class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
-                                        </div>
-                                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="sl-item">
-                                    <div class="sl-left"> <img src="assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="sl-right">
-                                        <div><a href="#" class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
-                                        </div>
-                                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="sl-item">
-                                    <div class="sl-left"> <img src="assets/images/users/3.jpg" alt="user" class="img-circle"> </div>
-                                    <div class="sl-right">
-                                        <div><a href="#" class="link">John Doe</a> <span class="sl-date">5 minutes ago</span>
-                                            <p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
-                                        </div>
-                                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
-                                    </div>
-                                </div>
-                                <hr>
+                                        <hr>
+                                    @endforeach
+                                    
+                                @else
+                                        <p>No reviews yet.</p>
+                                    
+                                @endif                        
+                                
                             </div>
                         </div>
-                    </div>
+                    </div>
                     <!--second tab   PROFILE-->
                     <div class="tab-pane" id="profile" role="tabpanel">
                         <div class="card-block">

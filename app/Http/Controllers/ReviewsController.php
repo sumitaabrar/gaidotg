@@ -14,8 +14,11 @@ class ReviewsController extends Controller
      */
     public function index()
     {
+        //return Post::where('title','Post # 01')->get();
+        
         $allRev = Review::orderBy('created_at','desc')->get();
-        return view('pages.trashed-bProfile')->with('allRev', $allRev);
+
+        return view('pages.bProfile')->with('allRev', $allRev);
     }
 
     /**

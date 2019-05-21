@@ -7272,6 +7272,28 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
   right: 20px;
   padding: 25px; }
 
+
+
+
+/*Posts Special Features*/
+.simpleFont{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.postFontSize{
+  font-size: 14px;
+}
+
+
+/*Sticky Sidebar*/
+.stickyPanel{
+  top: 0px;
+  position: sticky;
+  -webkit-position: sticky;
+  display: flex;
+}
+
+
 /*Radio button*/
 @-webkit-keyframes ripple {
   0% {
