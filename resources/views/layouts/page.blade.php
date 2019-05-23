@@ -25,8 +25,7 @@
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
 
 		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
-		
-
+			
 	</head>
 
 	
@@ -118,7 +117,6 @@
 		<script src="{{  URL::asset('assets/plugins/c3-master/c3.min.js')  }}"></script>
 		<!-- Chart JS -->
 		<script src="{{  URL::asset('js/dashboard1.js')  }}"></script>
-
 
 	</body>
 
