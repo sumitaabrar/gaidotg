@@ -103,10 +103,13 @@
                                         <div class="sl-item">
                                             <div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
                                             <div class="sl-right">
-                                                <div><a href="#" class="link">{{ $rev->userName }}</a> <span class="sl-date">{{ $rev->created_at }}</span>
+                                                <div>
+                                                    <a href="#" class="link">{{ $rev->userName }}</a> 
+                                                    <span class="sl-date">{{ $rev->created_at }}</span>
+                                                    <span class="floatRight"><i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</span>
                                                     <p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
                                                 </div>
-                                                <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> <i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</div>
+                                                <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
                                             </div>
                                         </div>
                                         <hr>

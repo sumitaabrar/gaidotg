@@ -17,9 +17,9 @@ class CreateReviewsTable extends Migration
             $table->bigIncrements('rId');
             $table->string('userName');
             $table->string('userDp');
-            $table->string('bId');
+            $table->integer('bId');
             $table->mediumText('rBody');
-            $table->string('rRate');
+            $table->tinyInteger('rRate');
             $table->timestamps();
         });
     }
