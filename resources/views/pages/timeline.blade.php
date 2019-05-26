@@ -4,59 +4,77 @@
     <!-- Row Discussions-->
     <div class="row">
         <!--Column - Right Panel-->
-        <div class="col-lg-8 col-xlg-9 col-md-7">
-            <div class="card">                    
-				<!--User Discussions input--> 
-				<div class="card-block p-t-0">
-					<div class="profiletimeline simpleFont">
+        <div class="col-lg-9 col-xlg-9 col-md-8">
 
-						<div class="m-t-30 m-b-30">
-							<div class="sl-left"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> </div>
-							<div class="sl-right">
-								<div> 
-									<a href="#" class="link">Current User</a>
-									<div class="m-t-20 row">
-										<div class="col-md-3 col-xs-12"><img src="assets/images/big/img1.jpg" alt="user" class="img-responsive radius"></div>
-										<div class="col-md-9 col-xs-12"><p>Initiate a Discussion </p> </div>
+			<div class="row">
+				<div class="col-lg-12 col-xlg-12 col-md-12">
+					<div class="card m-b-0">                    
+						<!--User Discussions input--> 
+						<div class="card-block p-t-0 p-b-0">
+							<div class="profiletimeline simpleFont">
+								<div class="m-t-30 m-b-30">
+									<div class="sl-left"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> </div>
+									<div class="sl-right">
+										<div> 
+											<a href="#" class="link">Current User</a>
+											<div class="m-t-20 row">
+												<div class="col-md-3 col-xs-12"><img src="assets/images/big/img11.jpg" alt="user" class="img-responsive radius"></div>
+												<div class="col-md-9 col-xs-12"><p>Initiate a Discussion </p> </div>
+											</div>
+											<div class="m-t-10 row ">
+												<div class="col-md-12"><span class="floatRight"><a href="#" class="btn btn-success">Post Discussion</a></span></div>
+												
+											</div>
+										</div>
 									</div>
-									<div class="m-t-10 row ">
-										<div class="col-md-12"><span class="floatRight"><a href="#" class="btn btn-success">Post Discussion</a></span></div>
-										
-									</div>
-								</div>
+								</div>              
 							</div>
 						</div>
-						<hr>
-
-						<!--Actual discussions start form here--> 
-						@if ( count($allRev) > 0)     <!--If there are discussions to view, then dispaly them-->
-							@foreach ($allRev as $rev)
-								<div class="sl-item">
-									<div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
-									<div class="sl-right">
-										<div>
-											<a href="#" class="link">{{ $rev->userName }}</a> 
-											<span class="sl-date">{{ $rev->created_at }}</span>
-											<p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
-										</div>
-										<div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> <a href="javascript:void(0)" class="link m-r-10"><i class="fa fa-heart text-danger"></i> 5 Love</a> </div>
-									</div>
-								</div>
-								<hr>
-							@endforeach
-							
-						@else
-								<p>No recent Activity.</p>
-							
-						@endif                        
-						
-					</div>
+					</div>
 				</div>
-            </div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-lg-12 col-xlg-12 col-md-12">
+					<div class="card">                    
+						<div class="card-block p-t-20">
+							<div class="profiletimeline simpleFont">
+								<!--Actual discussions start form here--> 
+								@if ( count($allRev) > 0)     <!--If there are discussions to view, then dispaly them-->
+									@foreach ($allRev as $rev)
+										<div class="sl-item">
+											<div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
+											<div class="sl-right">
+												<div>
+													<a href="#" class="link">{{ $rev->userName }}</a> 
+													<span class="sl-date">{{ $rev->created_at }}</span>
+													<p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
+												</div>
+												<div class="like-comm m-t-20"> 
+													<a href="javascript:void(0)" class="link m-r-10">2 comment</a> 
+													<a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-check-outline text-success"></i> 5 </a> 
+													<a href="javascript:void(0)" class="link m-r-10"><i class="mdi  mdi-comment-remove-outline text-danger"></i> 2 </a> 													
+												</div>
+											</div>
+										</div>
+										<hr>
+									@endforeach
+									
+								@else
+										<p>No recent Activity.</p>
+									
+								@endif                        
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>           
 		</div>
 		
 		<!-- Column - Left Panel-->
-        <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="col-lg-3 col-xlg-3 col-md-4">
 			<!-- Card - Announcements -->
 			<div class="card stickyPanel">
 				<div class="card-block bgg-info">

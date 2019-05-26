@@ -19,4 +19,5 @@ Route::get('/userProfile','PagesController@userProfile');
 
 
 Route::resource('bProfile', 'ReviewsController');
-Route::resource('post', 'PostsController');
+Route::resource('discussions', 'PostsController');
+//Route::resource('rec', 'RecommendationsController');

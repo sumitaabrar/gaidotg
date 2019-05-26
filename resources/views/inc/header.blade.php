@@ -9,17 +9,10 @@
           
           <nav id="nav-menu-container">
             <ul class="nav-menu">
-              <li class="menu-active"><a href="/">Home</a></li>
-              <li><a href="/review">Review</a></li>
-              <li><a href="/dis">Discussion</a></li>
+              <a href="/review" class="btn waves-effect waves-light btn-warning hidden-md-down floatLeft">Review</a>
+              <li class="menu-active"><a href="/discussions">Discussion</a></li>
               <li><a href="/rec">Recommendation</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-              <li class="/search"><a href="">Search</a>
-                <ul>
-                  <li><a href="generic.html">Places</a></li>
-                  <li><a href="elements.html">Products</a></li>
-                </ul>
-              </li>
+              <li class="/search"><a href="">Notification</a></li>
             </ul>
           </nav><!-- #nav-menu-container -->		    		
         </div>

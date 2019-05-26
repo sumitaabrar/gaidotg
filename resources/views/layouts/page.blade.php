@@ -25,6 +25,8 @@
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
 
 		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
+
+		<link href="{{  URL::asset('css/colors/blue.css')  }}" id="theme" rel="stylesheet">
 			
 	</head>
 
@@ -40,10 +42,10 @@
 		<!-- Main wrapper -->
 		<div id="main-wrapper">
 			
-			@include('inc.header')          <!-- Topbar header -->
+			@include('inc.header2')          <!-- Topbar header -->
 				 
-			@include('inc.side-nav')        <!-- Sidebar -->   
-			<br><br><br> 
+			@include('inc.side-nav')         <!-- Sidebar -->   
+			<br>
 	
 			<!-- Page wrapper (Remaining Content) -->
 			<div class="page-wrapper">
