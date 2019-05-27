@@ -1931,7 +1931,7 @@ Layouts
   padding-bottom: 60px; }
 
 .container-fluid {
-  padding: 0 30px 25px 30px; }
+  padding: 20px 20px 0px 20px }
 
 /*******************
  Topbar
@@ -1959,8 +1959,8 @@ Layouts
           line-height: 70px;
           display: inline-block; }
     .topbar .top-navbar .navbar-nav > .nav-item > .nav-link {
-      padding-left: .75rem;
-      padding-right: .75rem;
+      /*padding-left: .75rem;*/
+      padding-right: .5rem;
       font-size: 14px;
       line-height: 50px; }
     .topbar .top-navbar .navbar-nav > .nav-item.show {
@@ -2019,17 +2019,25 @@ Layouts
           color: #009efb;
           text-decoration: none; }
 
-
+/*
 
 .navbar-nav > li.menu-active a span{
   border-bottom: 2px solid #11ABB0;
 }
+*/
 
-.navbar-nav > li.nav-item a span.user-name{
+.navbar-nav > li.nav-item a span{
   padding-left: 10px; 
   border-left: 1px solid #717171e0;
 }
 
+.navbar-nav > li.nav-item a i.navi{
+  font-size: 16px;
+  margin-left:5px;
+}
+.navbar-nav > li.menu-active a i.navi{
+  color: #11abb0;
+}
 
 /*Search bar on top*/
 .single-widget{
@@ -6699,8 +6707,8 @@ When click on sidebar toggler and also for tablet
 .col-xlg-1, .col-xlg-10, .col-xlg-11, .col-xlg-12, .col-xlg-2, .col-xlg-3, .col-xlg-4, .col-xlg-5, .col-xlg-6, .col-xlg-7, .col-xlg-8, .col-xlg-9 {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 10px;
+  padding-left: 10px; }
 
 /*
  

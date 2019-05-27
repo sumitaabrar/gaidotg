@@ -13,19 +13,18 @@
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
 								<div class="m-t-30 m-b-30">
-									<div class="sl-left"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> </div>
+									<div class="sl-left"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
 									<div class="sl-right">
-										<div> 
-											<a href="#" class="link">Current User</a>
-											<div class="m-t-20 row">
-												<div class="col-md-3 col-xs-12"><img src="assets/images/big/img11.jpg" alt="user" class="img-responsive radius"></div>
-												<div class="col-md-9 col-xs-12"><p>Initiate a Discussion </p> </div>
-											</div>
-											<div class="m-t-10 row ">
-												<div class="col-md-12"><span class="floatRight"><a href="#" class="btn btn-success">Post Discussion</a></span></div>
-												
-											</div>
-										</div>
+                                        <div class="m-t-20 row">
+                                            <div class="col-md-8 col-xs-8">
+                                                <p>Initiate a Discussion </p> 
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <span class="floatRight">
+                                                    <a href="#" class="btn btn-success">Post</a>
+                                                </span>
+                                            </div>
+                                        </div>
 									</div>
 								</div>              
 							</div>
@@ -117,6 +116,4 @@
 @endsection
             
             
-
-
 

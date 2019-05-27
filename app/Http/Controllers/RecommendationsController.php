@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 
-class PostsController extends Controller
+class RecommendationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class PostsController extends Controller
         
         $allRev = Review::orderBy('created_at','desc')->get();
 
-        return view('pages.timeline')->with('allRev', $allRev);
+        return view('pages.recommendations')->with('allRev', $allRev);
     }
 
     /**

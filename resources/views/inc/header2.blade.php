@@ -1,4 +1,3 @@
-
 <header class="topbar">
   <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
 
@@ -40,16 +39,24 @@
       <!-- User profile and Menu itmes-->
       <ul class="navbar-nav my-lg-0">
           <!-- Profile -->
-          <li class="nav-item  menu-active"> <a class="nav-link" href="/discussions"><span>Discussion</span></a></li>
-          <li class="nav-item "> <a class="nav-link" href="/rec"><span>Recommendation</span></a></li>
+          <li class="nav-item  menu-active"> 
+            <a class="nav-link" href="/dis"><span>Discussion</span>  
+              <i class="mdi mdi-account-multiple navi"></i>
+            </a>
+          </li>
+          <li class="nav-item "> 
+            <a class="nav-link" href="/rec"><span>Recommendation</span>  
+              <i class="mdi mdi-star-circle navi"></i>
+            </a>
+          </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="user-name">Markarn Doe </span><img src="assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />
-              </a>
+            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="/userProfile">
+              <span class="user-name">Markarn Doe </span>
+              <img src="assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />
+            </a>
           </li>
       </ul>
 
     </div>
   </nav>
 </header>
-     

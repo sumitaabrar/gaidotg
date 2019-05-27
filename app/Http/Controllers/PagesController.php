@@ -22,10 +22,6 @@ class PagesController extends Controller
         return view('pages.page2');
     }
 
-    public function timeline(){
-        return view('pages.timeline');
-    }
-
     
 
 

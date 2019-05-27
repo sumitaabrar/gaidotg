@@ -44,8 +44,7 @@
 			
 			@include('inc.header2')          <!-- Topbar header -->
 				 
-			@include('inc.side-nav')         <!-- Sidebar -->   
-			<br>
+			@include('inc.side-nav')         <!-- Sidebar -->   
 	
 			<!-- Page wrapper (Remaining Content) -->
 			<div class="page-wrapper">
