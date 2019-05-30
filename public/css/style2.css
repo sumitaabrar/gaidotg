@@ -5958,7 +5958,7 @@ File: scss
         background: #ffb22b; }
     .message-box .message-widget a .mail-contnet {
       display: inline-block;
-      width: 75%;
+      width: 60%;
       vertical-align: middle; }
       .message-box .message-widget a .mail-contnet h5 {
         margin: 5px 0px 0; }

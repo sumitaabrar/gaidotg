@@ -15,6 +15,9 @@ class PagesController extends Controller
     public function userProfile(){
         return view('pages.userProfile');
     }
+    public function uSignup(){
+        return view('pages.uSignup');
+    }
 
 
 
