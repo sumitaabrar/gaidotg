@@ -87,7 +87,7 @@ a:hover, a:focus, a:visited {
 a.link {
   color: #455a64; }
   a.link:hover, a.link:focus {
-    color: #009efb; }
+    color: #11ABB0; }
 
 .img-responsive {
   width: 100%;
@@ -174,7 +174,7 @@ html body .db {
 Blockquote
 *******************/
 html body blockquote {
-  border-left: 5px solid #009efb;
+  border-left: 5px solid #11ABB0;
   border: 1px solid rgba(120, 130, 140, 0.13);
   padding: 15px; }
 
@@ -470,7 +470,7 @@ html body .text-dark {
   color: #67757c; }
 
 html body .text-themecolor {
-  color: #009efb; }
+  color: #11ABB0; }
 
 /*******************
 Background Colors
@@ -494,7 +494,7 @@ html body .bgg-megna {
   background-color: #00897b; }
 
 html body .bgg-theme {
-  background-color: #009efb; }
+  background-color: #11ABB0; }
 
 html body .bgg-inverse {
   background-color: #2f3d4a; }
@@ -686,8 +686,8 @@ Pagination
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #009efb;
-  border-color: #009efb; }
+  background-color: #11ABB0;
+  border-color: #11ABB0; }
 
 .pager li > a,
 .pager li > span {
@@ -983,14 +983,14 @@ Buttons
 
 .btn-themecolor,
 .btn-themecolor.disabled {
-  background: #009efb;
+  background: #11ABB0;
   color: #ffffff;
-  border: 1px solid #009efb; }
+  border: 1px solid #11ABB0; }
   .btn-themecolor:hover,
   .btn-themecolor.disabled:hover {
-    background: #009efb;
+    background: #11ABB0;
     opacity: 0.7;
-    border: 1px solid #009efb; }
+    border: 1px solid #11ABB0; }
   .btn-themecolor.active, .btn-themecolor:focus,
   .btn-themecolor.disabled.active,
   .btn-themecolor.disabled:focus {
@@ -1404,6 +1404,17 @@ Buttons
   color: #ffffff;
   background-color: #171515; }
 
+
+
+.btn-broad {
+  width:100%;
+  height:100%;
+}
+
+
+
+
+
 /*******************
 Notify
 *******************/
@@ -1786,7 +1797,7 @@ ul.list-style-none {
       display: block;
       text-decoration: none; }
       ul.list-style-none li a:hover {
-        color: #009efb; }
+        color: #11ABB0; }
 
 /*******************
 dropdown-item
@@ -2016,7 +2027,7 @@ Layouts
         color: #67757c; }
         .topbar ul.dropdown-user li a:hover {
           background: #f2f4f8;
-          color: #009efb;
+          color: #11ABB0;
           text-decoration: none; }
 
 /*
@@ -2277,7 +2288,7 @@ Layouts
     color: #ffffff;
     text-transform: uppercase;
     font-size: 15px;
-    background: #009efb; }
+    background: #11ABB0; }
     .right-sidebar .rpanel-title span {
       float: right;
       cursor: pointer;
@@ -2627,7 +2638,7 @@ ul.list-icons {
     ul.list-icons li a {
       color: #67757c; }
       ul.list-icons li a:hover {
-        color: #009efb; }
+        color: #11ABB0; }
     ul.list-icons li i {
       font-size: 13px;
       padding-right: 8px; }
@@ -2752,7 +2763,7 @@ html body #visitor .c3-chart-arcs-title {
 .stylish-table tbody tr {
   border-left: 4px solid #ffffff; }
   .stylish-table tbody tr:hover, .stylish-table tbody tr.active {
-    border-left: 4px solid #009efb; }
+    border-left: 4px solid #11ABB0; }
 
 .stylish-table tbody td {
   vertical-align: middle; }
@@ -2981,11 +2992,11 @@ widget-chart-page product review
   color: #67757c; }
   .profile-tab li a.nav-link.active,
   .customtab li a.nav-link.active {
-    border-bottom: 2px solid #009efb;
-    color: #009efb; }
+    border-bottom: 2px solid #11ABB0;
+    color: #11ABB0; }
   .profile-tab li a.nav-link:hover,
   .customtab li a.nav-link:hover {
-    color: #009efb; }
+    color: #11ABB0; }
 
 /*============================================================== 
 Form addons page
@@ -3003,7 +3014,7 @@ Form addons page
   color: #67757c;
   white-space: nowrap; }
   .bootstrap-select .dropdown-menu li a:hover {
-    color: #009efb;
+    color: #11ABB0;
     background: #f2f4f8; }
 
 .bootstrap-touchspin .input-group-btn-vertical > .btn {
@@ -3029,10 +3040,10 @@ Form Material page
 .form-material .form-control,
 .form-material .form-control.focus,
 .form-material .form-control:focus {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#009efb), to(#009efb)), -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#d9d9d9));
-  background-image: -webkit-linear-gradient(#009efb, #009efb), -webkit-linear-gradient(#d9d9d9, #d9d9d9);
-  background-image: -o-linear-gradient(#009efb, #009efb), -o-linear-gradient(#d9d9d9, #d9d9d9);
-  background-image: linear-gradient(#009efb, #009efb), linear-gradient(#d9d9d9, #d9d9d9);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#11ABB0), to(#11ABB0)), -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(#11ABB0, #11ABB0), -webkit-linear-gradient(#d9d9d9, #d9d9d9);
+  background-image: -o-linear-gradient(#11ABB0, #11ABB0), -o-linear-gradient(#d9d9d9, #d9d9d9);
+  background-image: linear-gradient(#11ABB0, #11ABB0), linear-gradient(#d9d9d9, #d9d9d9);
   border: 0 none;
   border-radius: 0;
   -webkit-box-shadow: none;
@@ -3056,7 +3067,7 @@ Form Material page
   padding-left: 0px;
   border-bottom: 1px solid #d9d9d9; }
   .form-control-line .form-control:focus {
-    border-bottom: 1px solid #009efb; }
+    border-bottom: 1px solid #11ABB0; }
 
 /*******************/
 /*Floating Label*/
@@ -3115,7 +3126,7 @@ Form Material page
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #009efb;
+  background: #11ABB0;
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -3255,13 +3266,13 @@ table th {
 
 .daterangepicker td.active,
 .daterangepicker td.active:hover {
-  background-color: #009efb; }
+  background-color: #11ABB0; }
 
 .datepicker table tr td.today,
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover,
 .datepicker table tr td.today:hover {
-  background: #009efb;
+  background: #11ABB0;
   color: #ffffff; }
 
 .datepicker td,
@@ -3583,7 +3594,7 @@ Table-Data Table
   .dt-buttons .dt-button {
     padding: 5px 15px;
     border-radius: 4px;
-    background: #009efb;
+    background: #11ABB0;
     color: #ffffff;
     margin-right: 3px; }
     .dt-buttons .dt-button:hover {
@@ -3900,7 +3911,7 @@ Bootstrap Switch
 Date paginator page
 ******************/
 .dp-selected[style] {
-  background-color: #009efb !important; }
+  background-color: #11ABB0 !important; }
 
 .datepaginator-sm .pagination li a,
 .datepaginator-lg .pagination li a,
@@ -3954,7 +3965,7 @@ Vertical tabs
 .tabs-vertical li .nav-link.active,
 .tabs-vertical li .nav-link:hover,
 .tabs-vertical li .nav-link.active:focus {
-  background: #009efb;
+  background: #11ABB0;
   border: 0px;
   color: #ffffff; }
 
@@ -3964,9 +3975,9 @@ Vertical tabs
 .customvtab .tabs-vertical li .nav-link:focus {
   background: #ffffff;
   border: 0px;
-  border-right: 2px solid #009efb;
+  border-right: 2px solid #11ABB0;
   margin-right: -1px;
-  color: #009efb; }
+  color: #11ABB0; }
 
 .tabcontent-border {
   border: 1px solid #ddd;
@@ -3977,11 +3988,11 @@ Vertical tabs
   margin-right: 3px;
   color: #67757c; }
   .customtab2 li a.nav-link.active {
-    background: #009efb;
+    background: #11ABB0;
     color: #ffffff; }
   .customtab2 li a.nav-link:hover {
     color: #ffffff;
-    background: #009efb; }
+    background: #11ABB0; }
 
 /*******************
 Progress bar
@@ -4058,8 +4069,8 @@ list and media
 
 .list-group-item.active,
 .list-group .list-group-item.active:hover {
-  background: #009efb;
-  border-color: #009efb; }
+  background: #11ABB0;
+  border-color: #11ABB0; }
 
 .list-group-item.disabled {
   color: #99abb4;
@@ -4088,7 +4099,7 @@ User card page
     .el-element-overlay .el-card-item .el-card-content a {
       color: #67757c; }
       .el-element-overlay .el-card-item .el-card-content a:hover {
-        color: #009efb; }
+        color: #11ABB0; }
   .el-element-overlay .el-card-item .el-overlay-1 {
     width: 100%;
     height: 100%;
@@ -4136,8 +4147,8 @@ User card page
           color: #ffffff;
           padding: 12px 15px 10px; }
           .el-element-overlay .el-card-item .el-overlay-1 .el-info > li a:hover {
-            background: #009efb;
-            border-color: #009efb; }
+            background: #11ABB0;
+            border-color: #11ABB0; }
   .el-element-overlay .el-card-item .el-overlay {
     width: 100%;
     height: 100%;
@@ -4301,14 +4312,14 @@ Horizontal Timeline page
 ******************/
 .cd-horizontal-timeline .events a {
   padding-bottom: 6px;
-  color: #009efb; }
+  color: #11ABB0; }
 
 .cd-horizontal-timeline .filling-line,
 .cd-horizontal-timeline .events a.selected::after {
-  background: #009efb; }
+  background: #11ABB0; }
 
 .cd-horizontal-timeline .events a.selected::after {
-  border-color: #009efb; }
+  border-color: #11ABB0; }
 
 .myadmin-dd .dd-list .dd-item .dd-handle {
   background: #ffffff;
@@ -4470,8 +4481,8 @@ ribbons page
   height: 0;
   content: '';
   border: 30px solid transparent;
-  border-top-color: #009efb;
-  border-left-color: #009efb; }
+  border-top-color: #11ABB0;
+  border-left-color: #11ABB0; }
 
 .ribbon-corner.ribbon-right:before {
   right: 0;
@@ -4496,15 +4507,15 @@ ribbons page
   padding: 0 10px 6px 10px; }
 
 .ribbon-custom {
-  background: #009efb; }
+  background: #11ABB0; }
 
 .ribbon-bookmark.ribbon-right.ribbon-custom:before {
-  border-right-color: #009efb;
+  border-right-color: #11ABB0;
   border-left-color: transparent; }
 
 .ribbon-bookmark.ribbon-vertical-l.ribbon-custom:before,
 .ribbon-bookmark.ribbon-vertical-r.ribbon-custom:before {
-  border-right-color: #009efb;
+  border-right-color: #11ABB0;
   border-bottom-color: transparent; }
 
 .ribbon-primary {
@@ -4679,8 +4690,8 @@ ribbons page
 session ideal timeout page
 ******************/
 #idletimeout {
-  background: #009efb;
-  border: 3px solid #009efb;
+  background: #11ABB0;
+  border: 3px solid #11ABB0;
   color: #fff;
   font-family: arial, sans-serif;
   text-align: center;
@@ -4849,7 +4860,7 @@ Stylish tooltip
   bottom: 100%;
   border-radius: 50%;
   text-align: center;
-  background: #009efb;
+  background: #11ABB0;
   color: #ffffff;
   opacity: 0;
   margin-bottom: 20px;
@@ -5010,7 +5021,7 @@ Stylish tooltip
     display: block; }
 
 .tooltip-text3 {
-  border-bottom: 10px solid #009efb;
+  border-bottom: 10px solid #11ABB0;
   overflow: hidden;
   -webkit-transform: scale3d(0, 1, 1);
   transform: scale3d(0, 1, 1);
@@ -5041,7 +5052,7 @@ Stylish tooltip
   position: absolute;
   pointer-events: none;
   border-color: transparent;
-  border-top-color: #009efb;
+  border-top-color: #11ABB0;
   border-width: 10px;
   margin-left: -10px; }
 
@@ -5094,7 +5105,7 @@ Stylish tooltip
 
 a.mytooltip {
   font-weight: 500;
-  color: #009efb; }
+  color: #11ABB0; }
 
 .tooltip-effect-7 .tooltip-content2 {
   -webkit-transform: translate3d(0, 10px, 0);
@@ -5422,7 +5433,7 @@ Email inbox Page
     color: #67757c; }
   .inbox-panel .list-group .list-group-item.active, .inbox-panel .list-group .list-group-item:hover {
     background: #f2f4f8;
-    border-left: 3px solid #009efb; }
+    border-left: 3px solid #11ABB0; }
 
 .inbox-center .unread td {
   font-weight: 400; }
@@ -5486,7 +5497,7 @@ Contact app Page
       display: block;
       color: #67757c; }
       .list-style-none li a:hover {
-        color: #009efb; }
+        color: #11ABB0; }
       .list-style-none li a span {
         float: right; }
 
@@ -5788,7 +5799,7 @@ When click on sidebar toggler and also for tablet
     width: 260px;
     background: #26c6da;
     color: #ffffff;
-    border-color: #009efb; }
+    border-color: #11ABB0; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a i {
       color: #ffffff; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a .hide-menu {
@@ -5796,7 +5807,7 @@ When click on sidebar toggler and also for tablet
   .mini-sidebar .sidebar-nav #sidebarnav > li.active > a {
     border-color: transparent; }
     .mini-sidebar .sidebar-nav #sidebarnav > li.active > a.active {
-      border-color: #009efb; } }
+      border-color: #11ABB0; } }
 
 @media (max-width: 767px) {
   .mini-sidebar .left-sidebar {
@@ -5919,7 +5930,7 @@ When click on sidebar toggler and also for tablet
     .city-weather-days li i {
       display: block;
       font-size: 20px;
-      color: #009efb; }
+      color: #11ABB0; }
     .city-weather-days li h3 {
       font-weight: 300;
       margin-top: 5px; }
@@ -5934,7 +5945,7 @@ When click on sidebar toggler and also for tablet
     border-left: 3px solid #ffffff;
     padding: 15px; }
     .comment-widgets .comment-row:hover, .comment-widgets .comment-row.active {
-      border-color: #009efb; }
+      border-color: #11ABB0; }
 
 .comment-text {
   padding: 15px 15px 15px 20px; }

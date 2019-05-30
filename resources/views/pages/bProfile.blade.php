@@ -72,17 +72,21 @@
 						<!--User Discussions input--> 
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
-								<div class="m-t-30 m-b-30">
+								<div class="m-t-20 m-b-20">
 									<div class="sl-left"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
 									<div class="sl-right">
                                         <div class="m-t-20 row">
-                                            <div class="col-md-8 col-xs-8">
-                                                <p>Write a Review</p> 
-                                            </div>
-                                            <div class="col-md-4 col-xs-4">
-                                                <span class="floatRight">
-                                                    <a href="#" class="btn btn-success">Post</a>
-                                                </span>
+                                            <div class="col-sm-12">
+                                                {!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+                                                <div class="row">    
+                                                    <div class="card m-b-0 col-md-10">
+                                                        {{ Form::text('review', '',  [ 'placeholder' => 'Write a Review', 'class' => 'form-control form-control-line' ]) }}
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        {{ Form::submit( 'Post', [ 'class' => 'btn btn-success btn-broad' ]) }}
+                                                    </div>
+                                                </div>
+                                                {!! Form::close() !!}
                                             </div>
                                         </div>
 									</div>

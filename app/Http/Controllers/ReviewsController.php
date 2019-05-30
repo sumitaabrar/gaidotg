@@ -39,7 +39,18 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'review' => 'required' 
+        ]);
+
+        $rev = new Review();
+        $rev->userName = "Ali";
+        $rev->userDp = "uDP2.jpg";
+        $rev->bId = 1;
+        $rev->rBody = $request->review;
+        $rev->rRate = 3;
+        $rev->save();
+
     }
 
     /**
