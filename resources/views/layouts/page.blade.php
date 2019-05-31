@@ -16,6 +16,7 @@
 		
 		<!-- Bootstrap Core CSS -->
 		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" >
+		<link rel="stylesheet" href="{{  URL::asset('http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css') }}" >
 		<!--Extra Stylesheets-->
 		<link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
 		<link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
@@ -23,9 +24,16 @@
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist-init.css')  }}" >
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')  }}" >
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
-
+		<link rel="stylesheet" href="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css') }}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+		
 		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
-			
+
+		<link rel="stylesheet" href="{{  URL::asset('css/colors/blue.css')  }}" id="theme">
+		
+
 	</head>
 
 	
@@ -42,13 +50,13 @@
 			
 			@include('inc.header')          <!-- Topbar header -->
 				 
-			@include('inc.side-nav')        <!-- Sidebar -->   
-			<br><br><br> 
-	
+			@include('inc.side-nav')         <!-- Sidebar -->   
+			<br><br><br>
 			<!-- Page wrapper (Remaining Content) -->
 			<div class="page-wrapper">
 				<div class="container-fluid">
 
+					@include('inc.messages')
 					@yield('content')
 
 				</div>
@@ -96,9 +104,12 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 	
 		<!-- Jquery -->
 		<script src="{{  URL::asset('assets/plugins/jquery/jquery.min.js')  }}"></script>
+		<script src="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js') }}"></script>
 		<!-- Bootstrap tether Core JavaScript -->
 		<script src="{{  URL::asset('assets/plugins/bootstrap/js/tether.min.js')  }}"></script>
 		<script src="{{  URL::asset('assets/plugins/bootstrap/js/bootstrap.min.js')  }}"></script>
+		<!--Bootstrap Start Rating -->
+		<script src="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js') }}"></script>
 		<!-- slimscrollbar scrollbar JavaScript -->
 		<script src="{{  URL::asset('js/jquery.slimscroll.js')  }}"></script>
 		<!--Wave Effects -->
@@ -117,6 +128,25 @@
 		<script src="{{  URL::asset('assets/plugins/c3-master/c3.min.js')  }}"></script>
 		<!-- Chart JS -->
 		<script src="{{  URL::asset('js/dashboard1.js')  }}"></script>
+
+		<!--Emoji -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
+
+		
+		<script>
+			$("#review").emojioneArea({
+				pickerPosition: "bottom",
+				search: false, 
+				tones: false,
+				saveEmojisAs: "shortname",
+				attributes: {
+					spellcheck : true,
+				}
+			});
+
+		</script>
+
 
 	</body>
 

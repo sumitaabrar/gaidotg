@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 
+
+use Emojione\Emojione;
+use Emojione\Client as EmojioneClient;
+
 class ReviewsController extends Controller
 {
     /**
@@ -12,10 +16,30 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
+        $emojioneClient = new EmojioneClient();
+        $emojioneClient->cacheBustParam = '';
+        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
+        Emojione::setClient($emojioneClient);
+
+
+
+        //return Post::where('title','Post # 01')->get();
         $allRev = Review::orderBy('created_at','desc')->get();
-        return view('pages.trashed-bProfile')->with('allRev', $allRev);
+
+        //converting emoji shortnames into emoji icons
+        foreach($allRev as $rev)
+        {
+            $body = htmlspecialchars($rev->rBody);
+            $body = Emojione::shortnameToImage($body);
+            $body = nl2br($body);
+            $rev->rBody = $body;
+        }
+
+        return view('pages.bProfile')->with('allRev', $allRev);
     }
 
     /**
@@ -36,7 +60,21 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'review' => 'required' 
+        ]);
+
+        $revBody = Emojione::toShort($request->review);
+
+        $rev = new Review;
+        $rev->userName = "Ali";
+        $rev->userDp = "uDP2.jpg";
+        $rev->bId = 1;
+        $rev->rBody = $revBody;
+        $rev->rRate = $request->rate;
+        $rev->save();
+
+        return redirect('/bProfile')->with('success', 'Review has been added');
     }
 
     /**

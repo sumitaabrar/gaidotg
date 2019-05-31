@@ -1,4 +1,4 @@
-@extends('layouts.page')
+@extends('layouts.trashed-page')
 
 @section('content')
 	<div class="container bo-profile">
@@ -9,7 +9,7 @@
 				<img src="img/01.png" alt="logo" />
 			</div>
 			<div class="col-md-8 bo-details">
-				<h2>Burger King</h2>
+				<h2>Burger King </h2>
 				<p>We are tthe best in Town</p>
 			</div>
 		</div>
@@ -21,31 +21,45 @@
 				<h3>Reviews</h3>
 				<div class='featurebox_center'> 
 					<div class="box">
-						
-						@if(count($allRev)>0)
-							<ul class="homelist">
 
-								@foreach($allRev as $rev)
-									<li> 
-										<div class="post">
-											<div class="post-header" >
-												<a class="profile-pic-link" href="/"><img class="profile-pic" src="img/{{ $rev->userDp }}" alt="" /></a> 
-												<h4><a class="post-title">{{ $rev->userName }}</a></h4>
-												<p class="post-description">{{ $rev->created_at }}</p>
-											</div>
-											<div class="post-body">
-												<p class="post-content" >{{ $rev->rBody }}</p>
-												<p><a class="more" href="/reviews/{{ $rev->rId }}">Read more</a> </p>
-											</div>
+				
+
+
+
+								<div class="card-block p-t-0">
+										<div class="profiletimeline simpleFont">
+	
+											@if ( count($allRev) > 0)     <!--If the brand has reviews to view, then dispaly them-->
+												@foreach ($allRev as $rev)
+													<div class="sl-item">
+														<div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
+														<div class="sl-right">
+															<div>
+																<a href="#" class="link">{{ $rev->userName }}</a> 
+																<span class="sl-date">{{ $rev->created_at }}</span>
+	
+																@if ($rev->rRate != NULL)
+																	<span class="floatRight"><i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</span>
+																@endif
+																
+																<p class="m-t-10 postFontSize" >
+																	{!! $rev->rBody !!}
+																</p>
+															</div>
+															<div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
+														</div>
+													</div>
+													<hr>
+												@endforeach
+												
+											@else
+													<p>No reviews yet.</p>
+												
+											@endif                        
+											
 										</div>
-									</li>
-								@endforeach
-							
-							</ul>
+									</div>
 
-						@else
-							<p>No reviews yet.</p>				
-						@endif
 
 					</div>
 				</div>

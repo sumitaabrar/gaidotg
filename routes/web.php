@@ -12,10 +12,12 @@
 */
 
 Route::get('/','PagesController@index');
-Route::get('/timeline','PagesController@timeline');
-
-Route::get('/bProfile','PagesController@bProfile');
 Route::get('/userProfile','PagesController@userProfile');
 
+Route::get('/trash','PagesController@trash');
 
-Route::resource('reviews', 'ReviewsController');
+
+
+Route::resource('bProfile', 'ReviewsController');
+Route::resource('dis', 'DiscussionsController');
+Route::resource('rec', 'RecommendationsController');
