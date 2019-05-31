@@ -12,7 +12,7 @@
                     <div class="pro-img"><img src="assets/images/users/01.png" alt="user" /></div>
                     <h3 class="m-b-0">Burger King</h3>
                     <p>Fast Food Chain</p>
-                    <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest It</a>
+                    <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest Me</a>
                     <div class="row text-center m-t-20">
                         <div class="col-lg-4 col-md-4 m-t-20">
                             <h3 class="m-b-0 font-light">4 <small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
