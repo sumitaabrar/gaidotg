@@ -69,7 +69,7 @@
             <div class="row">
 				<div class="col-lg-12 col-xlg-12 col-md-12">
 					<div class="card m-b-0">                    
-						<!--User Discussions input--> 
+						<!--User Reviews input--> 
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
 								<div class="m-t-20 m-b-20">
@@ -78,12 +78,17 @@
                                         <div class="m-t-20 row">
                                             <div class="col-sm-12">
                                                 {!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
-                                                <div class="row">    
-                                                    <div class="card m-b-0 col-md-10">
-                                                        {{ Form::text('review', '',  [ 'placeholder' => 'Write a Review', 'class' => 'form-control form-control-line' ]) }}
+                                                <div class="row">    
+                                                    <div class="col-md-9">
+                                                        {{ Form::number('rate', '', ['class' => 'rating rating-loading',  'data-min' => '0', 'data-max' => '5',  'data-step' => '1'])}}
                                                     </div>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-3">
                                                         {{ Form::submit( 'Post', [ 'class' => 'btn btn-success btn-broad' ]) }}
+                                                    </div>
+                                                </div>
+                                                <div class="row">    
+                                                    <div class="col-md-12 m-t-5">
+                                                        {{ Form::textarea('review', '',  [ 'id' => 'review', 'placeholder' => 'Write a Review', 'class' => 'revTextArea' ]) }}
                                                     </div>
                                                 </div>
                                                 {!! Form::close() !!}
@@ -143,8 +148,12 @@
                                                         <div>
                                                             <a href="#" class="link">{{ $rev->userName }}</a> 
                                                             <span class="sl-date">{{ $rev->created_at }}</span>
-                                                            <span class="floatRight"><i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</span>
-                                                            <p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
+
+                                                            @if ($rev->rRate != NULL)
+                                                                <span class="floatRight"><i class="mdi mdi-star text-warning"></i> {{ $rev->rRate }} Star</span>
+                                                            @endif
+                                                            
+                                                            <p class="m-t-10 postFontSize"> {!! $rev->rBody !!} </p>
                                                         </div>
                                                         <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
                                                     </div>

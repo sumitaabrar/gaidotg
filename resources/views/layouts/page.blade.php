@@ -16,6 +16,7 @@
 		
 		<!-- Bootstrap Core CSS -->
 		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" >
+		<link rel="stylesheet" href="{{  URL::asset('http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css') }}" >
 		<!--Extra Stylesheets-->
 		<link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
 		<link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
@@ -23,83 +24,16 @@
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist-init.css')  }}" >
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')  }}" >
     	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
-
+		<link rel="stylesheet" href="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css') }}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+		
 		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
 
-		<link href="{{  URL::asset('css/colors/blue.css')  }}" id="theme" rel="stylesheet">
+		<link rel="stylesheet" href="{{  URL::asset('css/colors/blue.css')  }}" id="theme">
+		
 
-
-
-		<style>
-			.rating {
-			display: inline-block;
-			position: relative;
-			height: 50px;
-			line-height: 50px;
-			font-size: 50px;
-			}
-
-			.rating label {
-			position: absolute;
-			top: 0;
-			height: 100%;
-			cursor: pointer;
-			}
-
-			.rating label:last-child {
-			position: static;
-			}
-
-			.rating label:nth-child(1) {
-			z-index: 5;
-			}
-
-			.rating label:nth-child(2) {
-			z-index: 4;
-			}
-
-			.rating label:nth-child(3) {
-			z-index: 3;
-			}
-
-			.rating label:nth-child(4) {
-			z-index: 2;
-			}
-
-			.rating label:nth-child(5) {
-			z-index: 1;
-			}
-
-			.rating label input {
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			}
-
-			.rating label .icon {
-			float: left;
-			color: transparent;
-			}
-
-			.rating label:last-child .icon {
-			color: #000;
-			}
-
-			.rating:not(:hover) label input:checked ~ .icon,
-			.rating:hover label:hover input ~ .icon {
-			color: #09f;
-			}
-
-			.rating label input:focus:not(:checked) ~ .icon:last-child {
-			color: #000;
-			text-shadow: 0 0 5px #09f;
-			}
-		</style>
-
-
-
-				
 	</head>
 
 	
@@ -114,14 +48,15 @@
 		<!-- Main wrapper -->
 		<div id="main-wrapper">
 			
-			@include('inc.header2')          <!-- Topbar header -->
+			@include('inc.header')          <!-- Topbar header -->
 				 
 			@include('inc.side-nav')         <!-- Sidebar -->   
-	
+			<br><br><br>
 			<!-- Page wrapper (Remaining Content) -->
 			<div class="page-wrapper">
 				<div class="container-fluid">
 
+					@include('inc.messages')
 					@yield('content')
 
 				</div>
@@ -169,9 +104,12 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 	
 		<!-- Jquery -->
 		<script src="{{  URL::asset('assets/plugins/jquery/jquery.min.js')  }}"></script>
+		<script src="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js') }}"></script>
 		<!-- Bootstrap tether Core JavaScript -->
 		<script src="{{  URL::asset('assets/plugins/bootstrap/js/tether.min.js')  }}"></script>
 		<script src="{{  URL::asset('assets/plugins/bootstrap/js/bootstrap.min.js')  }}"></script>
+		<!--Bootstrap Start Rating -->
+		<script src="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js') }}"></script>
 		<!-- slimscrollbar scrollbar JavaScript -->
 		<script src="{{  URL::asset('js/jquery.slimscroll.js')  }}"></script>
 		<!--Wave Effects -->
@@ -191,12 +129,22 @@
 		<!-- Chart JS -->
 		<script src="{{  URL::asset('js/dashboard1.js')  }}"></script>
 
+		<!--Emoji -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
 
-
+		
 		<script>
-			$(':radio').change(function() {
-			console.log('New star rating: ' + this.value);
+			$("#review").emojioneArea({
+				pickerPosition: "bottom",
+				search: false, 
+				tones: false,
+				saveEmojisAs: "shortname",
+				attributes: {
+					spellcheck : true,
+				}
 			});
+
 		</script>
 
 

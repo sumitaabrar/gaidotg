@@ -21,18 +21,18 @@
 /*******************
 /*Top bar
 *******************/
-.topbar {
+.topbar2 {
   background: #3c3d3d; }
-  .topbar .navbar-header {
+  .topbar2 .navbar-header {
     background: rgba(0, 0, 0, 0.5); }
-  .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
+  .topbar2 .top-navbar .navbar-header .navbar-brand .dark-logo {
     display: none; }
-  .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+  .topbar2 .top-navbar .navbar-header .navbar-brand .light-logo {
     display: inline-block;
     color: rgba(255, 255, 255, 0.8); }
-  .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+  .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link {
     color: #ffffff !important; }
-    .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+    .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
       color: rgba(255, 255, 255, 0.8) !important; }
 
 /*******************

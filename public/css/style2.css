@@ -1945,87 +1945,94 @@ Layouts
   padding: 20px 20px 0px 20px }
 
 /*******************
- Topbar
+ topbar2
 *******************/
-.topbar {
+.topbar2 {
   position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
   z-index: 50;
   -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5); }
-  .topbar .top-navbar {
+  .topbar2 .top-navbar {
     min-height: 70px;
-    padding: 0px 15px 0 0; }
-    .topbar .top-navbar .dropdown-toggle::after {
+    height: 70px;
+    padding: 0px 0px 0 0;
+    border: none;}
+    .topbar2 .top-navbar .dropdown-toggle::after {
       display: none; }
-    .topbar .top-navbar .navbar-header {
+    .topbar2 .top-navbar .navbar-header {
       line-height: 65px;
+      height: 70px;
       text-align: center; }
-      .topbar .top-navbar .navbar-header .navbar-brand {
+      .topbar2 .top-navbar .navbar-header .navbar-brand {
         margin-right: 0px;
         padding-bottom: 0px;
         padding-top: 0px; }
-        .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+        .topbar2 .top-navbar .navbar-header .navbar-brand .light-logo {
           display: none; }
-        .topbar .top-navbar .navbar-header .navbar-brand b {
+        .topbar2 .top-navbar .navbar-header .navbar-brand b {
           line-height: 70px;
           display: inline-block; }
-    .topbar .top-navbar .navbar-nav > .nav-item > .nav-link {
+    .topbar2 .top-navbar .navbar-nav > .nav-item > .nav-link {
       /*padding-left: .75rem;*/
       padding-right: .5rem;
       font-size: 14px;
       line-height: 50px; }
-    .topbar .top-navbar .navbar-nav > .nav-item.show {
+    .topbar2 .top-navbar .navbar-nav > .nav-item.show {
       background: rgba(0, 0, 0, 0.05); }
-  .topbar .profile-pic {
+  .topbar2 .profile-pic {
     width: 30px;
     border-radius: 100%; }
-  .topbar .dropdown-menu {
+  .topbar2 .dropdown-menu {
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
     border-color: rgba(120, 130, 140, 0.13); }
-    .topbar .dropdown-menu .dropdown-item {
+    .topbar2 .dropdown-menu .dropdown-item {
       padding: 7px 1.5rem; }
-  .topbar ul.dropdown-user {
+  .topbar2 ul.dropdown-user {
     padding: 0px;
     width: 270px; }
-    .topbar ul.dropdown-user li {
+    .topbar2 ul.dropdown-user li {
       list-style: none;
       padding: 0px;
       margin: 0px; }
-      .topbar ul.dropdown-user li.divider {
+      .topbar2 ul.dropdown-user li.divider {
         height: 1px;
         margin: 9px 0;
         overflow: hidden;
         background-color: rgba(120, 130, 140, 0.13); }
-      .topbar ul.dropdown-user li .dw-user-box {
+      .topbar2 ul.dropdown-user li .dw-user-box {
         padding: 10px 15px; }
-        .topbar ul.dropdown-user li .dw-user-box .u-img {
+        .topbar2 ul.dropdown-user li .dw-user-box .u-img {
           width: 80px;
           display: inline-block;
           vertical-align: top; }
-          .topbar ul.dropdown-user li .dw-user-box .u-img img {
+          .topbar2 ul.dropdown-user li .dw-user-box .u-img img {
             width: 100%;
             border-radius: 5px; }
-        .topbar ul.dropdown-user li .dw-user-box .u-text {
+        .topbar2 ul.dropdown-user li .dw-user-box .u-text {
           display: inline-block;
           padding-left: 10px; }
-          .topbar ul.dropdown-user li .dw-user-box .u-text h4 {
+          .topbar2 ul.dropdown-user li .dw-user-box .u-text h4 {
             margin: 0px; }
-          .topbar ul.dropdown-user li .dw-user-box .u-text p {
+          .topbar2 ul.dropdown-user li .dw-user-box .u-text p {
             margin-bottom: 2px;
             font-size: 14px; }
-          .topbar ul.dropdown-user li .dw-user-box .u-text .btn {
+          .topbar2 ul.dropdown-user li .dw-user-box .u-text .btn {
             color: #ffffff;
             padding: 5px 10px;
             display: inline-block; }
-            .topbar ul.dropdown-user li .dw-user-box .u-text .btn:hover {
+            .topbar2 ul.dropdown-user li .dw-user-box .u-text .btn:hover {
               background: #e6294b; }
-      .topbar ul.dropdown-user li a {
+      .topbar2 ul.dropdown-user li a {
         padding: 9px 15px;
         display: block;
         color: #67757c; }
-        .topbar ul.dropdown-user li a:hover {
+        .topbar2 ul.dropdown-user li a:hover {
           background: #f2f4f8;
           color: #11ABB0;
           text-decoration: none; }
@@ -2099,7 +2106,7 @@ Layouts
 	border-radius:0;
 	border-top-left-radius:0px;
 	border-bottom-left-radius:0px;
-	padding:11px 12px;
+	padding:9px 12px;
 	border:0}
 .single-widget ::-moz-selection{
 	background-color:#191919 !important;
@@ -3068,6 +3075,55 @@ Form Material page
   border-bottom: 1px solid #d9d9d9; }
   .form-control-line .form-control:focus {
     border-bottom: 1px solid #11ABB0; }
+
+.form-material textarea.revTextArea{
+  height: 100px;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  margin-top: 5px;
+}
+
+.form-material textarea.revTextArea:focus{
+  border: 1px solid lightgrey;
+}
+
+
+
+
+
+/*Star Rating Input*/
+.rating-md {
+  font-size:2.5rem;
+}
+.rating-container .clear-rating {
+  display:none;
+}
+.rating-container .filled-stars {
+  color: #ffb22b;
+  -webkit-text-stroke: 1px #f5be5c;
+  text-shadow: none;
+}
+rating-container .empty-stars {
+  color: #7d8b93;
+}
+.rating-container .caption {
+  /*display: none; */
+}
+
+/*Emoji Input*/
+
+img.emojione {
+  min-width: 1rem;
+  min-height: 1rem;
+  width: 1.5rem;
+  height: auto;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+
+
 
 /*******************/
 /*Floating Label*/
@@ -5826,11 +5882,11 @@ When click on sidebar toggler and also for tablet
 /*******************
 /*User mail widgets*/
 /*******************/
-.topbar .top-navbar .mailbox {
+.topbar2 .top-navbar .mailbox {
   width: 300px; }
-  .topbar .top-navbar .mailbox ul {
+  .topbar2 .top-navbar .mailbox ul {
     padding: 0px; }
-    .topbar .top-navbar .mailbox ul li {
+    .topbar2 .top-navbar .mailbox ul li {
       list-style: none; }
 
 .mailbox ul li .drop-title {
@@ -6801,10 +6857,10 @@ When click on sidebar toggler and also for tablet
  ============================================================== */
 @media (max-width: 767px) {
   /*Header*/
-  .topbar {
+  .topbar2 {
     position: fixed;
     width: 100%; }
-    .topbar .top-navbar {
+    .topbar2 .top-navbar {
       padding-right: 15px;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -6815,27 +6871,27 @@ When click on sidebar toggler and also for tablet
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
       -webkit-align-items: center; }
-      .topbar .top-navbar .navbar-collapse {
+      .topbar2 .top-navbar .navbar-collapse {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         width: 100%; }
-      .topbar .top-navbar .navbar-nav {
+      .topbar2 .top-navbar .navbar-nav {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row; }
-        .topbar .top-navbar .navbar-nav > .nav-item.show {
+        .topbar2 .top-navbar .navbar-nav > .nav-item.show {
           position: static; }
-          .topbar .top-navbar .navbar-nav > .nav-item.show .dropdown-menu {
+          .topbar2 .top-navbar .navbar-nav > .nav-item.show .dropdown-menu {
             width: 100%;
             margin-top: 0px; }
-        .topbar .top-navbar .navbar-nav > .nav-item > .nav-link {
+        .topbar2 .top-navbar .navbar-nav > .nav-item > .nav-link {
           padding-left: .50rem;
           padding-right: .50rem; }
-        .topbar .top-navbar .navbar-nav .dropdown-menu {
+        .topbar2 .top-navbar .navbar-nav .dropdown-menu {
           position: absolute; }
   .mega-dropdown .dropdown-menu {
     height: 480px;

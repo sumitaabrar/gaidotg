@@ -12,18 +12,26 @@
 						<!--User Discussions input--> 
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
-								<div class="m-t-30 m-b-30">
-									<div class="sl-left"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> </div>
+								<div class="m-t-20 m-b-20">
+									<div class="sl-left"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
 									<div class="sl-right">
-										<div> 
-											<a href="#" class="link">Current User</a>
-											<div class="m-t-20 row">
-												<div class="col-md-3 col-xs-12"><img src="assets/images/big/img11.jpg" alt="user" class="img-responsive radius"></div>
-												<div class="col-md-9 col-xs-12"><p>Initiate a Discussion </p> </div>
-											</div>
-											<div class="m-t-10 row ">
-												<div class="col-md-12"><span class="floatRight"><a href="#" class="btn btn-success">Post Discussion</a></span></div>
-												
+										<div class="m-t-20 row">
+											<div class="col-sm-12">
+												{!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+												<div class="row">    
+													<div class="col-md-9">
+														{{ Form::number('rate', '', ['class' => 'rating rating-loading',  'data-min' => '0', 'data-max' => '5',  'data-step' => '1'])}}
+													</div>
+													<div class="col-md-3">
+														{{ Form::submit( 'Post', [ 'class' => 'btn btn-success btn-broad' ]) }}
+													</div>
+												</div>
+												<div class="row">    
+													<div class="col-md-12 m-t-5">
+														{{ Form::textarea('review', '',  [ 'id' => 'review', 'placeholder' => 'Initiate a Discussion', 'class' => 'revTextArea' ]) }}
+													</div>
+												</div>
+												{!! Form::close() !!}
 											</div>
 										</div>
 									</div>

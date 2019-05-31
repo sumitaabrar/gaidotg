@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->string('userDp');
             $table->integer('bId');
             $table->mediumText('rBody');
-            $table->tinyInteger('rRate');
+            $table->tinyInteger('rRate')->nullable();
             $table->timestamps();
         });
     }

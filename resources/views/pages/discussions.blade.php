@@ -12,19 +12,28 @@
 						<!--User Discussions input--> 
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
-								<div class="m-t-30 m-b-30">
+								<div class="m-t-20 m-b-20">
 									<div class="sl-left"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
 									<div class="sl-right">
-                                        <div class="m-t-20 row">
-                                            <div class="col-md-8 col-xs-8">
-                                                <p>Initiate a Discussion </p> 
-                                            </div>
-                                            <div class="col-md-4 col-xs-4">
-                                                <span class="floatRight">
-                                                    <a href="#" class="btn btn-success">Post</a>
-                                                </span>
-                                            </div>
-                                        </div>
+										<div class="m-t-20 row">
+											<div class="col-sm-12">
+												{!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+												<div class="row">    
+													<div class="col-md-9">
+														{{ Form::number('rate', '', ['class' => 'rating rating-loading',  'data-min' => '0', 'data-max' => '5',  'data-step' => '1'])}}
+													</div>
+													<div class="col-md-3">
+														{{ Form::submit( 'Post', [ 'class' => 'btn btn-success btn-broad' ]) }}
+													</div>
+												</div>
+												<div class="row">    
+													<div class="col-md-12 m-t-5">
+														{{ Form::textarea('review', '',  [ 'id' => 'review', 'placeholder' => 'Initiate a Discussion', 'class' => 'revTextArea' ]) }}
+													</div>
+												</div>
+												{!! Form::close() !!}
+											</div>
+										</div>
 									</div>
 								</div>              
 							</div>
@@ -48,7 +57,7 @@
 												<div>
 													<a href="#" class="link">{{ $rev->userName }}</a> 
 													<span class="sl-date">{{ $rev->created_at }}</span>
-													<p class="m-t-10 postFontSize"> {{ $rev->rBody }} </p>
+													<p class="m-t-10 postFontSize"> {!! $rev->rBody !!} </p>
 												</div>
 												<div class="like-comm m-t-20"> 
 													<a href="javascript:void(0)" class="link m-r-10">2 comment</a> 

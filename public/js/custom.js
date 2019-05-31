@@ -37,8 +37,8 @@ $(function() {
     $(window).ready(set);
     $(window).on("resize", set);
 
-    // topbar stickey on scroll
-    $(".fix-header .topbar").stick_in_parent({});
+    // topbar2 stickey on scroll
+    $(".fix-header .topbar2").stick_in_parent({});
 
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").click(function() {
