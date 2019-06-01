@@ -9,7 +9,7 @@
             <div class="card">
                 <img class="card-img-top" src="assets/images/background/profile-bg-01.jpg" alt="Card image cap">
                 <div class="card-block little-profile text-center">
-                    <div class="pro-img"><img src="assets/images/users/01.png" alt="user" /></div>
+                    <div class="pro-img"><img src="assets/images/users/brands/01.png" alt="user" /></div>
                     <h3 class="m-b-0">Burger King</h3>
                     <p>Fast Food Chain</p>
                     <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest Me</a>
@@ -143,7 +143,7 @@
                                         @if ( count($allRev) > 0)     <!--If the brand has reviews to view, then dispaly them-->
                                             @foreach ($allRev as $rev)
                                                 <div class="sl-item">
-                                                    <div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
+                                                    <div class="sl-left"> <img src="assets/images/users/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
                                                     <div class="sl-right">
                                                         <div>
                                                             <a href="#" class="link">{{ $rev->userName }}</a> 

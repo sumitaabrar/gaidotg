@@ -64,14 +64,17 @@ class ReviewsController extends Controller
             'review' => 'required' 
         ]);
 
+        $rev = new Review;
+        $rev->userName = "Joe";
+        $rev->userDp = "uDP6.jpg";
+        $rev->bId = 1;
+
         $revBody = Emojione::toShort($request->review);
 
-        $rev = new Review;
-        $rev->userName = "Ali";
-        $rev->userDp = "uDP2.jpg";
-        $rev->bId = 1;
         $rev->rBody = $revBody;
         $rev->rRate = $request->rate;
+        $rev->rScore = 0;
+        
         $rev->save();
 
         return redirect('/bProfile')->with('success', 'Review has been added');

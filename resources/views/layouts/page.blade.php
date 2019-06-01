@@ -145,6 +145,16 @@
 				}
 			});
 
+			$("#dis").emojioneArea({
+				pickerPosition: "bottom",
+				search: false, 
+				tones: false,
+				saveEmojisAs: "shortname",
+				attributes: {
+					spellcheck : true,
+				}
+			});
+
 		</script>
 
 

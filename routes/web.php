@@ -13,6 +13,7 @@
 
 Route::get('/','PagesController@index');
 Route::get('/userProfile','PagesController@userProfile');
+Route::get('/signup','PagesController@signup');
 
 Route::get('/trash','PagesController@trash');
 
