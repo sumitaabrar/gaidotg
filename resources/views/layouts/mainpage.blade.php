@@ -14,9 +14,24 @@
 		<!--Main Stylesheets compiled-->
 		<link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
-		<!--Extra stylesheet links-->
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" >
+		<link rel="stylesheet" href="{{  URL::asset('http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css') }}" >
+		<!--Extra Stylesheets-->
 		<link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
 		<link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
+		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist.min.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist-init.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+
+		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
+
+		<link rel="stylesheet" href="{{  URL::asset('css/colors/blue.css')  }}" id="theme">
 		
 			
 			
@@ -32,53 +47,7 @@
         		
 		
 		<!-- start footer Area -->		
-		<footer class="footer-area section-gap">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 col-md-6 col-sm-6">
-						<div class="single-footer-widget">
-							<h6>About Us</h6>
-							<p>
-									Gaido is a platform for consumers to connects with each other, and share their suggestions and recommendations online. The users can also give reviews about products they have used and places they have visited.
-							</p>
-							<p class="footer-text">
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Re-distributed by <a target="_blank" href="www.Themewagon.com">Themewagon</a>
-							</p>								
-						</div>
-					</div>
-					<div class="col-lg-5  col-md-6 col-sm-6">
-						<div class="single-footer-widget">
-							<h6>Newsletter</h6>
-							<p>Stay update with our latest</p>
-							<div class="" id="mc_embed_signup">
-								<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-										<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-										<div style="position: absolute; left: -5000px;">
-											<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-										</div>
-
-									<div class="info"></div>
-								</form>
-							</div>
-						</div>
-					</div>						
-					<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-						<div class="single-footer-widget">
-							<h6>Follow Us</h6>
-							<p>Let us be social</p>
-							<div class="footer-social d-flex align-items-center">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-dribbble"></i></a>
-								<a href="#"><i class="fa fa-behance"></i></a>
-							</div>
-						</div>
-					</div>							
-				</div>
-			</div>
-		</footer>	
-		<!-- End footer Area -->	
+		@include('inc.mainfooter')	
 
 
 		<script src="{{  URL::asset('js/vendor/jquery-2.2.4.min.js')  }}"></script>

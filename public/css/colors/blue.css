@@ -33,7 +33,16 @@
   .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link {
     color: #ffffff !important; }
     .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar2 .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
-      color: rgba(255, 255, 255, 0.8) !important; }
+      color: rgba(255, 255, 255, 0.8) !important; } 
+
+.topbarCustom {
+  background: #000000ab;
+}
+
+.topbarCustom .navbar-header {
+  background: rgba(0, 0, 0, 0);
+}
+
 
 /*******************
 /*General Elements

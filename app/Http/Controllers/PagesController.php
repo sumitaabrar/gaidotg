@@ -31,7 +31,9 @@ class PagesController extends Controller
     public function userProfile(){
         return view('pages.userProfile');
     }
-
+    public function signup(){
+        return view('pages.signup');
+    }
 
 
     public function trash(){
