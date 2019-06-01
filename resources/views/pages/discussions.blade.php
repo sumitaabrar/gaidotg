@@ -17,10 +17,10 @@
 									<div class="sl-right">
 										<div class="m-t-20 row">
 											<div class="col-sm-12">
-												{!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+												{!! Form::open(['action' => 'DiscussionsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
 												<div class="row">    
 													<div class="col-md-9">
-														{{ Form::number('rate', '', ['class' => 'rating rating-loading',  'data-min' => '0', 'data-max' => '5',  'data-step' => '1'])}}
+														{{ Form::text('image', '', ['placeholder' => 'Attatch an Image', 'class' => 'form-control form-control-line'])}}
 													</div>
 													<div class="col-md-3">
 														{{ Form::submit( 'Post', [ 'class' => 'btn btn-success btn-broad' ]) }}
@@ -28,7 +28,7 @@
 												</div>
 												<div class="row">    
 													<div class="col-md-12 m-t-5">
-														{{ Form::textarea('review', '',  [ 'id' => 'review', 'placeholder' => 'Initiate a Discussion', 'class' => 'revTextArea' ]) }}
+														{{ Form::textarea('discussionBody', '',  [ 'id' => 'dis', 'placeholder' => 'Initiate a Discussion', 'class' => 'revTextArea' ]) }}
 													</div>
 												</div>
 												{!! Form::close() !!}
@@ -49,15 +49,29 @@
 						<div class="card-block p-t-20">
 							<div class="profiletimeline simpleFont">
 								<!--Actual discussions start form here--> 
-								@if ( count($allRev) > 0)     <!--If there are discussions to view, then dispaly them-->
-									@foreach ($allRev as $rev)
+								@if ( count($allDis) > 0)     <!--If there are discussions to view, then dispaly them-->
+									@foreach ($allDis as $dis)
 										<div class="sl-item">
-											<div class="sl-left"> <img src="img/{{ $rev->userDp }}" alt="user" class="img-circle"> </div>
+											<div class="sl-left"> <img src="assets/images/users/{{ $dis->userDp }}" alt="user" class="img-circle"> </div>
 											<div class="sl-right">
 												<div>
-													<a href="#" class="link">{{ $rev->userName }}</a> 
-													<span class="sl-date">{{ $rev->created_at }}</span>
-													<p class="m-t-10 postFontSize"> {!! $rev->rBody !!} </p>
+													<a href="#" class="link">{{ $dis->userName }}</a> 
+													<span class="sl-date">{{ $dis->created_at }}</span>
+
+													@if ($dis->disOpen = true)
+														<span class="floatRight">Open</span>
+													@else
+														<span class="floatRight">Close</span>
+													@endif
+
+													<p class="m-t-10 postFontSize"> {!! $dis->disBody !!} </p>
+
+													@if ($dis->disImage != NULL)
+														<div class="row">
+															<div class="col-lg-12 col-md-12 m-b-20"><img src="assets/images/big/{{ $dis->disImage }}" alt="Image" class="img-responsive radius"></div>
+														</div>	
+													@endif
+													
 												</div>
 												<div class="like-comm m-t-20"> 
 													<a href="javascript:void(0)" class="link m-r-10">2 comment</a> 
