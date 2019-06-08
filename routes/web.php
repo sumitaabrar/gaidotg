@@ -22,3 +22,7 @@ Route::get('/trash','PagesController@trash');
 Route::resource('bProfile', 'ReviewsController');
 Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
