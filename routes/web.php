@@ -25,4 +25,22 @@ Route::resource('rec', 'RecommendationsController');
 
 Auth::routes();
 
+
+
+//To Handle Admin Login & Logout
+Route::get('/admin/login', 'Auth\AdminLoginController@showAdminLoginForm')->name('admin.login');
+Route::post('/admin/login', 'Auth\AdminLoginController@adminLogin')->name('admin.login.submit');
+Route::get('/admin/logout', 'Auth\AdminLoginController@adminLogout')->name('admin.logout');
+
+//To Handle BrandUser Login
+Route::get('/brand/login', 'Auth\BrandLoginController@showBrandLoginForm')->name('brand.login');
+Route::post('/brand/login', 'Auth\BrandLoginController@brandLogin')->name('brand.login.submit');
+Route::get('/brand/logout', 'Auth\BrandLoginController@brandLogout')->name('brand.logout');
+
+//User Custom Logout 
+Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+
+//Users' Dashboards
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/adminHome', 'AdminHomeController@index')->name('admin.dashboard');
+Route::get('/brandHome', 'BrandHomeController@index')->name('brand.dashboard');
