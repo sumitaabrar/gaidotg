@@ -36,4 +36,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //Creating 1-* reationship with Reccomendation. Each user can have multiple recommendations.
+    public function recommendation()
+    {
+        return $this->hasMany('App\Recommendation');
+    }
+
+    //Creating 1-* reationship with Discussion. Each user can have multiple discussions.
+    public function discussion()
+    {
+        return $this->hasMany('App\Discussion');
+    }
+
+    //Creating 1-* reationship with Review. Each user can have multiple reviews.
+    public function review()
+    {
+        return $this->hasMany('App\Review');
+    }
+
+
+
 }

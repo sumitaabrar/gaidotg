@@ -14,12 +14,13 @@ class CreateRecommendationsTable extends Migration
     public function up()
     {
         Schema::create('recommendations', function (Blueprint $table) {
-            $table->bigIncrements('recId');
-            $table->string('userName');
-            $table->string('userDp');
-            $table->Text('recBody');
-            $table->boolean('disOpen');
+            $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->Text('body');
+            $table->boolean('is_open');
             $table->timestamps();
+
+            
         });
     }
 

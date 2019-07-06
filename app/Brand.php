@@ -11,9 +11,15 @@ class Brand extends Model
     public $timestamps = true;   //Timestamps
 
 
-    //Creating 1-1 reationship with BrandUser. Each brand can only have 1 BrandUser account
+    //Creating 1-1 reationship with BrandUser. Each brand can have only 1 BrandUser account
     public function brandUser()
     {
         return $this->hasOne('App\BrandUser');
+    }
+
+    //Creating 1-* reationship with Review. There can be multiple reviews for each Brand.
+    public function review()
+    {
+        return $this->hasMany('App\Review');
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\User;
+use App\Brand;
 
 
 use Emojione\Emojione;
@@ -33,10 +35,10 @@ class ReviewsController extends Controller
         //converting emoji shortnames into emoji icons
         foreach($allRev as $rev)
         {
-            $body = htmlspecialchars($rev->rBody);
+            $body = htmlspecialchars($rev->body);
             $body = Emojione::shortnameToImage($body);
             $body = nl2br($body);
-            $rev->rBody = $body;
+            $rev->body = $body;
         }
 
         return view('pages.bProfile')->with('allRev', $allRev);
@@ -65,15 +67,14 @@ class ReviewsController extends Controller
         ]);
 
         $rev = new Review;
-        $rev->userName = "Joe";
-        $rev->userDp = "uDP6.jpg";
-        $rev->bId = 1;
+        $rev->user_id = auth()->user()->id;
+        $rev->brand_id = 1;
 
         $revBody = Emojione::toShort($request->review);
 
-        $rev->rBody = $revBody;
-        $rev->rRate = $request->rate;
-        $rev->rScore = 0;
+        $rev->body = $revBody;
+        $rev->rate = $request->rate;
+        $rev->score = 0;
         
         $rev->save();
 

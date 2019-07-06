@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Review;
-
+use App\Recommendation;
+use App\User;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -18,26 +18,7 @@ class RecommendationsController extends Controller
      */
     public function index()
     {
-        $emojioneClient = new EmojioneClient();
-        $emojioneClient->cacheBustParam = '';
-        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
-        Emojione::setClient($emojioneClient);
-
-
-
-        //return Post::where('title','Post # 01')->get();
-        $allRev = Review::orderBy('created_at','desc')->get();
-
-        //converting emoji shortnames into emoji icons
-        foreach($allRev as $rev)
-        {
-            $body = htmlspecialchars($rev->rBody);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $rev->rBody = $body;
-        }
-
-        return view('pages.discussions')->with('allRev', $allRev);
+        
     }
 
     /**
@@ -58,7 +39,21 @@ class RecommendationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'recommendation' => 'required'
+        ]);
+
+        $rec = new Recommendation;
+        $rec->user_id = auth()->user()->id;
+
+        $recBody = Emojione::toShort($request->recommendation);
+
+        $rec->body = $recBody;
+        $rec->is_open = true;
+
+        $rec->save();
+
+        return(redirect('/feed')->with('success','Recommendation has been added'));
     }
 
     /**

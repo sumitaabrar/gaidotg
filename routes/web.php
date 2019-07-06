@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/','PagesController@index');
-Route::get('/userProfile','PagesController@userProfile');
+Route::get('/','PagesController@index')->name('index');
 Route::get('/signup','PagesController@signup');
 
-Route::get('/trash','PagesController@trash');
+Route::get('/feed', 'FeedController@index')->name('feed');;
 
 
 
 Route::resource('bProfile', 'ReviewsController');
 Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
+
+
 
 Auth::routes();
 

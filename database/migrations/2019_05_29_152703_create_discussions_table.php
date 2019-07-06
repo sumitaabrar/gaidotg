@@ -14,15 +14,14 @@ class CreateDiscussionsTable extends Migration
     public function up()
     {
         Schema::create('discussions', function (Blueprint $table) {
-            $table->bigIncrements('disId');
-            $table->string('userName');
-            $table->string('userDp');
-            $table->integer('bId');
-            $table->Text('disBody');
-            $table->string('disImage')->nullable();
-            $table->smallInteger('disScore');
-            $table->boolean('disOpen');
+            $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->Text('body');
+            $table->string('image')->nullable();
+            $table->smallInteger('score');
+            $table->boolean('is_open');
             $table->timestamps();
+
 
         });
     }

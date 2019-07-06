@@ -14,14 +14,15 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->bigIncrements('rId');
-            $table->string('userName');
-            $table->string('userDp');
-            $table->integer('bId');
-            $table->mediumText('rBody');
-            $table->tinyInteger('rRate')->nullable();
-            $table->smallInteger('rScore');
+            $table->increments('id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('brand_id')->unsigned();
+            $table->mediumText('body');
+            $table->tinyInteger('rate')->nullable();
+            $table->smallInteger('score');
             $table->timestamps();
+
+            
         });
     }
 

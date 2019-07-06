@@ -14,12 +14,13 @@ class CreateBrandUsersTable extends Migration
     public function up()
     {
         Schema::create('brand_users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('brand_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 

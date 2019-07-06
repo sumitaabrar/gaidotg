@@ -110,14 +110,34 @@
                     <div class="card">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs profile-tab" role="tablist">
-                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Reviews</a> </li>
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Activity</a> </li>
                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">  
                             <!--first tab    REVIEWS-->  
                             <div class="tab-pane active" id="home" role="tabpanel">
+
+
+                                <!-- Branch Menu Filter
+                                <form id="branch-form" class="form-horizontal form-material">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <select class="form-control form-control-line">
+                                                <option>All</option>
+                                                <option>Gulshan Branch</option>
+                                                <option>Hyderi Branch</option>
+                                                <option>Defence Branch</option>
+                                                <option>Bahadurabad Branch</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                                Branch Menu Filter-->
+
+                                <!--Actual reviews start form here--> 
                                 <div class="card-block p-t-8">
                                     <div class="profiletimeline simpleFont">
 
@@ -192,7 +212,50 @@
                                     
 
                                 </div>
-                            </div>                            
+                            </div>
+
+                            <!--third tab   SETTINGS-->
+                            <div class="tab-pane" id="settings" role="tabpanel">
+                                <div class="card-block">
+                                    <form class="form-horizontal form-material">
+                                        <div class="form-group">
+                                            <label for="example-email" class="col-md-12">Log In ID</label>
+                                            <div class="col-md-12">
+                                                <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-12">Password</label>
+                                            <div class="col-md-12">
+                                                <input type="password" value="password" class="form-control form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-12">Account Number</label>
+                                            <div class="col-md-12">
+                                                <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Select City</label>
+                                            <div class="col-sm-12">
+                                                <select class="form-control form-control-line">
+                                                    <option>Karachi</option>
+                                                    <option>Lahore</option>
+                                                    <option>Islamabad</option>
+                                                    <option>Faisalabad</option>
+                                                    <option>Quetta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success">Update Profile</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

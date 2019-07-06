@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Discussion;
-
+use App\User;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -18,24 +18,7 @@ class DiscussionsController extends Controller
      */
     public function index()
     {
-        $emojioneClient = new EmojioneClient();
-        $emojioneClient->cacheBustParam = '';
-        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
-        Emojione::setClient($emojioneClient);
-
-
-        $allDis = Discussion::orderBy('created_at','desc')->get();
-
-        //converting emoji shortnames into emoji icons
-        foreach($allDis as $dis)
-        {
-            $body = htmlspecialchars($dis->disBody);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $dis->disBody = $body;
-        }
-
-        return view('pages.discussions')->with('allDis', $allDis);
+        
     }
 
     /**
@@ -57,24 +40,23 @@ class DiscussionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'discussionBody' => 'required'
+            'discussion' => 'required'
         ]);
 
         $dis = new Discussion;
-        $dis->userName = "Joe";
-        $dis->userDp = "uDP6.jpg";
-        $dis->bId = 1;
+        $dis->user_id = auth()->user()->id;
 
-        $disBody = Emojione::toShort($request->discussionBody);
 
-        $dis->disBody = $disBody;
-        $dis->disImage = $request->image;
-        $dis->disScore = 0;
-        $dis->disOpen = true;
+        $disBody = Emojione::toShort($request->discussion);
+
+        $dis->body = $disBody;
+        $dis->image = $request->image;
+        $dis->score = 0;
+        $dis->is_open = true;
 
         $dis->save();
 
-        return(redirect('/dis')->with('success','Discussion has been added'));
+        return(redirect('/feed')->with('success','Discussion has been added'));
     }
 
     /**
