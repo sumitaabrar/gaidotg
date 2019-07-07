@@ -9,10 +9,12 @@
             <div class="card">
                 <img class="card-img-top" src="assets/images/background/profile-bg-01.jpg" alt="Card image cap">
                 <div class="card-block little-profile text-center">
-                    <div class="pro-img"><img src="assets/images/users/brands/01.png" alt="user" /></div>
+                    <div class="pro-img">
+                        <div class="img"><img src="assets/images/users/brands/img1.png" alt="user" /></div>
+                    </div>
                     <h3 class="m-b-0">Burger King</h3>
                     <p>Fast Food Chain</p>
-                    <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest Me</a>
+                    <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest It</a>
                     <div class="row text-center m-t-20">
                         <div class="col-lg-4 col-md-4 m-t-20">
                             <h3 class="m-b-0 font-light">4 <small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>

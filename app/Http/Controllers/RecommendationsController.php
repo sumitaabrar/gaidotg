@@ -49,6 +49,7 @@ class RecommendationsController extends Controller
         $recBody = Emojione::toShort($request->recommendation);
 
         $rec->body = $recBody;
+        $rec->image = $request->image;
         $rec->is_open = true;
 
         $rec->save();
