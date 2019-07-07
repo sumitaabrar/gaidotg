@@ -17,6 +17,7 @@ class CreateRecommendationsTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->Text('body');
+            $table->string('image')->nullable();
             $table->boolean('is_open');
             $table->timestamps();
 
