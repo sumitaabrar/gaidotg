@@ -12,7 +12,7 @@
 */
 
 Route::get('/','PagesController@index')->name('index');
-Route::get('/signup','PagesController@signup');
+Route::get('/test','PagesController@test');
 
 Route::get('/feed', 'FeedController@index')->name('feed');;
 

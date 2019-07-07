@@ -41,7 +41,7 @@
 	<div class="col-lg-12 col-xlg-12 col-md-12">                 
 		<div class="card-block p-t-20">
 			<div class="profiletimeline simpleFont">
-				<!--Actual discussions start form here--> 
+				<!--Actual recommendations start form here--> 
 				@if ( count($allRec) > 0)     <!--If there are discussions to view, then dispaly them-->
 					@foreach ($allRec as $rec)
 						<div class="sl-item">

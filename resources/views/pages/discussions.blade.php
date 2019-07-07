@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-xlg-12 col-md-12">              
 			<!--User Discussions input--> 
-			<div class="card m-b-0 m-t-5">
+			<div class="card m-b-0 m-t-20">
 				<div class="card-block p-t-0 p-b-0">
 					<div class="profiletimeline simpleFont">
 						<div class="m-t-20 m-b-20">
