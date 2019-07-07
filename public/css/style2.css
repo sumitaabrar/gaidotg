@@ -6590,14 +6590,21 @@ When click on sidebar toggler and also for tablet
 .little-profile .pro-img {
   margin-top: -80px;
   margin-bottom: 20px; }
-  .little-profile .pro-img img {
-    width: 128px;
-    height: 128px;
-    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 100%; 
-    border: 3px solid #737373c4;
-  }
+.little-profile .pro-img .img{
+  width: 128px;
+  height: 128px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  border: 3px solid #737373c4;
+  background-color: #f7f7f7;
+  display: inline-block;
+  overflow: hidden;
+}
+.little-profile .pro-img img {
+  width: auto;
+  height: 100%;
+}
 
 .contact-box {
   position: relative; }
