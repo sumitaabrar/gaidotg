@@ -27,12 +27,28 @@
 	
 											@if ( count($allT) > 0)     <!--If the brand has reviews to view, then dispaly them-->
 												@foreach ($allT as $t)
-													<p>*************************************</p>
-													<p>Type ID: {{$t->id}}</p>
-													<p>Type Name: {{$t->name}}</p>
+													<p>********************************************</p>
+													<p>Brand Name: {{$t->name}}</p>
+													<p>Cat Name: {{$t->category->name}}</p>
 													<p>SubCat Name: {{$t->subcategory->name}}</p>
-													<p>Cat Name: {{$t->subcategory->category->name}}</p>
-													<p>*************************************</p>
+													<p>Type Name: {{$t->type->name}}</p>
+													
+													<p>----- List of Branches-----</p>
+													@foreach ($allB as $b)
+														<p>Branch Name: {{$b->name}}</p>
+														<p>Location: {{$b->location}}</p>
+													@endforeach
+
+													@foreach ($allA as $a)
+														<p>----- Analysis for {{ $a->created_at }} -----</p>
+														<p>Brand Name: {{$a->brand->name}}</p>
+														<p>Ranking: {{$a->ranking}}</p>
+														<p>Rating: {{$a->rating}}</p>
+														<p>Sentiment Score: {{$a->score}}</p>
+														<p>Suggested by  {{$a->suggested_by}} users.</p>
+													@endforeach
+																									
+													<p>********************************************</p>
 												@endforeach
 												
 											@else

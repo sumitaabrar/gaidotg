@@ -5,8 +5,8 @@
     <!-- Logo -->
     <div class="navbar-header">
         <a class="navbar-brand" href="{{ route('index') }}">
-          <b> <img src="assets/images/logo-light-icon.png" alt="gaido" class="light-logo" /> </b>
-          <span> <img src="assets/images/logo-light-text.png" class="light-logo" alt="gaido" /> </span> 
+          <b> <img src="../assets/images/logo-light-icon.png" alt="gaido" class="light-logo" /> </b>
+          <span> <img src="../assets/images/logo-light-text.png" class="light-logo" alt="gaido" /> </span> 
         </a>
     </div>
 
@@ -40,8 +40,8 @@
       <!-- User profile and Menu itmes-->
       <ul class="navbar-nav my-lg-0">
           <!-- Menu Items -->
-          <li class="nav-item  menu-active"> 
-            <a class="nav-link" href="/"><span> Review </span>  
+          <li class="nav-item  "> 
+            <a class="nav-link" href="/reviews"><span> Review </span>  
               <i class="mdi mdi-message-processing navi"></i>
             </a>
           </li>
@@ -65,22 +65,12 @@
           @else
             <!-- Profile -->
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false" >
                     <span class="user-name">{{ Auth::user()->name }} </span>
-                    <img src="assets/images/users/{{ Auth::user()->image }}" alt="user" class="profile-pic m-r-10" />
+                    <img src="../assets/images/users/{{ Auth::user()->image }}" alt="user" class="profile-pic m-r-10" />
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
+                
             </li>
           @endguest
       </ul>

@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/','PagesController@index')->name('index');
+Route::get('/','IndexController@index')->name('index');
 Route::get('/test','PagesController@test');
+Route::get('/product','PagesController@product')->name('product.list');
+Route::get('/place','PagesController@place')->name('place.list');
 
 Route::get('/feed', 'FeedController@index')->name('feed');;
 
 
 
-Route::resource('bProfile', 'ReviewsController');
+Route::resource('reviews', 'ReviewsController');
 Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
 
+Route::resource('bOrgs', 'BrandsController');
 
 
 Auth::routes();

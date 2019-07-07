@@ -15,4 +15,10 @@ class Type extends Model
     {
         return $this->belongsTo('App\Subcategory');
     }
+
+    //Creating 1-* reationship with Brand. Each type can have multiple brands.
+    public function brand()
+    {
+        return $this->hasMany('App\Brand');
+    }
 }

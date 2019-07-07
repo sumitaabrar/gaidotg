@@ -9,7 +9,7 @@
 		<meta name="keywords" content="">					<!-- Meta Keyword -->
 		
 		<title>Gaido</title>								<!-- Site Title -->
-		<link rel="shortcut icon" href="img/fav.png">		<!-- Favicon-->
+		<link rel="shortcut icon" href="../img/fav.png">		<!-- Favicon-->
 
 		<!--Main Stylesheets compiled-->
 		<link rel="stylesheet" href="{{ asset('css/app.css')}}">

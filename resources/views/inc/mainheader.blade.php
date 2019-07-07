@@ -31,7 +31,7 @@
         <!-- Signup and Menu itmes-->
         <ul class="navbar-nav my-lg-0">
             <!-- Menu Items -->
-            <li class="nav-item  menu-active"> 
+            <li class="nav-item "> 
               <a class="nav-link" href="/"><span> Review </span>  
                 <i class="mdi mdi-message-processing navi"></i>
               </a>
