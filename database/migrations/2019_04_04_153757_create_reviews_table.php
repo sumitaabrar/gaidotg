@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('brand_id')->unsigned();
             $table->mediumText('body');
             $table->tinyInteger('rate')->nullable();
-            $table->smallInteger('score');
+            $table->float('score');
             $table->timestamps();
 
             
