@@ -24,23 +24,6 @@ LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping data for table `brand_categories`
---
-
-LOCK TABLES `brand_categories` WRITE;
-/*!40000 ALTER TABLE `brand_categories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `brand_categories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping data for table `brand_subcategories`
---
-
-LOCK TABLES `brand_subcategories` WRITE;
-/*!40000 ALTER TABLE `brand_subcategories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `brand_subcategories` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping data for table `brand_users`
