@@ -1954,34 +1954,59 @@ Layouts
   height: 70px;
   z-index: 50;
   -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5); }
-  .topbar2 .top-navbar {
-    min-height: 70px;
-    height: 70px;
-    padding: 0px 0px 0 0;
-    border: none;}
-    .topbar2 .top-navbar .dropdown-toggle::after {
-      display: none; }
-    .topbar2 .top-navbar .navbar-header {
-      line-height: 65px;
-      height: 70px;
-      text-align: center; }
-      .topbar2 .top-navbar .navbar-header .navbar-brand {
-        margin-right: 0px;
-        padding-bottom: 0px;
-        padding-top: 0px; }
-        .topbar2 .top-navbar .navbar-header .navbar-brand .light-logo {
-          display: none; }
-        .topbar2 .top-navbar .navbar-header .navbar-brand b {
-          line-height: 70px;
-          display: inline-block; }
-    .topbar2 .top-navbar .navbar-nav > .nav-item > .nav-link {
-      /*padding-left: .75rem;*/
-      padding-right: .5rem;
-      font-size: 14px;
-      line-height: 50px; }
-    .topbar2 .top-navbar .navbar-nav > .nav-item.show {
-      background: rgba(0, 0, 0, 0.05); }
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+.topbar2 .top-navbar {
+  min-height: 70px;
+  height: 70px;
+  padding: 0px 0px 0 0;
+  border: none;
+}
+.topbar2 .top-navbar .dropdown-toggle::after {
+  display: none; 
+}
+.topbar2 .top-navbar .navbar-header {
+  line-height: 65px;
+  height: 70px;
+  text-align: center; 
+}
+.topbar2 .top-navbar .navbar-header .navbar-brand {
+  margin-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px; 
+}
+.topbar2 .top-navbar .navbar-header .navbar-brand .light-logo {
+  display: none; 
+}
+.topbar2 .top-navbar .navbar-header .navbar-brand b {
+  line-height: 70px;
+  display: inline-block; 
+}
+.topbar2 .top-navbar .navbar-nav > .nav-item > .nav-link {
+  /*padding-left: .75rem;*/
+  padding-right: .5rem;
+  font-size: 14px;
+  line-height: 50px; 
+}
+
+.topbar2 .top-navbar .navbar-nav > .nav-item > button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding-top: 1.5rem;
+}
+
+.topbar2 .top-navbar .navbar-nav > .nav-item > button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.topbar2 .top-navbar .navbar-nav > .nav-item > button:focus {
+  outline: none;
+}
+
+.topbar2 .top-navbar .navbar-nav > .nav-item.show {
+  background: rgba(0, 0, 0, 0.05);
+}
   .topbar2 .profile-pic {
     width: 30px;
     border-radius: 100%; }

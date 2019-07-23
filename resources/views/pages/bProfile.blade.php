@@ -85,8 +85,9 @@
                                         <div class="m-t-20 row">
                                             <div class="col-sm-12">
                                                 {!! Form::open(['action' => 'ReviewsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+                                                {!! Form::hidden('brand_id', $brand->id ) !!}
                                                 <div class="row">    
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-9">
                                                         {{ Form::number('rate', '', ['class' => 'rating rating-loading',  'data-min' => '0', 'data-max' => '5',  'data-step' => '1'])}}
                                                     </div>
                                                     <div class="col-md-3">
@@ -144,7 +145,10 @@
                                                             
                                                             <p class="m-t-10 postFontSize"> {!! $rev->body !!} </p>
                                                         </div>
-                                                        <div class="like-comm m-t-20"> <a href="javascript:void(0)" class="link m-r-10">2 comment</a> </div>
+                                                        <div class="like-comm m-t-20"> 
+                                                            <a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-check-outline text-success"></i> 5 </a> 
+                                                            <a href="javascript:void(0)" class="link m-r-10"><i class="mdi  mdi-comment-remove-outline text-danger"></i> 2 </a> 
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <hr>

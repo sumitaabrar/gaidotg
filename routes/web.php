@@ -24,12 +24,13 @@ Route::resource('reviews', 'ReviewsController');
 Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
 
-Route::resource('bOrgs', 'BrandsController');
-
+Route::resource('bOrg', 'BrandsController');
 
 Auth::routes();
 
 
+
+Route::post('bOrg/{bOrg}', 'ReviewsController@myUpdate');
 
 //To Handle Admin Login & Logout
 Route::get('/admin/login', 'Auth\AdminLoginController@showAdminLoginForm')->name('admin.login');

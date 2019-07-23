@@ -49,7 +49,7 @@ class ReviewsController extends Controller
 
         $rev = new Review;
         $rev->user_id = auth()->user()->id;
-        $rev->brand_id = 1;
+        $rev->brand_id = $request->brand_id;
 
         $revBody = Emojione::toShort($request->review);
 
@@ -95,6 +95,7 @@ class ReviewsController extends Controller
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.

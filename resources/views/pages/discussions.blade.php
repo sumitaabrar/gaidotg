@@ -50,7 +50,7 @@
 							<div class="sl-right">
 								<div>
 									<a href="#" class="link">{{ $dis->user->name }}</a> 
-									<span class="sl-date">{{ $dis->created_at }}</span>
+									<span class="sl-date">{{ (new Carbon\Carbon($dis->created_at))->diffForHumans() }}</span>
 
 									@if ($dis->is_open == false)
 										<span class="floatRight"><i class="mdi mdi-lock-outline"></i></span>

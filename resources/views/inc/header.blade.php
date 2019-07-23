@@ -23,27 +23,24 @@
 
         <!-- Search -->
         <li>
-          <div class="single-widget" id="mc_embed_signup">
-              <form action="" method="get" class="form-inline">
-                <input class="form-control" name="SEARCH" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" type="text">
-                  <button class="click-btn btn btn-default">
-                      <i class="ti-search" aria-hidden="true"></i>
-                  </button>
-                <div class="info"></div>
-              </form>
+          <div class="single-widget input-group mb-3 " id="mc_embed_signup">
+            <input type="text" class="form-control" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" aria-label="Search" aria-describedby="searchBtn">
+            <div class="input-group-append">
+              <button class="click-btn btn btn-default" type="button" id="searchBtn">
+                <i class="ti-search" aria-hidden="true"></i>
+              </button>
             </div>
+          </div>
         </li>
-
-
       </ul>
 
       <!-- User profile and Menu itmes-->
       <ul class="navbar-nav my-lg-0">
           <!-- Menu Items -->
           <li class="nav-item  "> 
-            <a class="nav-link" href="/reviews"><span> Review </span>  
-              <i class="mdi mdi-message-processing navi"></i>
-            </a>
+            <button type="button" class="nav-link" data-toggle="modal" data-target="#addReview">
+              Review <i class="mdi mdi-message-processing navi"></i>
+            </button>
           </li>
           <li class="nav-item "> 
             <a class="nav-link" href="{{ route('feed') }}"><span> Feed </span>  
@@ -57,9 +54,7 @@
                 <a class="nav-link" href="{{ route('login') }}">
                   <span class="user-name">{{ __('Login') }}</span>
                   <i class="mdi mdi-account-circle navi"></i>
-                </a>
-
-                
+                </a>  
             </li>
             
           @else
@@ -78,3 +73,5 @@
     </div>
   </nav>
 </header>
+
+@include('inc.addReview')
