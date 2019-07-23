@@ -1,12 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.signin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -72,6 +70,9 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 p-l-6 p-r-0">
+            <img src="assets/images/signup.png" alt="sign in" >     
+    </div>
     </div>
 </div>
 @endsection

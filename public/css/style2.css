@@ -6840,10 +6840,13 @@ When click on sidebar toggler and also for tablet
 @media (min-width: 1024px) {
   .page-wrapper {
     margin-left: 190px; }
+  .sign {
+    margin-left: 20px; }
   .footer {
     left: 190px; } }
 
 @media (max-width: 1023px) {
+
   .page-wrapper {
     margin-left: 60px;
     -webkit-transition: 0.2s ease-in;
