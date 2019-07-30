@@ -75,7 +75,9 @@ class ReviewsController extends Controller
         $rev->body = $revBody;
         $rev->rate = $request->rate;
         $p = strip_tags($rev->body);
-        $senti = exec('F:\R\R-3.5.1\bin\Rscript.exe E:\xampp\htdocs\Rpractice\on.R '.$p);
+        $senti = exec('F:\R\R-3.5.1\bin\Rscript.exe E:\xampp\htdocs\gaidotg\public\R_engine\on.R '.$p);
+        //$senti = exec('F:\R\R-3.5.1\bin\Rscript.exe E:\xampp\htdocs\gaidotg\public\R_engine\on.R '.$p);
+        
         $snum = substr($senti,4);
         $fsenti = (float)$snum;
         $rev->score = $fsenti;
