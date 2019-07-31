@@ -45,7 +45,13 @@ class BrandsController extends Controller
 
         
 
-        return view('pages.bProfile')->with([ 'bId'=>$bId, 'brand'=>$brand, 'assess' => $assess, 'allOut'=>$allOut, 'allRev'=>$allRev ]);
+        return view('pages.bProfile')->with([ 
+            'bId'=>$bId, 
+            'brand'=>$brand, 
+            'assess' => $assess, 
+            'allOut'=>$allOut, 
+            'allRev'=>$allRev 
+            ]);
     }
 
     public function addReview(Request $request)

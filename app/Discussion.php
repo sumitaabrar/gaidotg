@@ -15,4 +15,16 @@ class Discussion extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    //Creating 1-* reationship with DComment. There can be multiple discussion-comments for each Discussion.
+    public function dcomments()
+    {
+        return $this->hasMany('App\DComment', 'discussion_id');
+    }
+
+    //Creating 1-* reationship with DUseful. There can be multiple discussion-usefuls for each Discussion.
+    public function dusefuls()
+    {
+        return $this->hasMany('App\DUseful', 'discussion_id');
+    }
 }

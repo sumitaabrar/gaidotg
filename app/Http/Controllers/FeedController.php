@@ -31,7 +31,12 @@ class FeedController extends Controller
             $body = nl2br($body);
             $dis->body = $body;
         }
-
+        //Fetching all DiscussionComments
+        $comments = Discussion::with('dcomments')->get();
+        //Fetching all DiscussionUsefuls
+        $usefuls = Discussion::with('dusefuls')->get();
+        
+        
         //Fetching all recommendations
         $allRec = Recommendation::orderBy('created_at','desc')->get();
         //converting emoji shortnames into emoji icons
@@ -43,7 +48,11 @@ class FeedController extends Controller
             $rec->body = $body;
         }
 
-        return view('pages.feed')->with('allDis', $allDis)->with('allRec', $allRec);
+        return view('pages.feed')->with([
+            'allDis'    => $allDis, 
+            'allRec'    => $allRec,
+            'comments'  => $comments,
+            ]);
 
         
 

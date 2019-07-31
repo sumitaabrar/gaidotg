@@ -101,13 +101,6 @@ html body .mdi:before, html body .mdi-set {
   line-height: initial; }
 
 
-.floatRight {
-  float:right;
-}
-.floatLeft {
-  float:left;
-}
-
 
 /*******************
 Headings
@@ -2570,6 +2563,73 @@ ul#themecolors {
 
 .btn.active .text {
   display: none; }
+
+.comment-btn
+{
+  line-height: 42px;
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  width: 33.3333%;
+  height:100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-size:14px;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: 1px solid #d2d2d2;
+}
+.comment-btn:focus{
+  outline:0;
+}
+.comment-btn:visited{
+  text-decoration: none;
+  border: 1px solid #d2d2d2;
+}
+
+.comment-btn:hover {
+  border: 1px solid #b8b7b7;
+  background: transparent;
+}
+.comment-btn:active {
+  border: 1px solid #adacac;
+  background: transparent;
+}
+
+.like-btn
+{
+  line-height: 42px;
+  display: inline-block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  width: 33.3333%;
+  height:100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-size:14px;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: 1px solid #d2d2d2;
+}
+.like-btn:focus{
+  outline:0;
+}
+.like-btn:visited{
+  text-decoration: none;
+  border: 1px solid #d2d2d2;
+}
+
+.like-btn:hover {
+  border: 1px solid #adacac;
+  background: transparent;
+}
+.like-btn:active {
+  border: 1px solid #adacac;
+  background: #ececec;
+}
+
 
 /*============================================================== 
  Cards page
@@ -6015,17 +6075,85 @@ When click on sidebar toggler and also for tablet
       font-weight: 300;
       margin-top: 5px; }
 
+
+.name{
+  font-size:15px !important;
+  font-weight: bold;
+}
+
 /*******************/
 /*Comment widgets*/
 /*******************/
+.comment-section {
+  border:none;
+  margin-bottom: 0px;
+  box-shadow: none !important;
+}
 .comment-widgets {
-  position: relative;
-  margin-bottom: 10px; }
-  .comment-widgets .comment-row {
-    border-left: 3px solid #ffffff;
-    padding: 15px; }
-    .comment-widgets .comment-row:hover, .comment-widgets .comment-row.active {
-      border-color: #11ABB0; }
+  height: 100%;
+  display: table;
+  margin-bottom: 10px; 
+}
+.comment-widgets .comment-pic {
+  display: inline;
+  float:left;
+  width: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+
+}
+.comment-widgets .comment-pic img {
+  max-width: 40px;
+}
+.comment-widgets .comment-row {
+  padding-left: 50px;
+  vertical-align: middle;
+}
+
+.comment-widgets .comment-row .comment-input{
+  padding-top:6px; 
+}
+
+.comment-widgets .comment-row .comment-body {
+  width:100%;
+  border: 1px solid #cfcfcf;
+  padding: 5px;
+  border-radius: 10px 10px 10px 10px;
+}
+.comment-widgets .comment-row .comment-textArea {
+  width:95%;
+  float:left;
+  margin:0;
+  padding: 5px;
+  border: 1px solid #cfcfcf; 
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+  
+}
+
+.comment-widgets .comment-row .click-btn{
+	background-color:#fff;
+  color:#11ABB0;
+  font-weight: bold;
+	border-radius:0;
+  border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	padding:6px 12px;
+  border: 1px solid #d2d2d2;
+  height: 32px;
+}
+
+.comment-widgets .comment-row .comment-name {
+  width:100%;
+  padding-left: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  color:#455a64;;
+  font-weight: bold;
+}
+
+.comment-widgets .comment-row:hover, .comment-widgets .comment-row.active {
+    border-color: #11ABB0; }
 
 .comment-text {
   padding: 15px 15px 15px 20px; }

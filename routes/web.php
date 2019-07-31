@@ -25,6 +25,7 @@ Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
 
 Route::resource('bOrg', 'BrandsController');
+Route::resource('comm', 'DCommentsController');
 
 Auth::routes();
 

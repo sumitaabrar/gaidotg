@@ -56,6 +56,12 @@ class User extends Authenticatable
         return $this->hasMany('App\Review');
     }
 
+    //Creating 1-* reationship with DComment. Each user can have multiple discussion-comments.
+    public function dcomment()
+    {
+        return $this->hasMany('App\DComment');
+    }
+
 
 
 }

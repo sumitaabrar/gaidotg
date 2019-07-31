@@ -45,34 +45,88 @@
 				<!--Actual discussions start form here--> 
 				@if ( count($allDis) > 0)     <!--If there are discussions to view, then dispaly them-->
 					@foreach ($allDis as $dis)
-						<div class="sl-item">
+						<div class="sl-item p-b-20 p-t-10" style="border-bottom: 1px solid #d6dee2" >
 							<div class="sl-left"> <img src="assets/images/users/{{ $dis->user->image }}" alt="user" class="img-circle"> </div>
 							<div class="sl-right">
-								<div>
-									<a href="#" class="link">{{ $dis->user->name }}</a> 
+								<div >
+									<a href="#" class="name link">{{ $dis->user->name }}</a> 
 									<span class="sl-date">{{ (new Carbon\Carbon($dis->created_at))->diffForHumans() }}</span>
 
 									@if ($dis->is_open == false)
-										<span class="floatRight"><i class="mdi mdi-lock-outline"></i></span>
+										<span class="float-right"><i class="mdi mdi-lock-outline"></i></span>
 									@endif
 
 									<p class="m-t-10 postFontSize"> {!! $dis->body !!} </p>
 
 									@if ($dis->image != NULL)
 										<div class="row">
-											<div class="col-lg-12 col-md-12 m-b-20"><img src="assets/images/big/{{ $dis->image }}" alt="Image" class="img-responsive radius"></div>
+											<div class="col-lg-12 col-md-12 m-b-10"><img src="assets/images/big/{{ $dis->image }}" alt="Image" class="img-responsive radius"></div>
 										</div>	
 									@endif
 									
 								</div>
-								<div class="like-comm m-t-20"> 
-									<a href="javascript:void(0)" class="link m-r-10">2 comment</a> 
-									<a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-check-outline text-success"></i> 5 </a> 
-									<a href="javascript:void(0)" class="link m-r-10"><i class="mdi  mdi-comment-remove-outline text-danger"></i> 2 </a> 													
+								<hr>
+
+								<div class="like-comm m-t-10 m-b-10"> 
+									<a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-processing-outline"></i> {{ count($dis->dcomments) }} </a> 
+									<a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-check-outline text-success"></i> {{ count($dis->dusefuls->where('useful',1)) }} </a> 
+									<a href="javascript:void(0)" class="link m-r-10"><i class="mdi  mdi-comment-remove-outline text-danger"></i> {{ count($dis->dusefuls->where('useful',0)) }} </a> 													
 								</div>
 							</div>
+						
+						<div class="clearfix">
+							<button class="comment-btn float-left" type="button" data-toggle="collapse" data-target="#collapse{{ $dis->id }}" aria-expanded="false" aria-controls="collapse{{ $dis->id }}" >
+								<i class="mdi mdi-comment-processing-outline"></i> Comment
+							</button>
+							<button class="like-btn float-left" type="button" >
+								<i class="mdi mdi-comment-check-outline text-success"></i> Usefel
+							</button>
+							<button class="like-btn float-left" type="button" >
+								<i class="mdi  mdi-comment-remove-outline text-danger"></i> Unuseful
+							</button>
 						</div>
-						<hr>
+						<div class="collapse" id="collapse{{ $dis->id }}">
+							<div class="card card-body comment-section">
+								
+								<!--User Discussion-Comments input (only for logged in users--> 
+								@if(!Auth::guest())
+
+									<div class="comment-widgets p-t-10">
+										<div class="comment-pic"> <img src="assets/images/users/{{ Auth::user()->image }}" alt="user" class="img-circle"> </div>
+										<div class="comment-row">
+											<div class="comment-input input-group mb-3">
+												{!! Form::open(['id'=>'commentFrom', 'action' => 'DCommentsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+												{!! Form::hidden('discussion_id', $dis->id ) !!}
+												{{ Form::textarea('comment', '',  [ 'id' => 'comment', 'class' => 'comment-textArea', 'placeholder' => 'Your Comment', 'rows' => '1', 'cols' => '20']) }}
+												<div class="input-group-append">
+													{{ Form::button( '<i class="mdi mdi-send"></i>', [ 'class' => 'click-btn btn btn-default', 'id' => 'commentBtn', 'type' => 'submit']) }}
+												</div>
+
+												{!! Form::close() !!}
+											</div> 
+										</div>
+									</div>
+
+								@endif
+
+								@if(count($dis->dcomments))
+									@foreach ($dis->dcomments as $comment)
+										<div class="comment-widgets">
+											<div class="comment-pic"> <img src="assets/images/users/{{ $comment->user->image }}" alt="user" class="img-circle"> </div>
+											<div class="comment-row"> 
+												<a href="#" class="comment-name">{{ $comment->user->name }}</a> 
+												<span class="sl-date">{{ $comment->created_at }}</span>
+												<p class="comment-body">{{ $comment->body }}</p> 
+											</div>
+										</div>
+									@endforeach
+								@endif
+
+								
+							</div>
+						  </div>
+						</div>
+
 					@endforeach
 					
 				@else
