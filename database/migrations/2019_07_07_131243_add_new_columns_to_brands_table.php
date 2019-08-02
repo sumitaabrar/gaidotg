@@ -17,7 +17,6 @@ class AddNewColumnsToBrandsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->integer('subcategory_id')->unsigned();
             $table->integer('type_id')->unsigned();
-            $table->integer('suggested_by')->default(0);
         });
     }
 

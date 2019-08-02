@@ -7,8 +7,6 @@ use App\Discussion;
 use App\User;
 use App\DComment;
 
-use Emojione\Emojione;
-use Emojione\Client as EmojioneClient;
 
 class DCommentsController extends Controller
 {
@@ -51,7 +49,7 @@ class DCommentsController extends Controller
 
         $c->save();
 
-        return(redirect('/feed')->with('success','Comment has been posteed'));
+        return(redirect('/dis/#dcomm'.$c->id));
     }
 
     /**

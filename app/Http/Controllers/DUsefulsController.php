@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Discussion;
 use App\User;
+use App\DUseful;
 
-use Emojione\Emojione;
-use Emojione\Client as EmojioneClient;
 
-class DiscussionsController extends Controller
+class DUsefulsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,31 +17,7 @@ class DiscussionsController extends Controller
      */
     public function index()
     {
-        $emojioneClient = new EmojioneClient();
-        $emojioneClient->cacheBustParam = '';
-        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
-        Emojione::setClient($emojioneClient);
-
-
-        //Fetching all discussions
-        $allDis = Discussion::orderBy('created_at','desc')->get();
-        //converting emoji shortnames into emoji icons
-        foreach($allDis as $dis)
-        {
-            $body = htmlspecialchars($dis->body);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $dis->body = $body;
-        }
-        //Fetching all DiscussionComments
-        $comments = Discussion::with('dcomments')->get();
-        //Fetching all DiscussionUsefuls
-        $usefuls = Discussion::with('dusefuls')->get();
         
-        return view('pages.discussions')->with([
-            'allDis'    => $allDis, 
-            'comments'  => $comments,
-            ]);
     }
 
     /**
@@ -64,23 +39,17 @@ class DiscussionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'discussion' => 'required'
+            
         ]);
 
-        $dis = new Discussion;
-        $dis->user_id = auth()->user()->id;
+        $u = new DUseful;
+        $u->discussion_id = $request->discussion_id;
+        $u->user_id = auth()->user()->id;
+        $u->useful = $request->useful;
 
+        $u->save();
 
-        $disBody = Emojione::toShort($request->discussion);
-
-        $dis->body = $disBody;
-        $dis->image = $request->image;
-        $dis->score = 0;
-        $dis->is_open = true;
-
-        $dis->save();
-
-        return(redirect('/dis')->with('success','Discussion has been added'));
+        return(redirect('/dis/#dis'.$request->discussion_id));
     }
 
     /**
@@ -114,7 +83,43 @@ class DiscussionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            
+        ]);
+
+        $u = DUseful::find($id);
+
+        //User has clicked useful
+        if ($request->useful == 1) {
+            //He had already marked this dis as useful
+            if ($u->useful == 1) {
+                //delete that usesul
+                $u->delete();
+            } 
+            //He had previuosly marked this dis as unuseful
+            else {
+                //change his unuseful to useful
+                $u->useful=1;
+                $u->save();
+            }    
+        } 
+        
+        //User has clicked unuseful
+        else {
+            //He had already marked this dis as unuseful
+            if ($u->useful == 0) {
+                //delete that unusesul
+                $u->delete();
+            } 
+            //He had previuosly marked this dis as useful
+            else {
+                //change his useful to unuseful
+                $u->useful=0;
+                $u->save();
+            }
+        }
+
+        return(redirect('/feed/#dis'.$request->discussion_id));
     }
 
     /**

@@ -22,7 +22,6 @@ class CreateBrandsTable extends Migration
             $table->string('website')->nullable;
             $table->string('contact')->nullable;
             $table->boolean('is_reg')->default(false);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -2597,6 +2597,10 @@ ul#themecolors {
   background: transparent;
 }
 
+.clicked{
+  background-color: #ecececde !important;
+}
+
 .like-btn
 {
   line-height: 42px;
@@ -2604,7 +2608,7 @@ ul#themecolors {
   font-weight: 500;
   cursor: pointer;
   position: relative;
-  width: 33.3333%;
+  width: 50%;
   height:100%;
   text-transform: uppercase;
   text-align: center;
@@ -6116,8 +6120,9 @@ When click on sidebar toggler and also for tablet
 
 .comment-widgets .comment-row .comment-body {
   width:100%;
-  border: 1px solid #cfcfcf;
   padding: 5px;
+  color:#333333;
+  background-color: #efefef;
   border-radius: 10px 10px 10px 10px;
 }
 .comment-widgets .comment-row .comment-textArea {
@@ -6125,6 +6130,7 @@ When click on sidebar toggler and also for tablet
   float:left;
   margin:0;
   padding: 5px;
+  color: black;
   border: 1px solid #cfcfcf; 
   border-top-left-radius:10px;
   border-bottom-left-radius:10px;
@@ -6152,8 +6158,7 @@ When click on sidebar toggler and also for tablet
   font-weight: bold;
 }
 
-.comment-widgets .comment-row:hover, .comment-widgets .comment-row.active {
-    border-color: #11ABB0; }
+
 
 .comment-text {
   padding: 15px 15px 15px 20px; }

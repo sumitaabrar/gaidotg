@@ -16,16 +16,20 @@ Route::get('/test','PagesController@test');
 Route::get('/product','PagesController@product')->name('product.list');
 Route::get('/place','PagesController@place')->name('place.list');
 
-Route::get('/feed', 'FeedController@index')->name('feed');;
 
 
 
-Route::resource('reviews', 'ReviewsController');
-Route::resource('dis', 'DiscussionsController');
-Route::resource('rec', 'RecommendationsController');
 
 Route::resource('bOrg', 'BrandsController');
-Route::resource('comm', 'DCommentsController');
+Route::resource('reviews', 'ReviewsController');
+Route::resource('sugg', 'SuggestionsController');
+
+Route::resource('dis', 'DiscussionsController');
+Route::resource('rec', 'RecommendationsController');
+Route::resource('dcomm', 'DCommentsController');
+Route::resource('duseful', 'DUsefulsController');
+Route::resource('rcomm', 'RCommentsController');
+Route::resource('ruseful', 'RUsefulsController');
 
 Auth::routes();
 

@@ -43,8 +43,27 @@ class AddForeignKeyConstraintsToSubCatTypesBrandsAssessOutlets extends Migration
      */
     public function down()
     {
-        Schema::table('sub_cat_types_brands_assess_outlets', function (Blueprint $table) {
-            //
+        Schema::table('subcategorys', function (Blueprint $table) {
+            $table->dropForeign('subcategorys_category_id_foreign');
         });
+
+        Schema::table('types', function (Blueprint $table) {
+            $table->dropForeign('types_subcategory_id_foreign');
+        });
+
+        Schema::table('brands', function (Blueprint $table) {
+            $table->dropForeign('brands_category_id_foreign');
+            $table->dropForeign('brands_subcategory_id_foreign');
+            $table->dropForeign('brands_type_id_foreign');
+        });
+
+        Schema::table('assessments', function (Blueprint $table) {
+            $table->dropForeign('assessments_brand_id_foreign');
+        });
+
+        Schema::table('outlets', function (Blueprint $table) {
+            $table->dropForeign('outlets_brand_id_foreign');
+        });
+
     }
 }

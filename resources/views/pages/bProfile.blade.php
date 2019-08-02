@@ -14,7 +14,34 @@
                     </div>
                     <h3 class="m-b-0">{{ $brand->name }}</h3>
                     <p>{{ $brand->type->name }}</p>
-                    <a href="javascript:void(0)" class="primary-btn text-uppercase">Suggest It</a>
+                    
+                    @if(!Auth::guest())
+                        <!-- Render Useful Button -->
+                        @if(count($brand->suggestions->where('user_id', Auth::user()->id )))
+                            @foreach(($brand->suggestions->where('user_id', Auth::user()->id )) as $s)
+                                <!-- Button to delete the suggestion -->
+                                {!! Form::open(['id'=>'suggestionFromDown', 'action' => ['SuggestionsController@update', $s->id], 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+                                {{ Form::hidden('_method', 'PUT')}}
+                                {{ Form::hidden('brand_id', $brand->id ) }}
+                                {{ Form::button('Un-Suggest It', [ 'class' => 'primary-btn text-uppercase', 'type' => 'submit' ]) }}
+                                {!!Form::close() !!}
+                            @endforeach
+                        @else
+                            <!-- Button to mark a new Suggestion -->
+                            {!! Form::open(['id'=>'suggestionFromUp', 'action' => 'SuggestionsController@store', 'method' => 'POST', 'class' => 'form-horizontal form-material']) !!}
+                            {!! Form::hidden('brand_id', $brand->id ) !!}
+                            {{ Form::button('Suggest It', [ 'class' => 'primary-btn text-uppercase', 'type' => 'submit' ]) }}
+                            {!!Form::close() !!}
+                        @endif
+                        
+                    @else
+                        <!-- Dummy Button of Suggestion to request signin -->
+                        <button class="primary-btn text-uppercase" type="button" data-toggle="modal" data-target="#signinModal" >
+                            Suggest It
+                        </button>	
+                    @endif
+
+
 
                     @foreach ($assess as $a)
                         <div class="row text-center m-t-20">
@@ -23,7 +50,7 @@
                             <div class="col-lg-4 col-md-4 m-t-20">
                                 <h3 class="m-b-0 font-light">{{ $a->rating }}<small> <i class="mdi mdi-star"></i></small></h3><small>Ratings</small></div>
                             <div class="col-lg-4 col-md-4 m-t-20">
-                                <h3 class="m-b-0 font-light">{{ $brand->suggested_by }}</h3><small>Suggest</small></div>
+                                <h3 class="m-b-0 font-light">{{ count($brand->suggestions) }}</h3><small>Suggest</small></div>
                         </div>    
                     @endforeach
                     

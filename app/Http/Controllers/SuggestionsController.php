@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Recommendation;
+use App\Brand;
 use App\User;
+use App\Suggestion;
 
-use Emojione\Emojione;
-use Emojione\Client as EmojioneClient;
 
-class RecommendationsController extends Controller
+class SuggestionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,20 +17,6 @@ class RecommendationsController extends Controller
      */
     public function index()
     {
-        //Fetching all recommendations
-        $allRec = Recommendation::orderBy('created_at','desc')->get();
-        //converting emoji shortnames into emoji icons
-        foreach($allRec as $rec)
-        {
-            $body = htmlspecialchars($rec->body);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $rec->body = $body;
-        }
-
-        return view('pages.recommendations')->with([ 
-            'allRec'    => $allRec,
-            ]);
         
     }
 
@@ -54,21 +39,17 @@ class RecommendationsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'recommendation' => 'required'
+            
         ]);
 
-        $rec = new Recommendation;
-        $rec->user_id = auth()->user()->id;
+        $s = new Suggestion;
+        $s->brand_id = $request->brand_id;
+        $s->user_id = auth()->user()->id;
+        $s->suggest = 1;
 
-        $recBody = Emojione::toShort($request->recommendation);
+        $s->save();
 
-        $rec->body = $recBody;
-        $rec->image = $request->image;
-        $rec->is_open = true;
-
-        $rec->save();
-
-        return(redirect('/rec')->with('success','Recommendation has been added'));
+        return redirect()->back();
     }
 
     /**
@@ -102,7 +83,14 @@ class RecommendationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            
+        ]);
+
+        $s = Suggestion::find($id);
+        $s->delete();
+
+        return redirect()->back();
     }
 
     /**

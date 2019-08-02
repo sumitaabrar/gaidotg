@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recommendation;
 use App\User;
+use App\RUseful;
 
-use Emojione\Emojione;
-use Emojione\Client as EmojioneClient;
-
-class RecommendationsController extends Controller
+class RUsefulsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,20 +16,6 @@ class RecommendationsController extends Controller
      */
     public function index()
     {
-        //Fetching all recommendations
-        $allRec = Recommendation::orderBy('created_at','desc')->get();
-        //converting emoji shortnames into emoji icons
-        foreach($allRec as $rec)
-        {
-            $body = htmlspecialchars($rec->body);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $rec->body = $body;
-        }
-
-        return view('pages.recommendations')->with([ 
-            'allRec'    => $allRec,
-            ]);
         
     }
 
@@ -54,21 +38,17 @@ class RecommendationsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'recommendation' => 'required'
+            
         ]);
 
-        $rec = new Recommendation;
-        $rec->user_id = auth()->user()->id;
+        $u = new RUseful;
+        $u->recommendation_id = $request->recommendation_id;
+        $u->user_id = auth()->user()->id;
+        $u->useful = $request->useful;
 
-        $recBody = Emojione::toShort($request->recommendation);
+        $u->save();
 
-        $rec->body = $recBody;
-        $rec->image = $request->image;
-        $rec->is_open = true;
-
-        $rec->save();
-
-        return(redirect('/rec')->with('success','Recommendation has been added'));
+        return(redirect('/rec/#rec'.$request->recommendation_id));
     }
 
     /**
@@ -102,7 +82,43 @@ class RecommendationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            
+        ]);
+
+        $u = RUseful::find($id);
+
+        //User has clicked useful
+        if ($request->useful == 1) {
+            //He had already marked this rec as useful
+            if ($u->useful == 1) {
+                //delete that usesul
+                $u->delete();
+            } 
+            //He had previuosly marked this rec as unuseful
+            else {
+                //change his unuseful to useful
+                $u->useful=1;
+                $u->save();
+            }    
+        } 
+        
+        //User has clicked unuseful
+        else {
+            //He had already marked this rec as unuseful
+            if ($u->useful == 0) {
+                //delete that unusesul
+                $u->delete();
+            } 
+            //He had previuosly marked this rec as useful
+            else {
+                //change his useful to unuseful
+                $u->useful=0;
+                $u->save();
+            }
+        }
+
+        return(redirect('/feed/#rec'.$request->recommendation_id));
     }
 
     /**

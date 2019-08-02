@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
             return redirect('/brandHome');
         }
         if (Auth::guard($guard)->check()) {
-            return redirect('/feed');
+            return redirect('/dis');
         }
 
         return $next($request);

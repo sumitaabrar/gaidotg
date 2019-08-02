@@ -52,4 +52,10 @@ class Brand extends Model
     {
         return $this->hasMany('App\Outlet');
     }
+
+    //Creating 1-* reationship with Suggestion. There can be multiple suggestions for each Brand.
+    public function suggestions()
+    {
+        return $this->hasMany('App\Suggestion');
+    }
 }

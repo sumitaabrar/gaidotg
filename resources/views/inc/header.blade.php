@@ -37,14 +37,15 @@
       <!-- User profile and Menu itmes-->
       <ul class="navbar-nav my-lg-0">
           <!-- Menu Items -->
-          <li class="nav-item  "> 
-            <button type="button" class="nav-link" data-toggle="modal" data-target="#addReview">
-              Review <i class="mdi mdi-message-processing navi"></i>
-            </button>
+          
+          <li class="nav-item "> 
+            <a class="nav-link" href="{{ route('dis.index') }}"><span> Discussions </span>  
+              <i class="mdi mdi-hexagon-multiple navi"></i>
+            </a>
           </li>
           <li class="nav-item "> 
-            <a class="nav-link" href="{{ route('feed') }}"><span> Feed </span>  
-              <i class="mdi mdi-clipboard-text navi"></i>
+            <a class="nav-link" href="{{ route('rec.index') }}"><span> Recommendations </span>  
+              <i class="mdi mdi-clipboard-check navi"></i>
             </a>
           </li>
           
@@ -73,5 +74,3 @@
     </div>
   </nav>
 </header>
-
-@include('inc.addReview')

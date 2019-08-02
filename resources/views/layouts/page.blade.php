@@ -65,7 +65,8 @@
 				<footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
 
 			</div>
-
+			            
+			@include('inc.signinModal')
 			<!-- start footer Area 	
 			<footer class="page-footer-area">
 				<div class="container">
