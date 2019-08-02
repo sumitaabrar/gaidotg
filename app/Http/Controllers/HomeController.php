@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Discussion;
 use App\Recommendation;
+use App\Suggestion;
 use Auth;
 
 
@@ -41,7 +42,7 @@ class HomeController extends Controller
         Emojione::setClient($emojioneClient);
 
 
-        //Fetching all discussions
+        //Fetching user's discussions
         $allDis = Discussion::where('user_id', Auth::user()->id)->get();
         //converting emoji shortnames into emoji icons
         foreach($allDis as $dis)
@@ -52,7 +53,7 @@ class HomeController extends Controller
             $dis->body = $body;
         }
 
-        //Fetching all recommendations
+        //Fetching user's recommendations
         $allRec = Recommendation::where('user_id', Auth::user()->id)->get();
         //converting emoji shortnames into emoji icons
         foreach($allRec as $rec)
@@ -63,7 +64,15 @@ class HomeController extends Controller
             $rec->body = $body;
         }
 
-        return view('pages.home')->with(['user' => $user])->with('allDis', $allDis)->with('allRec', $allRec);
+        //Fetching user's suggestions
+        $allSug = Suggestion::get()->where('user_id',1);
+
+        return view('pages.home')->with([
+            'user' => $user,
+            'allDis'=> $allDis,
+            'allRec' => $allRec,
+            'allSug' => $allSug,
+        ]);
 
         //The user's profile is the Home. 
     }

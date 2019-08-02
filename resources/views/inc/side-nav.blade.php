@@ -6,14 +6,29 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 @if (!Auth::guest())    <!--Show User Profile link only to signed in user-->
-                   <li> <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Your Profile</span></a>
+                   <li> 
+                       <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Your Profile</span></a>
                     </li> 
                 @endif
+
+                <li>
+                    <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-message-processing"></i><span class="hide-menu">Review</span></a>
+
+                    <ul>
+                        <li> 
+                            <a class="waves-effect waves-dark" href="{{ route('product.list') }}" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Products</span></a>
+                        </li>
+                        <li> 
+                            <a class="waves-effect waves-dark" href="{{ route('place.list') }}" aria-expanded="false"><i class="mdi mdi-map-marker-radius"></i><span class="hide-menu">Places</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                        <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                </li>
                 
-                <li> <a class="waves-effect waves-dark" href="{{ route('product.list') }}" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Products</span></a>
-                </li>
-                <li> <a class="waves-effect waves-dark" href="{{ route('place.list') }}" aria-expanded="false"><i class="mdi mdi-map-marker-radius"></i><span class="hide-menu">Places</span></a>
-                </li>
+                
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

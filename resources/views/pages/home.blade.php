@@ -17,44 +17,36 @@
             </div>
 
         </div>
-        <!-- active contacts -->
+        <!-- Suggested brands -->
         <div class="card">
             <div class="card-block bg-info">
-                <h4 class="text-white card-title">Liked Brands</h4>
+                <h4 class="text-white card-title">Suggested Brands</h4>
             </div>
             <div class="card-block">
                 <div class="message-box contact-box">
-                    
                     <div class="message-widget contact-widget">
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="user-img"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                            <div class="mail-contnet">
-                                <h5>Khaadi</h5></div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="user-img"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                            <div class="mail-contnet">
-                                <h5>Nishat Linen</h5></div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="user-img"> <span class="round">A</span> <span class="profile-status away pull-right"></span> </div>
-                            <div class="mail-contnet">
-                                <h5>Threads and Motifs</h5> </div>
-                        </a>
-                        <!-- Message -->
-                        <a href="#">
-                            <div class="user-img"> <img src="assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                            <div class="mail-contnet">
-                                <h5>Wardah</h5></div>
-                        </a>
+
+                        @if($allSug != NULL)
+                            <!--Show the suggestions-->
+                            @foreach($allSug as $s)
+                                <a href="#">
+                                    <div class="user-img"> 
+                                        <img src="assets/images/users/brands/{{ $s->brand->logo }}" alt="brand" class="img-circle">
+                                        
+                                    </div>
+                                    <div class="mail-contnet">
+                                        <h5>{{ $s->brand->name }}</h5>
+                                    </div>
+                                </a>
+                            @endforeach
+                        @else
+                            <p>No Brands suggested by you</p>
+                        @endif
+
                     </div>
                 </div>
             </div>
         </div>
-        <!-- announcements (may be)-->
     </div>
     <div class="col-lg-9 col-xlg-9 col-md-7">
         <div class="card">
