@@ -25,6 +25,16 @@ LOCK TABLES `admins` WRITE;
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `announcements`
+--
+
+LOCK TABLES `announcements` WRITE;
+/*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
+INSERT  IGNORE INTO `announcements` VALUES (1,1,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img1.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24'),(2,1,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img2.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24'),(3,1,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img3.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24'),(4,2,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img4.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24'),(5,2,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img5.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24'),(6,2,'50% off','Show your Gaido membership card and get 50% off on any of our food items this weekend.','img6.jpg','https://www.google.com/','2019-07-07 04:17:24','2019-07-07 04:17:24');
+/*!40000 ALTER TABLE `announcements` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `assessments`
 --
 
@@ -49,7 +59,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT  IGNORE INTO `brands` VALUES (1,'Burger King','img1.png','img0.jpg','Best burger place in town','burgerking.com','info@burgerking.com',0,'2019-05-31 17:19:56','2019-05-31 17:19:56',2,6,3),(2,'Food Club','img2.png','img0.jpg','Add flavour to life',NULL,NULL,0,'2019-05-31 17:19:56','2019-05-31 17:19:56',2,6,3);
+INSERT  IGNORE INTO `brands` VALUES (1,'Burger King','img0.jpg','img0.jpg','Best burger place in town','burgerking.com','info@burgerking.com',0,'2019-05-31 17:19:56','2019-05-31 17:19:56',2,6,3),(2,'Food Club','img0.jpg','img0.jpg','Add flavour to life','','',0,'2019-05-31 17:19:56','2019-05-31 17:19:56',2,6,3),(3,'Ice Cream World','img0.jpg','img0.jpg','Add flavour to life','','',0,'2019-05-31 17:19:56','2019-05-31 17:19:56',2,6,3);
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +89,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `d_usefuls` WRITE;
 /*!40000 ALTER TABLE `d_usefuls` DISABLE KEYS */;
-INSERT  IGNORE INTO `d_usefuls` VALUES (1,1,1,1,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(4,4,1,0,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(5,4,2,1,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(7,1,2,0,'2019-08-02 02:34:03','2019-08-02 02:34:34');
+INSERT  IGNORE INTO `d_usefuls` VALUES (1,1,1,1,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(4,4,1,0,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(5,4,2,1,'2019-07-31 11:25:41','2019-07-31 11:25:41'),(7,1,2,0,'2019-08-02 02:34:03','2019-08-02 02:34:34'),(8,5,1,0,'2019-08-02 08:47:47','2019-08-02 08:47:47');
 /*!40000 ALTER TABLE `d_usefuls` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +99,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `discussions` WRITE;
 /*!40000 ALTER TABLE `discussions` DISABLE KEYS */;
-INSERT  IGNORE INTO `discussions` VALUES (1,1,'Had this last night. It was cold when it arrived but still tasted great.','img9.jpg',0,1,'2019-07-07 04:27:53','2019-07-07 04:27:53'),(3,2,'Had soooo much fun last night at this new place in our area. Its called Ice cream Palace :shaved_ice::ice_cream:',NULL,0,1,'2019-07-23 09:00:42','2019-07-23 09:00:42'),(4,2,'Must must must try it!','img8.jpg',0,1,'2019-07-23 09:03:03','2019-07-23 09:03:03'),(5,2,'Guess WHaaaaaaatt???????????',NULL,0,1,'2019-08-02 04:53:32','2019-08-02 04:53:32');
+INSERT  IGNORE INTO `discussions` VALUES (1,1,'Had this last night. It was cold when it arrived but still tasted great.','img9.jpg',0,1,'2019-07-07 04:27:53','2019-07-07 04:27:53'),(3,2,'Had soooo much fun last night at this new place in our area. Its called Ice cream Palace :shaved_ice::ice_cream:',NULL,0,1,'2019-07-23 09:00:42','2019-07-23 09:00:42'),(4,2,'Must must must try it!','img8.jpg',0,1,'2019-07-23 09:03:03','2019-07-23 09:03:03'),(5,2,'Guess WHaaaaaaatt???????????',NULL,0,1,'2019-08-02 04:53:32','2019-08-02 04:53:32'),(6,1,'Isn\'t he the cutest??? :heart_eyes::kissing_heart:','11564756742_46990124_1644568772365038_4890983670057271296_n.jpg',0,1,'2019-08-02 09:39:02','2019-08-02 09:39:02');
 /*!40000 ALTER TABLE `discussions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +109,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT  IGNORE INTO `migrations` VALUES (10,'2019_07_07_072234_create_brand_categories_table',3),(11,'2019_07_07_072707_create_brand_subcategories_table',3),(12,'2014_10_12_000000_create_users_table',4),(13,'2014_10_12_100000_create_password_resets_table',4),(14,'2019_04_04_153757_create_reviews_table',4),(15,'2019_05_29_152703_create_discussions_table',4),(16,'2019_06_01_073550_create_recommendations_table',4),(17,'2019_06_20_103850_create_admins_table',4),(18,'2019_06_20_104105_create_brand_users_table',4),(19,'2019_06_20_104131_create_brands_table',4),(20,'2019_07_06_133933_add_foreign_key_constraints_to_reviews_dis_rec_and_brand_users',4),(21,'2014_10_12_000000_create_users_table',4),(22,'2014_10_12_100000_create_password_resets_table',4),(23,'2019_04_04_153757_create_reviews_table',4),(24,'2019_05_29_152703_create_discussions_table',4),(25,'2019_06_01_073550_create_recommendations_table',4),(26,'2019_06_20_103850_create_admins_table',4),(27,'2019_06_20_104105_create_brand_users_table',4),(28,'2019_06_20_104131_create_brands_table',4),(29,'2019_07_06_133933_add_foreign_key_constraints_to_reviews_dis_rec_and_brand_users',4),(30,'2019_07_07_100634_create_categorys_table',5),(31,'2019_07_07_100859_create_subcategorys_table',5),(32,'2019_07_07_112917_create_types_table',6),(33,'2019_07_07_131243_add_new_columns_to_brands_table',7),(34,'2019_07_07_140744_create_assessments_table',8),(35,'2019_07_07_141455_create_outlets_table',8),(36,'2019_07_07_152420_add_foreign_key_constraints_to_sub_cat_types_brands_assess_outlets',9),(37,'2019_07_28_184740_create_d_comments_table',10),(38,'2019_07_31_172037_create_d_usefuls_table',11),(39,'2019_08_02_074717_add_foreign_key_constraints_to_dcomments_dusefuls',12),(40,'2019_08_02_075757_create_r_comments_table',12),(41,'2019_08_02_075826_create_r_usefuls_table',12),(42,'2019_08_02_110528_add_foreign_key_constraints_to_rcomments_rusefuls',13),(43,'2019_08_02_110744_create_suggestions_table',13);
+INSERT  IGNORE INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_04_04_153757_create_reviews_table',1),(4,'2019_05_29_152703_create_discussions_table',1),(5,'2019_06_01_073550_create_recommendations_table',1),(6,'2019_06_20_103850_create_admins_table',1),(7,'2019_06_20_104105_create_brand_users_table',1),(8,'2019_06_20_104131_create_brands_table',1),(9,'2019_07_06_133933_add_foreign_key_constraints_to_reviews_dis_rec_and_brand_users',1),(10,'2019_07_07_100634_create_categorys_table',1),(11,'2019_07_07_100859_create_subcategorys_table',1),(12,'2019_07_07_112917_create_types_table',1),(13,'2019_07_07_131243_add_new_columns_to_brands_table',1),(14,'2019_07_07_140744_create_assessments_table',1),(15,'2019_07_07_141455_create_outlets_table',1),(16,'2019_07_07_152420_add_foreign_key_constraints_to_sub_cat_types_brands_assess_outlets',1),(17,'2019_07_28_184740_create_d_comments_table',1),(18,'2019_07_31_172037_create_d_usefuls_table',1),(19,'2019_08_02_074717_add_foreign_key_constraints_to_dcomments_dusefuls',1),(20,'2019_08_02_075757_create_r_comments_table',1),(21,'2019_08_02_075826_create_r_usefuls_table',1),(22,'2019_08_02_110528_add_foreign_key_constraints_to_rcomments_rusefuls',1),(23,'2019_08_02_110744_create_suggestions_table',1),(24,'2019_05_29_152703_create_discussions_table',4),(25,'2019_06_01_073550_create_recommendations_table',4),(26,'2019_06_20_103850_create_admins_table',4),(27,'2019_06_20_104105_create_brand_users_table',4),(28,'2019_06_20_104131_create_brands_table',4),(29,'2019_07_06_133933_add_foreign_key_constraints_to_reviews_dis_rec_and_brand_users',4),(30,'2019_07_07_100634_create_categorys_table',5),(31,'2019_07_07_100859_create_subcategorys_table',5),(32,'2019_07_07_112917_create_types_table',6),(33,'2019_07_07_131243_add_new_columns_to_brands_table',7),(34,'2019_07_07_140744_create_assessments_table',8),(35,'2019_07_07_141455_create_outlets_table',8),(36,'2019_07_07_152420_add_foreign_key_constraints_to_sub_cat_types_brands_assess_outlets',9),(37,'2019_07_28_184740_create_d_comments_table',10),(38,'2019_07_31_172037_create_d_usefuls_table',11),(39,'2019_08_02_074717_add_foreign_key_constraints_to_dcomments_dusefuls',12),(40,'2019_08_02_075757_create_r_comments_table',12),(41,'2019_08_02_075826_create_r_usefuls_table',12),(42,'2019_08_02_110528_add_foreign_key_constraints_to_rcomments_rusefuls',13),(43,'2019_08_02_110744_create_suggestions_table',13),(44,'2019_08_02_124915_create_announcements_table',14);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +138,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `r_comments` WRITE;
 /*!40000 ALTER TABLE `r_comments` DISABLE KEYS */;
-INSERT  IGNORE INTO `r_comments` VALUES (1,3,2,'Pleaseeeeee','2019-08-02 03:43:28','2019-08-02 03:43:28'),(2,3,2,'I need it urgently','2019-08-02 03:43:46','2019-08-02 03:43:46'),(3,2,2,'Biryani Kingz. It\'s the best','2019-08-02 03:44:42','2019-08-02 03:44:42'),(4,3,2,'well....\r\nyeah...\r\nright!\r\n:D','2019-08-02 04:46:25','2019-08-02 04:46:25'),(5,4,2,'It\'s amazing','2019-08-02 04:48:51','2019-08-02 04:48:51');
+INSERT  IGNORE INTO `r_comments` VALUES (1,3,2,'Pleaseeeeee','2019-08-02 03:43:28','2019-08-02 03:43:28'),(2,3,2,'I need it urgently','2019-08-02 03:43:46','2019-08-02 03:43:46'),(3,2,2,'Biryani Kingz. It\'s the best','2019-08-02 03:44:42','2019-08-02 03:44:42'),(4,3,2,'well....\r\nyeah...\r\nright!\r\n:D','2019-08-02 04:46:25','2019-08-02 04:46:25'),(5,4,2,'It\'s amazing','2019-08-02 04:48:51','2019-08-02 04:48:51'),(6,1,1,'hi','2019-08-02 12:16:33','2019-08-02 12:16:33');
 /*!40000 ALTER TABLE `r_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +158,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `recommendations` WRITE;
 /*!40000 ALTER TABLE `recommendations` DISABLE KEYS */;
-INSERT  IGNORE INTO `recommendations` VALUES (1,1,'Is there a place in Karachi where I can get this?','img8.jpg',1,'2019-07-07 04:19:21','2019-07-07 04:19:21'),(2,1,'I need to order 100 kg biryani. What are the best places in the city? :confused:',NULL,1,'2019-07-07 07:10:40','2019-07-07 07:10:40'),(3,2,'Can anybody tell me which place sells the best lasagna in Defence??? :yum:',NULL,1,'2019-07-23 09:02:20','2019-07-23 09:02:20'),(4,2,'How\'s Student Biryani? Any good???',NULL,1,'2019-08-02 04:47:48','2019-08-02 04:47:48');
+INSERT  IGNORE INTO `recommendations` VALUES (1,1,'Is there a place in Karachi where I can get this?','img8.jpg',1,'2019-07-07 04:19:21','2019-07-07 04:19:21'),(2,1,'I need to order 100 kg biryani. What are the best places in the city? :confused:',NULL,1,'2019-07-07 07:10:40','2019-07-07 07:10:40'),(3,2,'Can anybody tell me which place sells the best lasagna in Defence??? :yum:',NULL,1,'2019-07-23 09:02:20','2019-07-23 09:02:20'),(4,2,'How\'s Student Biryani? Any good???',NULL,1,'2019-08-02 04:47:48','2019-08-02 04:47:48'),(5,1,'Has anyone ever been here? How is it?','11564757653_267614-bigthumbnail.jpg',1,'2019-08-02 09:54:13','2019-08-02 09:54:13');
 /*!40000 ALTER TABLE `recommendations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +188,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `suggestions` WRITE;
 /*!40000 ALTER TABLE `suggestions` DISABLE KEYS */;
-INSERT  IGNORE INTO `suggestions` VALUES (1,1,1,1,'2019-08-02 06:37:28','2019-08-02 06:37:28');
+INSERT  IGNORE INTO `suggestions` VALUES (2,1,1,1,'2019-08-02 10:29:37','2019-08-02 10:29:37'),(3,2,1,1,'2019-08-02 10:29:51','2019-08-02 10:29:51'),(5,3,1,1,'2019-08-02 16:58:13','2019-08-02 16:58:13');
 /*!40000 ALTER TABLE `suggestions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +208,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT  IGNORE INTO `users` VALUES (1,'Sumita Abrar','img0.jpg','sumitaabrar@yahoo.com',NULL,'$2y$10$ybQ26F4Mrod44uOuVUD0GOLrdx4Vnq1pPnqo7gKMiT7bzoYKJNFUS',NULL,'2019-07-07 04:17:24','2019-07-07 04:17:24'),(2,'Aimen','img2.jpg','aimen@gmail.com',NULL,'$2y$10$ijUlOGDXtIjylmy81axqq.w6qYwBouy7g2Ch.3YH5l2yDbp.S4ENq',NULL,'2019-07-07 07:11:48','2019-07-07 07:11:48');
+INSERT  IGNORE INTO `users` VALUES (1,'Sumita Abrar','11564763706_01.jpg','sumitaabrar@yahoo.com',NULL,'$2y$10$ybQ26F4Mrod44uOuVUD0GOLrdx4Vnq1pPnqo7gKMiT7bzoYKJNFUS',NULL,'2019-07-07 04:17:24','2019-08-02 11:37:42'),(2,'Aimen','img0.jpg','aimen@gmail.com',NULL,'$2y$10$ijUlOGDXtIjylmy81axqq.w6qYwBouy7g2Ch.3YH5l2yDbp.S4ENq',NULL,'2019-07-07 07:11:48','2019-07-07 07:11:48');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-02 16:48:28
+-- Dump completed on 2019-08-03  3:02:54
