@@ -76,4 +76,44 @@ class HomeController extends Controller
 
         //The user's profile is the Home. 
     }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', ''],
+            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+            'image' => 'image|nullable|max:1999'
+        ]);
+
+        $u = User::find($id);
+
+        
+        $u->name = $request->name;
+        $u->email = $request->email;
+
+        if($request->password != NULL){
+            $u->password = Hash::make($request->password);
+        }
+
+        //Handle Image Upload
+        if($request->hasFile('image')){
+            //Get Filename with Extension
+            $fileNameWuthExt = $request->file('image')->getClientOriginalName();
+            //Get just the Filename
+            $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
+            //Get just the Extension
+            $ext = $request->file('image')->getClientOriginalExtension();
+            //Filename that will be stored
+            $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
+            //Upload image
+            $path = $request->file('image')->storeAs('public/images/users', $fileNameToStore);
+
+            $u->image = $fileNameToStore;
+        }
+        
+        $u->save();
+
+        return(redirect('/home'));
+    }
 }

@@ -119,7 +119,7 @@ class DUsefulsController extends Controller
             }
         }
 
-        return(redirect('/feed/#dis'.$request->discussion_id));
+        return(redirect('/dis/#dis'.$request->discussion_id));
     }
 
     /**

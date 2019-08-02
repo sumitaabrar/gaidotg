@@ -7,10 +7,10 @@
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <!-- Card - Upper Panel - Brand Info -->
             <div class="card">
-                <img class="card-img-top" src="../assets/images/background/{{ $brand->cover_photo }}" alt="Card image cap">
+                <img class="card-img-top" src="../storage/images/cover/{{ $brand->cover_photo }}" alt="Card image cap">
                 <div class="card-block little-profile text-center">
                     <div class="pro-img">
-                        <div class="img"><img src="../assets/images/users/brands/{{ $brand->logo }}" alt="user" /></div>
+                        <div class="img"><img src="../storage/images/users/brands/{{ $brand->logo }}" alt="user" /></div>
                     </div>
                     <h3 class="m-b-0">{{ $brand->name }}</h3>
                     <p>{{ $brand->type->name }}</p>
@@ -42,17 +42,27 @@
                     @endif
 
 
-
-                    @foreach ($assess as $a)
+                    @if( count($assess) > 0)
+                        @foreach ($assess as $a)
+                            <div class="row text-center m-t-20">
+                                <div class="col-lg-4 col-md-4 m-t-20">
+                                    <h3 class="m-b-0 font-light">{{ $a->ranking }}<small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
+                                <div class="col-lg-4 col-md-4 m-t-20">
+                                    <h3 class="m-b-0 font-light">{{ $a->rating }}<small> <i class="mdi mdi-star"></i></small></h3><small>Ratings</small></div>
+                                <div class="col-lg-4 col-md-4 m-t-20">
+                                    <h3 class="m-b-0 font-light">{{ count($brand->suggestions) }}</h3><small>Suggest</small></div>
+                            </div>    
+                        @endforeach
+                    @else
                         <div class="row text-center m-t-20">
                             <div class="col-lg-4 col-md-4 m-t-20">
-                                <h3 class="m-b-0 font-light">{{ $a->ranking }}<small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
+                                <h3 class="m-b-0 font-light">0<small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
                             <div class="col-lg-4 col-md-4 m-t-20">
-                                <h3 class="m-b-0 font-light">{{ $a->rating }}<small> <i class="mdi mdi-star"></i></small></h3><small>Ratings</small></div>
+                                <h3 class="m-b-0 font-light">0<small> <i class="mdi mdi-star"></i></small></h3><small>Ratings</small></div>
                             <div class="col-lg-4 col-md-4 m-t-20">
                                 <h3 class="m-b-0 font-light">{{ count($brand->suggestions) }}</h3><small>Suggest</small></div>
-                        </div>    
-                    @endforeach
+                        </div> 
+                    @endif
                     
                 </div>
             </div>
@@ -68,25 +78,25 @@
                         <div class="message-widget contact-widget">
                             
                             <a href="#">
-                                <div class="ann-img"> <img src="../assets/images/ann/bk-01.jpg" alt="user"> </div>
+                                <div class="ann-img"> <img src="../storage/images/ann/bk-01.jpg" alt="user"> </div>
                                 <div class="ann-contnet">
                                     <h5>50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                             </a>
                             
                             <a href="#">
-                                <div class="ann-img"> <img src="../assets/images/ann/bk-02.jpg" alt="user"> </div>
+                                <div class="ann-img"> <img src="../storage/images/ann/bk-02.jpg" alt="user"> </div>
                                 <div class="ann-contnet">
                                     <h5>Flat 50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card.</p></div>
                             </a>
                             
                             <a href="#">
-                                <div class="ann-img"> <img src="../assets/images/ann/bk-03.jpg" alt="user"> </div>
+                                <div class="ann-img"> <img src="../storage/images/ann/bk-03.jpg" alt="user"> </div>
                                 <div class="ann-contnet">
                                     <h5>Discount</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                             </a>
                             
                             <a href="#">
-                                <div class="ann-img"> <img src="../assets/images/ann/bk-04.jpg" alt="user"> </div>
+                                <div class="ann-img"> <img src="../storage/images/ann/bk-04.jpg" alt="user"> </div>
                                 <div class="ann-contnet">
                                     <h5>Special Offer</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
                             </a>
@@ -107,7 +117,7 @@
 						<div class="card-block p-t-0 p-b-0">
 							<div class="profiletimeline simpleFont">
 								<div class="m-t-20 m-b-20">
-									<div class="sl-left"> <img src="../assets/images/users/{{ Auth::user()->image }}" alt="user" class="img-circle"> </div>
+									<div class="sl-left"> <img src="../storage/images/users/{{ Auth::user()->image }}" alt="user" class="img-circle"> </div>
 									<div class="sl-right">
                                         <div class="m-t-20 row">
                                             <div class="col-sm-12">
@@ -160,7 +170,7 @@
                                         @if ( count($allRev) > 0)     <!--If the brand has reviews to view, then dispaly them-->
                                             @foreach ($allRev as $rev)
                                                 <div class="sl-item">
-                                                    <div class="sl-left"> <img src="../assets/images/users/{{ $rev->user->image }}" alt="user" class="img-circle"> </div>
+                                                    <div class="sl-left"> <img src="../storage/images/users/{{ $rev->user->image }}" alt="user" class="img-circle"> </div>
                                                     <div class="sl-right">
                                                         <div>
                                                             <a href="#" class="link">{{ $rev->user->name }}</a> 

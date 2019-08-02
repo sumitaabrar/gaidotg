@@ -58,4 +58,10 @@ class Brand extends Model
     {
         return $this->hasMany('App\Suggestion');
     }
+
+    //Creating 1-* reationship with Announcement. There can be multiple announcements for each Brand.
+    public function announcements()
+    {
+        return $this->hasMany('App\Announcement');
+    }
 }

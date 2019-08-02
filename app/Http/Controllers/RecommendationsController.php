@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recommendation;
 use App\User;
+use App\Announcement;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -29,8 +30,12 @@ class RecommendationsController extends Controller
             $rec->body = $body;
         }
 
+        //Fetching all Announcements
+        $allAnn = Announcement::orderBy('created_at', 'desc')->get();
+
         return view('pages.recommendations')->with([ 
             'allRec'    => $allRec,
+            'allAnn'    => $allAnn,
             ]);
         
     }
@@ -54,16 +59,32 @@ class RecommendationsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'recommendation' => 'required'
-        ]);
+            'recommendation' => 'required',
+            'image' => 'image|nullable|max:1999',
+            ]);
+    
+            //Handle Image Upload
+            if($request->hasFile('image')){
+                //Get Filename with Extension
+                $fileNameWuthExt = $request->file('image')->getClientOriginalName();
+                //Get just the Filename
+                $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
+                //Get just the Extension
+                $ext = $request->file('image')->getClientOriginalExtension();
+                //Filename that will be stored
+                $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
+                //Upload image
+                $path = $request->file('image')->storeAs('public/images/posts', $fileNameToStore);
+            }
+            else{
+                $fileNameToStore = 'img0.jpg';
+            }
 
         $rec = new Recommendation;
         $rec->user_id = auth()->user()->id;
-
         $recBody = Emojione::toShort($request->recommendation);
-
         $rec->body = $recBody;
-        $rec->image = $request->image;
+        $rec->image = $fileNameToStore;
         $rec->is_open = true;
 
         $rec->save();

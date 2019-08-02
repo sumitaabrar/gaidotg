@@ -118,7 +118,7 @@ class RUsefulsController extends Controller
             }
         }
 
-        return(redirect('/feed/#rec'.$request->recommendation_id));
+        return(redirect('/rec/#rec'.$request->recommendation_id));
     }
 
     /**

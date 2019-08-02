@@ -1405,7 +1405,9 @@ Buttons
 }
 
 
-
+.primary-btn:focus{
+  outline:none !important;
+}
 
 
 /*******************
@@ -2700,6 +2702,15 @@ ul#themecolors {
   .card-outline-primary .card-header {
     background: #7460ee;
     border-color: #7460ee; }
+
+.card-search a{
+  text-decoration: none;
+  color:#67757c;
+}
+.card-search a:hover, a:focus{
+  text-decoration: underline;
+  color:#67757c;
+}
 
 /*============================================================== 
 Breadcrumb

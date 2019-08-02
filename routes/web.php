@@ -12,7 +12,8 @@
 */
 
 Route::get('/','IndexController@index')->name('index');
-Route::get('/test','PagesController@test');
+Route::post('/search', 'PagesController@search')->name('search');
+
 Route::get('/product','PagesController@product')->name('product.list');
 Route::get('/place','PagesController@place')->name('place.list');
 
@@ -54,3 +55,6 @@ Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminHome', 'AdminHomeController@index')->name('admin.dashboard');
 Route::get('/brandHome', 'BrandHomeController@index')->name('brand.dashboard');
+
+
+Route::match(['put', 'patch'], '/home/{user}','HomeController@update')->name('home.update');

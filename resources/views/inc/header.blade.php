@@ -23,15 +23,17 @@
 
         <!-- Search -->
         <li>
+          {!!Form::open(['action' => 'PagesController@search', 'method' => 'POST' ])!!}
           <div class="single-widget input-group mb-3 " id="mc_embed_signup">
-            <input type="text" class="form-control" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" aria-label="Search" aria-describedby="searchBtn">
+            {{Form::text('key', '' , [ 'class' => 'form-control', 'placeholder' => 'Search', 'onfocus' => 'this.placeholder = \'\'', 'onblur' => 'this.placeholder = \'Search\'', 'aria-label' => 'Search', 'aria-describedby' => 'searchBtn' ]) }}
             <div class="input-group-append">
-              <button class="click-btn btn btn-default" type="button" id="searchBtn">
-                <i class="ti-search" aria-hidden="true"></i>
-              </button>
+              {{ Form::button('<i class="ti-search" aria-hidden="true"></i>', [ 'class' => 'click-btn btn btn-default', 'type' => 'submit', 'id' => 'searchBtn' ]) }}
             </div>
           </div>
+          {!!Form::close()!!}
         </li>
+
+        
       </ul>
 
       <!-- User profile and Menu itmes-->
@@ -63,7 +65,7 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false" >
                     <span class="user-name">{{ Auth::user()->name }} </span>
-                    <img src="../assets/images/users/{{ Auth::user()->image }}" alt="user" class="profile-pic m-r-10" />
+                    <img src="../storage/images/users/{{ Auth::user()->image }}" alt="user" class="profile-pic m-r-10" />
                 </a>
 
                 
