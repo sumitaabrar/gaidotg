@@ -17,12 +17,60 @@
                 </li>
                 <li> <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Blank Page</span></a>
                 </li>
-                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Error 404</span></a>
+                <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false" data-toggle="modal" data-target="#guidemeModal"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Guide Me</span></a>
                 </li>
             </ul>
         </nav>
-        <!-- End Sidebar navigation -->
-    </div>
+           <!-- End Sidebar navigation -->
+  
+        <div id="guidemeModal" class="modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                
+                
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign in to use this feature</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Thank you for your interest but you need to sign in to use this feature of Gaido.</p>
+                        <a href="{{ route('login') }}" class="primary-btn text-uppercase float-right">Sign in</a> 
+                    </div>
+                    </div>
+            
+                </div>
+            </div>
+            
+       
+      <!-- Modal 
+        <div class="modal fade" id="guidemeModal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered ">
+            
+           \
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Give some details</h4>
+                </div>
+                <div class="modal-body">
+                <p>Type</p>
+                <select>
+                        <option value="places">Places</option>
+                        <option value="product">Product</option>
+                      </select>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            
+            </div>
+            </div>
+        
+        </div>
+   
+ -->
+        
     <!-- End Sidebar scroll-->
     <!-- Bottom points-->
     <div class="sidebar-footer">
@@ -32,8 +80,6 @@
     <!-- End Bottom points-->
 </aside>
 <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-
-
 
 
 

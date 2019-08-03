@@ -16,7 +16,7 @@ Route::get('/signup','PagesController@signup');
 
 Route::get('/feed', 'FeedController@index')->name('feed');;
 
-
+Route::get('/displayRec','PagesController@displayRec');
 
 Route::resource('bProfile', 'ReviewsController');
 Route::resource('dis', 'DiscussionsController');

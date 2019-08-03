@@ -12,6 +12,9 @@ class PagesController extends Controller
     public function bProfile(){
         return view('pages.bProfile');
     }
+    public function displayRec(){
+        return view('pages.displayRec');
+    }
 
 
 }
