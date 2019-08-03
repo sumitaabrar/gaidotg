@@ -25,7 +25,9 @@
                 </li>
 
                 <li>
-                        <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                        <button class="waves-effect waves-dark" type="button" data-toggle="modal" data-target="#signinModal" aria-expanded="false">
+                            <i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span>
+                        </button>
                 </li>
                 
                 

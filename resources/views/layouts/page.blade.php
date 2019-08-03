@@ -67,6 +67,7 @@
 			</div>
 			            
 			@include('inc.signinModal')
+			@include('inc.guideMeModal')
 			<!-- start footer Area 	
 			<footer class="page-footer-area">
 				<div class="container">
