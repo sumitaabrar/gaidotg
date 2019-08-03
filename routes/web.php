@@ -11,22 +11,32 @@
 |
 */
 
-Route::get('/','PagesController@index')->name('index');
-Route::get('/signup','PagesController@signup');
+Route::get('/','IndexController@index')->name('index');
+Route::post('/search', 'PagesController@search')->name('search');
 
-Route::get('/feed', 'FeedController@index')->name('feed');;
+Route::get('/product','PagesController@product')->name('product.list');
+Route::get('/place','PagesController@place')->name('place.list');
 
 
 
-Route::resource('bProfile', 'ReviewsController');
+
+
+Route::resource('bOrg', 'BrandsController');
+Route::resource('reviews', 'ReviewsController');
+Route::resource('sugg', 'SuggestionsController');
+
 Route::resource('dis', 'DiscussionsController');
 Route::resource('rec', 'RecommendationsController');
-
-
+Route::resource('dcomm', 'DCommentsController');
+Route::resource('duseful', 'DUsefulsController');
+Route::resource('rcomm', 'RCommentsController');
+Route::resource('ruseful', 'RUsefulsController');
 
 Auth::routes();
 
 
+
+Route::post('bOrg/{bOrg}', 'ReviewsController@myUpdate');
 
 //To Handle Admin Login & Logout
 Route::get('/admin/login', 'Auth\AdminLoginController@showAdminLoginForm')->name('admin.login');
@@ -45,3 +55,6 @@ Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminHome', 'AdminHomeController@index')->name('admin.dashboard');
 Route::get('/brandHome', 'BrandHomeController@index')->name('brand.dashboard');
+
+
+Route::match(['put', 'patch'], '/home/{user}','HomeController@update')->name('home.update');

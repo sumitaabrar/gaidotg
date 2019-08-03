@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Discussion;
 use App\User;
+use App\Announcement;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -18,7 +19,36 @@ class DiscussionsController extends Controller
      */
     public function index()
     {
+        $emojioneClient = new EmojioneClient();
+        $emojioneClient->cacheBustParam = '';
+        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
+        Emojione::setClient($emojioneClient);
+
+
+        //Fetching all discussions
+        $allDis = Discussion::orderBy('created_at','desc')->get();
+        //converting emoji shortnames into emoji icons
+        foreach($allDis as $dis)
+        {
+            $body = htmlspecialchars($dis->body);
+            $body = Emojione::shortnameToImage($body);
+            $body = nl2br($body);
+            $dis->body = $body;
+        }
+        //Fetching all DiscussionComments
+        $comments = Discussion::with('dcomments')->get();
+        //Fetching all DiscussionUsefuls
+        $usefuls = Discussion::with('dusefuls')->get();
+
+        //Fetching all Announcements
+        $allAnn = Announcement::orderBy('created_at', 'desc')->get();
         
+        return view('pages.discussions')->with([
+            'allDis'    => $allDis, 
+            'comments'  => $comments,
+            'usefuls'   => $usefuls,
+            'allAnn'    => $allAnn,
+            ]);
     }
 
     /**
@@ -40,23 +70,38 @@ class DiscussionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'discussion' => 'required'
+            'discussion' => 'required',
+            'image' => 'image|nullable|max:1999',
         ]);
+
+        //Handle Image Upload
+        if($request->hasFile('image')){
+            //Get Filename with Extension
+            $fileNameWuthExt = $request->file('image')->getClientOriginalName();
+            //Get just the Filename
+            $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
+            //Get just the Extension
+            $ext = $request->file('image')->getClientOriginalExtension();
+            //Filename that will be stored
+            $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
+            //Upload image
+            $path = $request->file('image')->storeAs('public/images/posts', $fileNameToStore);
+        }
+        else{
+            $fileNameToStore = 'img0.jpg';
+        }
 
         $dis = new Discussion;
         $dis->user_id = auth()->user()->id;
-
-
         $disBody = Emojione::toShort($request->discussion);
-
         $dis->body = $disBody;
-        $dis->image = $request->image;
+        $dis->image = $fileNameToStore;
         $dis->score = 0;
         $dis->is_open = true;
 
         $dis->save();
 
-        return(redirect('/feed')->with('success','Discussion has been added'));
+        return(redirect('/dis')->with('success','Discussion has been added'));
     }
 
     /**

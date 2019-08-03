@@ -14,7 +14,7 @@
 					<p class="text-white">
 						We are here to provide you a forum where you can review places and products and also see what other users have to say about your favourite brand. 
 					</p>
-					<a href="#" class="primary-btn text-uppercase">Write a Review</a>
+					<a href="{{ route('login') }}" class="primary-btn text-uppercase">Write a Review</a>
 				</div>
 			
 

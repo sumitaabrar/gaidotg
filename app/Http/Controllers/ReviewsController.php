@@ -22,26 +22,7 @@ class ReviewsController extends Controller
 
     public function index()
     {
-        $emojioneClient = new EmojioneClient();
-        $emojioneClient->cacheBustParam = '';
-        $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
-        Emojione::setClient($emojioneClient);
-
-
-
-        //return Post::where('title','Post # 01')->get();
-        $allRev = Review::orderBy('created_at','desc')->get();
-
-        //converting emoji shortnames into emoji icons
-        foreach($allRev as $rev)
-        {
-            $body = htmlspecialchars($rev->body);
-            $body = Emojione::shortnameToImage($body);
-            $body = nl2br($body);
-            $rev->body = $body;
-        }
-
-        return view('pages.bProfile')->with('allRev', $allRev);
+        
     }
 
     /**
@@ -68,7 +49,7 @@ class ReviewsController extends Controller
 
         $rev = new Review;
         $rev->user_id = auth()->user()->id;
-        $rev->brand_id = 1;
+        $rev->brand_id = $request->brand_id;
 
         $revBody = Emojione::toShort($request->review);
 
@@ -84,7 +65,7 @@ class ReviewsController extends Controller
         
         $rev->save();
 
-        return redirect('/bProfile')->with('success', 'Review has been added');
+        return redirect()->back()->with('success', 'Review has been added');
     }
 
     /**
@@ -120,6 +101,7 @@ class ReviewsController extends Controller
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.

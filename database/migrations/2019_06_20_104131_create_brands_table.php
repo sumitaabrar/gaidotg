@@ -16,10 +16,12 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('name');
-            $table->string('logo');
+            $table->string('logo')->default('img0.jpg');
+            $table->string('cover_photo')->default('img0.jpg');
             $table->mediumText('description');
+            $table->string('website')->nullable;
+            $table->string('contact')->nullable;
             $table->boolean('is_reg')->default(false);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

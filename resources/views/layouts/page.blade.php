@@ -9,7 +9,7 @@
 		<meta name="keywords" content="">					<!-- Meta Keyword -->
 		
 		<title>Gaido</title>								<!-- Site Title -->
-		<link rel="shortcut icon" href="img/fav.png">		<!-- Favicon-->
+		<link rel="shortcut icon" href="../img/fav.png">		<!-- Favicon-->
 
 		<!--Main Stylesheets compiled-->
 		<link rel="stylesheet" href="{{ asset('css/app.css')}}">
@@ -65,7 +65,9 @@
 				<footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
 
 			</div>
-
+			            
+			@include('inc.signinModal')
+			@include('inc.guideMeModal')
 			<!-- start footer Area 	
 			<footer class="page-footer-area">
 				<div class="container">
