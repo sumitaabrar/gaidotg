@@ -17,10 +17,9 @@ Route::post('/search', 'PagesController@search')->name('search');
 Route::get('/product','PagesController@product')->name('product.list');
 Route::get('/place','PagesController@place')->name('place.list');
 
+Route::get('/displayRec','PagesController@displayRec');
 
-
-
-
+//Route::resource('preferences', 'DisplayRecController');
 Route::resource('bOrg', 'BrandsController');
 Route::resource('reviews', 'ReviewsController');
 Route::resource('sugg', 'SuggestionsController');

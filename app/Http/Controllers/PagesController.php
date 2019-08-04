@@ -12,6 +12,10 @@ use Emojione\Client as EmojioneClient;
 
 class PagesController extends Controller
 {
+    public function displayRec(){
+        return view('pages.displayRec');
+    }
+
     public function index(){
         return view('pages.index');
     }
@@ -24,7 +28,6 @@ class PagesController extends Controller
         return "palces";
     }
 
-    
     public function search( Request $request)
     {
         $this->validate($request, [
