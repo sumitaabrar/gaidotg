@@ -148,11 +148,11 @@
 												@else
 													<!-- Dummy Buttons of useful/unuseful to request signin -->
 													<button class="like-btn float-left" type="button" data-toggle="modal" data-target="#signinModal" >
-															<i class="mdi mdi-comment-check-outline text-success"></i> Usefel
-														</button>
-														<button class="like-btn float-left" type="button" data-toggle="modal" data-target="#signinModal" >
-															<i class="mdi  mdi-comment-remove-outline text-danger"></i> Unuseful
-														</button>
+														<i class="mdi mdi-comment-check-outline text-success"></i> Usefel
+													</button>
+													<button class="like-btn float-left" type="button" data-toggle="modal" data-target="#signinModal" >
+														<i class="mdi  mdi-comment-remove-outline text-danger"></i> Unuseful
+													</button>
 						
 														
 
@@ -215,45 +215,48 @@
 			</div>
 		</div>
 		
+		
 		<!-- Column - Left Panel-->
         <div class="col-lg-3 col-xlg-3 col-md-4">
-			<!-- Card - Announcements -->
-			<div class="card stickyPanel">
-				<div class="card-block bgg-info">
-					<h4 class="text-white card-title">Announcements</h4>
-				</div>
-				<div class="card-block">
-					<div class="message-box contact-box">
-						<h2 class="add-ct-btn"></h2>
-						<div class="message-widget contact-widget">
-							@if(count($allAnn) > 0)
-								@foreach($allAnn as $ann)
+			@if(!Auth::guest())
+				<!-- Card - Announcements -->
+				<div class="card stickyPanel">
+					<div class="card-block bgg-info">
+						<h4 class="text-white card-title">Announcements</h4>
+					</div>
+					<div class="card-block">
+						<div class="message-box contact-box">
+							<h2 class="add-ct-btn"></h2>
+							<div class="message-widget contact-widget">
+								@if(count($allAnn) > 0)
+									@foreach($allAnn as $ann)
 
-									@if( $ann->url != NULL)
-										<a href="{{ $ann->url }}" target="_blank">
-									@endif
-									
-									@if( $ann->image != NULL )
-										<div class="ann-img"> <img src="storage/images/ann/{{ $ann->image }}"}} alt="user"> </div>
-									@endif	
-
-										<div class="ann-contnet">
-											<h5>{{ $ann->title }}</h5> 
-											<p class="ann-desc">{{ $ann->body }}</p>
-										</div>
-									
 										@if( $ann->url != NULL)
-										</a>
-									@endif
-								@endforeach
-							@else
-								<p>No Announcements to show </p>
-							@endif
-							
+											<a href="{{ $ann->url }}" target="_blank">
+										@endif
+										
+										@if( $ann->image != NULL )
+											<div class="ann-img"> <img src="storage/images/ann/{{ $ann->image }}"}} alt="user"> </div>
+										@endif	
+
+											<div class="ann-contnet">
+												<h5>{{ $ann->title }}</h5> 
+												<p class="ann-desc">{{ $ann->body }}</p>
+											</div>
+										
+											@if( $ann->url != NULL)
+											</a>
+										@endif
+									@endforeach
+								@else
+									<p>No Announcements to show </p>
+								@endif
+								
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			@endif
 		</div>
     </div>                
 @endsection

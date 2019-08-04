@@ -41,15 +41,48 @@
                         </button>	
                     @endif
 
+                    @if(!Auth::guest())
+                        @if($rating)
+                            <div class="row m-t-10"  >
+                                <div class="col-md-6 col-md-offset-3">
+                                    {!! Form::open(['id'=>'ratingForm', 'action' => ['ReviewsController@updateRating', $rating->id], 'method' => 'POST']) !!}
+                                    {{ Form::hidden('_method', 'PUT')}}
+                                    <div class="clearfix">
+                                        {{ Form::number('rating', $rating->rating , ['class' => 'rating rating-loading', 'data-min' => '0', 'data-max' => '5',  'data-step' => '1' ])}}
+                                        <button type="submit">
+                                            <span class="float-right"><i class="mdi mdi-star-outline"></i></span>
+                                        </button>
+                                    </div>
+                                    
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>    
+                        @else
+                            <div class="row m-t-10"  >
+                                <div class="col-md-6 col-md-offset-3">
+                                    {!! Form::open(['id'=>'ratingForm', 'action' => 'ReviewsController@storeRating', 'method' => 'POST']) !!}
+                                    {{ Form::hidden('brand_id', $brand->id ) }}
+                                    <div class="clearfix">
+                                        {{ Form::number('rating', '' , ['class' => 'rating rating-loading', 'data-min' => '0', 'data-max' => '5',  'data-step' => '1' ])}}
+                                        <button type="submit">
+                                            <span class="float-right"><i class="mdi mdi-star-outline"></i></span>
+                                        </button>
+                                    </div>
+                                    
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>   
+                        @endif
+                    @endif
 
                     @if( count($assess) > 0)
                         @foreach ($assess as $a)
-                            <div class="row text-center m-t-20">
-                                <div class="col-lg-4 col-md-4 m-t-20">
+                            <div class="row text-center">
+                                <div class="col-lg-4 col-md-4">
                                     <h3 class="m-b-0 font-light">{{ $a->ranking }}<small> <i class="mdi mdi-trophy"></i></small></h3><small>Rank</small></div>
-                                <div class="col-lg-4 col-md-4 m-t-20">
+                                <div class="col-lg-4 col-md-4">
                                     <h3 class="m-b-0 font-light">{{ $a->rating }}<small> <i class="mdi mdi-star"></i></small></h3><small>Ratings</small></div>
-                                <div class="col-lg-4 col-md-4 m-t-20">
+                                <div class="col-lg-4 col-md-4">
                                     <h3 class="m-b-0 font-light">{{ count($brand->suggestions) }}</h3><small>Suggest</small></div>
                             </div>    
                         @endforeach
@@ -66,47 +99,48 @@
                     
                 </div>
             </div>
-            <!-- Card - Lower Panel - Brand Announcements 
-            <div class="card stickyPanel">
-                <div class="card-block bgg-info">
-                    <h4 class="text-white card-title">Announcements</h4>
-                    <h6 class="card-subtitle text-white m-b-0 op-5">Check out our latest offers</h6>
-                </div>
-                <div class="card-block">
-                    <div class="message-box contact-box">
-                        <h2 class="add-ct-btn"></h2>
-                        <div class="message-widget contact-widget">
-                            
-                            <a href="#">
-                                <div class="ann-img"> <img src="../storage/images/ann/bk-01.jpg" alt="user"> </div>
-                                <div class="ann-contnet">
-                                    <h5>50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
-                            </a>
-                            
-                            <a href="#">
-                                <div class="ann-img"> <img src="../storage/images/ann/bk-02.jpg" alt="user"> </div>
-                                <div class="ann-contnet">
-                                    <h5>Flat 50% off</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card and get 50% off on any of our food items this weekend. Show your Gaido membership card.</p></div>
-                            </a>
-                            
-                            <a href="#">
-                                <div class="ann-img"> <img src="../storage/images/ann/bk-03.jpg" alt="user"> </div>
-                                <div class="ann-contnet">
-                                    <h5>Discount</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
-                            </a>
-                            
-                            <a href="#">
-                                <div class="ann-img"> <img src="../storage/images/ann/bk-04.jpg" alt="user"> </div>
-                                <div class="ann-contnet">
-                                    <h5>Special Offer</h5> <p class="ann-desc">Show your Gaido membership card and get 50% off on any of our food items this weekend.</p></div>
-                            </a>
+            
+            @if(!Auth::guest())
+                <!-- Card - Lower Panel - Brand Announcements -->
+                <div class="card stickyPanel">
+                    <div class="card-block bgg-info">
+                        <h4 class="text-white card-title">Announcements</h4>
+                        <h6 class="card-subtitle text-white m-b-0 op-5">Check out our latest offers</h6>
+                    </div>
+                    <div class="card-block">
+                        <div class="message-box contact-box">
+                            <h2 class="add-ct-btn"></h2>
+                            <div class="message-widget contact-widget">
+                                @if(count($allAnn) > 0)
+                                    @foreach($allAnn as $ann)
+
+                                        @if( $ann->url != NULL)
+                                            <a href="{{ $ann->url }}" target="_blank">
+                                        @endif
+                                        
+                                        @if( $ann->image != NULL )
+                                            <div class="ann-img"> <img src="../storage/images/ann/{{ $ann->image }}"}} alt="user"> </div>
+                                        @endif	
+
+                                            <div class="ann-contnet">
+                                                <h5>{{ $ann->title }}</h5> 
+                                                <p class="ann-desc">{{ $ann->body }}</p>
+                                            </div>
+                                        
+                                            @if( $ann->url != NULL)
+                                            </a>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <p>No Announcements to show </p>
+                                @endif    
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            -->
-
+            @endif
         </div>
+
         <div class="col-lg-8 col-xlg-9 col-md-7">
 
         @if (!Auth::guest())
@@ -169,11 +203,11 @@
 
                                         @if ( count($allRev) > 0)     <!--If the brand has reviews to view, then dispaly them-->
                                             @foreach ($allRev as $rev)
-                                                <div class="sl-item">
+                                                <div class="sl-item" id="rev{{$rev->id}}">
                                                     <div class="sl-left"> <img src="../storage/images/users/{{ $rev->user->image }}" alt="user" class="img-circle"> </div>
                                                     <div class="sl-right">
                                                         <div>
-                                                            <a href="#" class="link">{{ $rev->user->name }}</a> 
+                                                            <a href="#" class="name link">{{ $rev->user->name }}</a> 
                                                             <span class="sl-date">{{ $rev->created_at }}</span>
 
                                                             @if ($rev->rate != NULL)
@@ -182,18 +216,14 @@
                                                             
                                                             <p class="m-t-10 postFontSize"> {!! $rev->body !!} </p>
                                                         </div>
-                                                        <div class="like-comm m-t-20"> 
-                                                            <a href="javascript:void(0)" class="link m-r-10"><i class="mdi mdi-comment-check-outline text-success"></i> 5 </a> 
-                                                            <a href="javascript:void(0)" class="link m-r-10"><i class="mdi  mdi-comment-remove-outline text-danger"></i> 2 </a> 
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                                 <hr>
                                             @endforeach
                                             
                                         @else
-                                                <p>No reviews yet.</p>
-                                            
+                                            <p>No reviews yet.</p>
                                         @endif                        
                                         
                                     </div>

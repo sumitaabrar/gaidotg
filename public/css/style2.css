@@ -85,9 +85,9 @@ a:hover, a:focus{
 
 
 a.link {
-  color: #455a64; }
-  a.link:hover, a.link:focus {
-    color: #11ABB0; }
+  color: #0071a7; }
+a.link:hover, a.link:focus {
+  color: #11ABB0; }
 
 .img-responsive {
   width: 100%;
@@ -200,6 +200,8 @@ html body .p-l-10 {
 
 html body .p-l-20 {
   padding-left: 20px; }
+html body .p-l-30 {
+  padding-left: 30px; }
 
 html body .p-r-0 {
   padding-right: 0px; }
@@ -2709,7 +2711,7 @@ ul#themecolors {
 }
 .card-search a:hover, a:focus{
   text-decoration: underline;
-  color:#67757c;
+  color:#63a0c0;
 }
 
 /*============================================================== 
@@ -3176,7 +3178,8 @@ Form Material page
     border-bottom: 1px solid #11ABB0; }
 
 .form-material textarea.revTextArea{
-  height: 100px;
+  height: 150px;
+  width: 100%;
   padding: 10px;
   border: 1px solid lightgrey;
   margin-top: 5px;
@@ -3214,8 +3217,10 @@ rating-container .empty-stars {
 img.emojione {
   min-width: 1rem;
   min-height: 1rem;
+  max-width: 2rem;
   width: 1.5rem;
   height: auto;
+  
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -6115,11 +6120,24 @@ When click on sidebar toggler and also for tablet
   width: 40px;
   line-height: 40px;
   vertical-align: middle;
-
 }
+
+.comment-widgets .test-pic {
+  text-align: center;
+  align-items: center;
+  padding-left: 120px;
+  width: 80px;
+  vertical-align: middle;
+}
+
 .comment-widgets .comment-pic img {
   max-width: 40px;
 }
+
+.comment-widgets .test-pic img {
+  max-width: 80px;
+}
+
 .comment-widgets .comment-row {
   padding-left: 50px;
   vertical-align: middle;

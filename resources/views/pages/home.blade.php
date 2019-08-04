@@ -25,7 +25,7 @@
                 <div class="message-box contact-box">
                     <div class="message-widget contact-widget">
 
-                        @if($allSug != NULL)
+                        @if(count($allSug) > 0)
                             <!--Show the suggestions-->
                             @foreach($allSug as $s)
                                 <a href="/bOrg/{{$s->brand->id}}">

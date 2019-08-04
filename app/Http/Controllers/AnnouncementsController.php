@@ -9,14 +9,15 @@ use App\Brand;
 
 class AnnouncementsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth:brand');
+    }
+    
+    
     public function index()
     {
-        //
+        return view('pages.brands.ann');
     }
 
     /**

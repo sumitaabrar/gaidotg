@@ -52,8 +52,9 @@ class BrandLoginController extends Controller
             'password' => 'required|min:8'
         ]);
 
-        //Attempt to log admins in. 
+        //Attempt to log brand in. 
         if (Auth::guard('brand')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+           
             //If successful, redirect them to their intended page.
             return redirect()->intended(route('brand.dashboard'));
         }

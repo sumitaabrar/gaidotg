@@ -48,6 +48,8 @@
 		@include('inc.signinModal')
 		@include('inc.guideMeModal')
 		
+		@include('inc.testModal')
+
 		<!-- start footer Area -->		
 		@include('inc.mainfooter')	
 

@@ -67,6 +67,9 @@
 			</div>
 			            
 			@include('inc.signinModal')
+
+			@include('inc.testModal')
+			
 			@include('inc.guideMeModal')
 			<!-- start footer Area 	
 			<footer class="page-footer-area">
@@ -166,6 +169,8 @@
 					spellcheck : true,
 				}
 			});
+
+
 
 		</script>
 
