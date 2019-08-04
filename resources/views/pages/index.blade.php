@@ -5,7 +5,7 @@
 	<section class="banner-area relative" id="home">	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
-			<div class="row fullscreen d-flex align-items-center justify-content-start">
+			<div class="row d-flex align-items-center justify-content-start" style="height: 625px !important;">
 				<div class="banner-content col-lg-9 col-md-12">
 
 					<h1 class="text-white text-uppercase">
@@ -19,20 +19,27 @@
 			
 
 				<!-- Start Review Carousel-->
-				<div class="holder">
-					<div id="brand-slider" class="owl-carousel owl-theme"> 
-						<div class="item brand">
-							<span class="icon fa fa-quote-left"></span>
-							<p class="description">Their services are best in th...</p>
-							<span class="brand-link"><a href="/">Read full Review</a></span>
-							<div class="brand-content">
-								<div class="pic">
-									<img src="img/01.png" alt="logo" />
+				@if(count($allRev) > 0)
+					<div class="holder">
+						<div id="brand-slider" class="owl-carousel owl-theme"> 
+							@foreach($allRev as $rev)
+								<div class="item brand">
+									<span class="icon fa fa-quote-left"></span>
+									<p class="description postFontSize">{!! $rev->body !!}</p>
+									<span class="brand-link"><a href="/bOrg/{{$rev->brand->id}}/#rev{{$rev->id}}">Read full Review</a></span>
+									<div class="brand-content">
+										<div class="pic">
+											<img src="storage/images/users/brands/{{$rev->brand->logo}}" alt="logo" />
+										</div>
+										<h3 class="title">{{$rev->brand->name}}</h3>		
+									</div>
 								</div>
-								<h3 class="title">Burger King</h3>		
-							</div>
+							@endforeach
 						</div>
+					</div>
+				@endif
 						
+				<!--
 						<div class="item brand">
 							<span class="icon fa fa-quote-left"></span>
 							<p class="description">Their services are best in th...</p>
@@ -107,7 +114,7 @@
 						
 	
 					</div>
-				</div>
+				</div> -->
 				<!-- End Review Carousel-->				
 			</div>
 		</div>
@@ -228,103 +235,21 @@
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-8">
 					<div class="title text-center">
-						<h1 class="mb-10">What our Client’s Say about us</h1>
-						<p>Who are in extremely love with eco friendly system.</p>
+						<h1 class="mb-10">What our User’s Say about us</h1>
+						<p>Who are in extremely love with our user friendly website.</p>
 					</div>
 				</div>
 			</div>						
 			<div class="row">
 				<div class="active-tstimonial-carusel">
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t1.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t2.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t3.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>	
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t1.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t2.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t3.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>															
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t1.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t2.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>
-					<div class="single-testimonial item">
-						<img class="mx-auto" src="img/t3.png" alt="">
-						<p class="desc">
-							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
-						</p>
-						<h4>Mark Alviro Wiens</h4>
-						<p>
-							CEO at Google
-						</p>
-					</div>														
+					@foreach($allTest as $t)
+						<div class="single-testimonial item comment-widgets ">
+							<div class="test-pic"> <img class="img-circle" src="storage/images/users/{{ $t->user->image }}" alt="user"></div>
+							<p class="desc"> {{ $t->body }}</p>
+							<h4>{{ $t->user->name }}</h4>
+							<!-- <p>Designation</p> -->
+						</div>
+					@endforeach													
 				</div>
 			</div>
 		</div>	

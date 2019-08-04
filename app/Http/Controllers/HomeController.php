@@ -65,7 +65,7 @@ class HomeController extends Controller
         }
 
         //Fetching user's suggestions
-        $allSug = Suggestion::get()->where('user_id',1);
+        $allSug = Suggestion::get()->where('user_id',Auth::user()->id);
 
         return view('pages.home')->with([
             'user' => $user,

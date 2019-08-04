@@ -55,6 +55,13 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Review');
     }
+    
+    //Creating 1-* reationship with Rating. Each user can have multiple ratings.
+    public function rating()
+    {
+        return $this->hasMany('App\Rating');
+    }
+
 
     //Creating 1-* reationship with DComment. Each user can have multiple discussion-comments.
     public function dcomment()
@@ -62,6 +69,10 @@ class User extends Authenticatable
         return $this->hasMany('App\DComment');
     }
 
-
+     //Creating 1-* reationship with Testimonial. Each user can have only one Testimonial.
+     public function testimonial()
+     {
+         return $this->hasOne('App\Testimonial');
+     }
 
 }

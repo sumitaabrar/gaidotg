@@ -12,10 +12,16 @@
 */
 
 Route::get('/','IndexController@index')->name('index');
+Route::get('/search', 'PagesController@gSearch')->name('gSearch');
 Route::post('/search', 'PagesController@search')->name('search');
+Route::get('/sSearch', 'PagesController@sSearch')->name('sSearch');
+Route::post('/sSearch', 'PagesController@searchBrand')->name('searchBrand');
+
+Route::post('/test', 'PagesController@testStore')->name('test.store');
 
 Route::get('/product','PagesController@product')->name('product.list');
 Route::get('/place','PagesController@place')->name('place.list');
+Route::post('/product', 'PagesController@reviewSearch')->name('reviewSearch');
 
 
 
@@ -23,6 +29,9 @@ Route::get('/place','PagesController@place')->name('place.list');
 
 Route::resource('bOrg', 'BrandsController');
 Route::resource('reviews', 'ReviewsController');
+Route::post('/rating', 'ReviewsController@storeRating')->name('rating.store');
+Route::match(['put', 'patch'], '/rating/{id}','ReviewsController@updateRating')->name('rating.update');
+
 Route::resource('sugg', 'SuggestionsController');
 
 Route::resource('dis', 'DiscussionsController');

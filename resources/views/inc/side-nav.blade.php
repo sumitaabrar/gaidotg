@@ -40,8 +40,8 @@
     <!--Show these only to signed in user-->
     @if (!Auth::guest())
         <div class="sidebar-footer">
-            <a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
-            <a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
+            <a href="/home" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
+            <a href="#testModal" class="link" data-toggle="modal" title="Testimonial"><i class="mdi mdi-star-circle"></i></a>
             
             <a href="" class="link" data-toggle="tooltip" title="Logout" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

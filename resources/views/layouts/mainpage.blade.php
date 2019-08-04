@@ -46,6 +46,8 @@
 		</div>
         		
 		
+		@include('inc.testModal')
+
 		<!-- start footer Area -->		
 		@include('inc.mainfooter')	
 

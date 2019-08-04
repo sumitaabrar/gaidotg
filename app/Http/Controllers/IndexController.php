@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Brand;
-use App\Category;
-use App\Subcategory;
-use App\Type;
-use App\Assessment;
-use App\Outlet;
+use Illuminate\Support\Str;
+
+use App\Review;
+use App\Testimonial; 
+
+use Emojione\Emojione;
+use Emojione\Client as EmojioneClient;
 
 class IndexController extends Controller
 {
@@ -19,7 +20,25 @@ class IndexController extends Controller
 
     public function index()
     {
-        return view('pages.index');
+        $allRev = Review::orderBy('created_at', 'desc')->take(7)->get();
+
+        //converting emoji shortnames into emoji icons
+        foreach($allRev as $rev)
+        {
+            $body = Str::limit($rev->body, 30);
+            $body = htmlspecialchars($body);
+            $body = Emojione::shortnameToImage($body);
+            $body = nl2br($body);
+            $rev->body = $body;
+        }
+
+        $allTest = Testimonial::orderBy('created_at', 'desc')->take(3)->get();
+
+
+        return view('pages.index')->with([
+            'allRev'    => $allRev,
+            'allTest'   => $allTest,
+        ]);
     }
 
     

@@ -67,19 +67,9 @@
 			</div>
 			            
 			@include('inc.signinModal')
-			<!-- start footer Area 	
-			<footer class="page-footer-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<p class="page-footer-text">
-								Copyright &copy;2019 All rights reserved | <span class="page-copy-right-text">Gaido</span> by <span class="page-copy-right-text"> REKSAM</span>
-							</p>
-						</div>						
-					</div>
-				</div>
-			</footer>	
-			End footer Area -->
+
+			@include('inc.testModal')
+			
 		</div>
 
 		<!--Javscript & JQuery-->
@@ -165,6 +155,8 @@
 					spellcheck : true,
 				}
 			});
+
+
 
 		</script>
 

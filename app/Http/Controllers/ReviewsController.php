@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Review;
 use App\User;
 use App\Brand;
-
+use App\Rating;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -61,6 +61,38 @@ class ReviewsController extends Controller
 
         return redirect()->back()->with('success', 'Review has been added');
     }
+
+    public function storeRating(Request $request)
+    {
+        
+        if($request->rating)
+            $rating = $request->rating;
+        else
+            $rating = 0;
+
+        $r = new Rating;
+
+        $r->brand_id = $request->brand_id;
+        $r->user_id = auth()->user()->id;
+        $r->rating = $rating;
+
+        $r->save();
+
+        return(redirect()->back());
+
+    }
+
+    public function updateRating(Request $request, $id)
+    {
+        $r = Rating::find($id);
+        $r->rating = $request->rating;
+
+        $r->save();
+
+        return(redirect()->back());
+    }
+
+
 
     /**
      * Display the specified resource.

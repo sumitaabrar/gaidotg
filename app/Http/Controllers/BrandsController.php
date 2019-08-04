@@ -8,6 +8,9 @@ use App\Brand;
 use App\Assessment;
 use App\Outlet;
 use App\Review;
+use App\Rating;
+use App\Announcement;
+use Auth;
 
 use Emojione\Emojione;
 use Emojione\Client as EmojioneClient;
@@ -32,8 +35,9 @@ class BrandsController extends Controller
         $brand = Brand::find($id);
         $assess = Assessment::where('brand_id', $id)->orderBy('created_at', 'desc')->take(1)->get();
         $allOut = Outlet::where('brand_id', $id)->get();
-        $allRev = Review::where('brand_id', $id)->orderBy('created_at', 'desc')->get();
+        $allAnn = Announcement::where('brand_id', $id)->get();
 
+        $allRev = Review::where('brand_id', $id)->orderBy('created_at', 'desc')->get();
         //converting emoji shortnames into emoji icons
         foreach($allRev as $rev)
         {
@@ -43,14 +47,23 @@ class BrandsController extends Controller
             $rev->body = $body;
         }
 
+        if(!Auth::guest())
+            $uID = auth()->user()->id;
+        else
+            $uID = 0;
+
+        $rating = Rating::where('brand_id', $id)->where('user_id', $uID)->first();
+
         
 
         return view('pages.bProfile')->with([ 
-            'bId'=>$bId, 
-            'brand'=>$brand, 
-            'assess' => $assess, 
-            'allOut'=>$allOut, 
-            'allRev'=>$allRev 
+            'bId'       =>$bId, 
+            'brand'     =>$brand, 
+            'assess'    => $assess, 
+            'allOut'    =>$allOut,
+            'allAnn'    =>$allAnn, 
+            'allRev'    =>$allRev,
+            'rating'    =>$rating,
             ]);
     }
 
