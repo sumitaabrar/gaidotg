@@ -45,6 +45,8 @@
 			@yield('content')
 		</div>
         		
+		@include('inc.signinModal')
+		@include('inc.guideMeModal')
 		
 		@include('inc.testModal')
 

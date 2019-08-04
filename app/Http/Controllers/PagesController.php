@@ -18,6 +18,10 @@ use Emojione\Client as EmojioneClient;
 
 class PagesController extends Controller
 {
+    public function displayRec(){
+        return view('pages.displayRec');
+    }
+
     public function index(){
         return view('pages.index');
     }
@@ -36,7 +40,6 @@ class PagesController extends Controller
         return view('pages.search')->with('brands', $brands);
     }
 
-    
     public function search( Request $request)
     {
         $this->validate($request, [
