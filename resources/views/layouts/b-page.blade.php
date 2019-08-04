@@ -1,76 +1,73 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		<!-- Mobile Specific Meta -->
-    <meta name="author" content="">			<!-- Author Meta -->
-    <meta name="description" content="">				<!-- Meta Description -->
-    <meta name="keywords" content="">					<!-- Meta Keyword -->
-    
+<html lang="zxx" class="no-js">
+	<head>
+		<meta charset="UTF-8">								<!-- meta character set -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		<!-- Mobile Specific Meta -->
+		<meta name="author" content="">			<!-- Author Meta -->
+		<meta name="description" content="">				<!-- Meta Description -->
+		<meta name="keywords" content="">					<!-- Meta Keyword -->
+		
+		<title>Gaido</title>								<!-- Site Title -->
+		<link rel="shortcut icon" href="../img/fav.png">		<!-- Favicon-->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+		<!--Main Stylesheets compiled-->
+		<link rel="stylesheet" href="{{ asset('css/app.css')}}">
+		
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" >
+		<link rel="stylesheet" href="{{  URL::asset('http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css') }}" >
+		<!--Extra Stylesheets-->
+		<link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
+		<link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
+		<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist.min.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist-init.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')  }}" >
+    	<link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
+		<link rel="stylesheet" href="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css') }}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+		
+		<link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
 
-    <title>Gaido | Login</title>    <!-- Site Title -->
-    <link rel="shortcut icon" href="../img/fav.png">		<!-- Favicon-->
+		<link rel="stylesheet" href="{{  URL::asset('css/colors/blue.css')  }}" id="theme">
+		
 
-    <!-- Main Stylesheet -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	</head>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{  URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')  }}" >
-    <link rel="stylesheet" href="{{  URL::asset('http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css') }}" >
-    <!--Extra Stylesheets-->
-    <link rel="stylesheet" href="{{  URL::asset('css/font-awesome.min.css')  }}">
-    <link rel="stylesheet" href="{{  URL::asset('css/linearicons.css')  }}">
-    <link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist.min.css')  }}" >
-    <link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-js/dist/chartist-init.css')  }}" >
-    <link rel="stylesheet" href="{{  URL::asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')  }}" >
-    <link rel="stylesheet" href="{{  URL::asset('assets/plugins/c3-master/c3.min.css')  }}" >
-    <link rel="stylesheet" href="{{  URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
-    
-    <link rel="stylesheet" href="{{  URL::asset('css/style2.css')  }}" >
+	
 
-    <link rel="stylesheet" href="{{  URL::asset('css/colors/blue.css')  }}" id="theme">
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
-    
-    <!-- Main wrapper -->
+	<body class="fix-header fix-sidebar card-no-border">
+		<!-- Preloader -->
+		<div class="preloader">
+			<svg class="circular" viewBox="25 25 50 50">
+				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+		</div>
+		
+		<!-- Main wrapper -->
 		<div id="main-wrapper">
-            @include('inc.signup-in-header')          <!-- Topbar header -->
-            <br><br><br><br/><br/>
-            <!-- Page wrapper (Remaining Content) -->
-            <div class="page-wrapper sign">
-                <div class="container-fluid">
+			
+			@include('inc.b-header')          <!-- Topbar header -->
+				 
+			@include('inc.b-side-nav')         <!-- Sidebar -->   
+			<br><br><br>
+			<!-- Page wrapper (Remaining Content) -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
 
-                    @include('inc.messages')
-                    @yield('content')
+					@include('inc.messages')
+					@yield('content')
 
-                </div>
+				</div>
 
-                <!-- footer -->
-                <footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
+				<!-- footer -->
+				<footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
 
-            </div>
-        </div>
+			</div>
+		</div>
 
-
-
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!--Javscript & JQuery-->
+		<!--Javscript & JQuery-->
 		<script src="{{  URL::asset('js/vendor/jquery-2.2.4.min.js')  }}"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="{{  URL::asset('js/vendor/bootstrap.min.js')  }}"></script>			
@@ -144,10 +141,22 @@
 				}
 			});
 
+			$("#rec").emojioneArea({
+				pickerPosition: "bottom",
+				search: false, 
+				tones: false,
+				saveEmojisAs: "shortname",
+				attributes: {
+					spellcheck : true,
+				}
+			});
+
+
+
 		</script>
 
 
+	</body>
 
-
-</body>
 </html>
+

@@ -67,8 +67,5 @@ class BrandsController extends Controller
             ]);
     }
 
-    public function addReview(Request $request)
-    {
-        return "OK";
-    }
+    
 }

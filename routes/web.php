@@ -54,7 +54,7 @@ Route::get('/admin/logout', 'Auth\AdminLoginController@adminLogout')->name('admi
 //To Handle BrandUser Login
 Route::get('/brand/login', 'Auth\BrandLoginController@showBrandLoginForm')->name('brand.login');
 Route::post('/brand/login', 'Auth\BrandLoginController@brandLogin')->name('brand.login.submit');
-Route::get('/brand/logout', 'Auth\BrandLoginController@brandLogout')->name('brand.logout');
+Route::post('/brand/logout', 'Auth\BrandLoginController@brandLogout')->name('brand.logout');
 
 //User Custom Logout 
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
@@ -64,5 +64,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminHome', 'AdminHomeController@index')->name('admin.dashboard');
 Route::get('/brandHome', 'BrandHomeController@index')->name('brand.dashboard');
 
-
+//Edit User Profile
 Route::match(['put', 'patch'], '/home/{user}','HomeController@update')->name('home.update');
+
+//Brand Report
+Route::get('/brand/report', 'AssessmentsController@index')->name('brand.report');
+Route::get('/brand/reportGen', 'AssessmentsController@create')->name('brand.report.gen');
+
+//Brand Announcements
+Route::get('/brand/announce', 'AnnouncementsController@index')->name('brand.ann');

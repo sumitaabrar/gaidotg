@@ -18,8 +18,10 @@ class CreateAssessmentsTable extends Migration
             $table->integer('brand_id')->unsigned();
             $table->float('rating');
             $table->integer('ranking');
-            $table->smallInteger('score');
+            $table->integer('score');
             $table->integer('suggested_by');
+            $table->string('rating_img')->nullable();
+            $table->string('score_img')->nullable();
             $table->timestamps();
         });
     }

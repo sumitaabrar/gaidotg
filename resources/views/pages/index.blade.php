@@ -221,7 +221,8 @@
 					<p class="text-white">
 						Get your business registered to start benefiting from amazing features of Gaido today. Connect with your consumer here on Gaido and learn what they have to say about you. What's more, keep an eye on market by comparing with your competitors.
 					</p>
-					<a class="primary-btn" href="/register">Register Now</a>							
+					<a class="primary-btn" href="/register">Register your Brand</a>
+					<p>Already registered? <a href="{{ route('brand.login') }}">Sign in Now</a> </p>							
 				</div>
 			</div>
 		</div>	

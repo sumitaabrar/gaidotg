@@ -7,25 +7,16 @@
             <ul id="sidebarnav">
                 @if (!Auth::guest())    <!--Show User Profile link only to signed in user-->
                    <li> 
-                       <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Your Profile</span></a>
+                       <a class="waves-effect waves-dark" href="{{ route('brand.dashboard') }}" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Your Profile</span></a>
                     </li> 
                 @endif
 
                 <li>
-                    <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-message-processing"></i><span class="hide-menu">Review</span></a>
-
-                    <ul>
-                        <li> 
-                            <a class="waves-effect waves-dark" href="{{ route('product.list') }}" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Products</span></a>
-                        </li>
-                        <li> 
-                            <a class="waves-effect waves-dark" href="{{ route('place.list') }}" aria-expanded="false"><i class="mdi mdi-map-marker-radius"></i><span class="hide-menu">Places</span></a>
-                        </li>
-                    </ul>
+                    <a class="waves-effect waves-dark" href="{{ route('brand.report') }}" aria-expanded="false"><i class="mdi mdi-message-processing"></i><span class="hide-menu">View Report</span></a>
                 </li>
 
                 <li> 
-                    <a class="waves-effect waves-dark" href="#guidemeModal" data-toggle="modal"  aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                    <a class="waves-effect waves-dark" href="{{ route('brand.ann') }}" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Announcements</span></a>
                 </li>
                 
             </ul>
@@ -39,15 +30,14 @@
     <!--Show these only to signed in user-->
     @if (!Auth::guest())
         <div class="sidebar-footer">
-            <a href="/home" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
-            <a href="#testModal" class="link" data-toggle="modal" title="Testimonial"><i class="mdi mdi-star-circle"></i></a>
+            <a href="{{ route('brand.dashboard') }}" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
             
-            <a href="" class="link" data-toggle="tooltip" title="Logout" href="{{ route('logout') }}"
+            <a class="link" data-toggle="tooltip" title="Logout" href="{{ route('brand.logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="mdi mdi-power"></i>
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('brand.logout') }}" method="POST" style="display: none;">
                 @csrf
             </form> 
         </div>
