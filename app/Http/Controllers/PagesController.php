@@ -100,16 +100,34 @@ class PagesController extends Controller
 
         $id = $request->id;
 
-        //Fetching matching Brands
-        $brands = Brand::where('type_id', $id)->get();
-        $q = Type::where('id', $id)->first();
+        if($id == 0){
 
-        $key = $q->name;
+            $key = $request->key;
+            //Fetching related Brands
+            $brands = Brand::where('name', 'LIKE', '%'.$key.'%')
+                            ->orwhere('description', 'LIKE', '%'.$key.'%' )
+                            ->get();
+            return view('pages.sSearch')->with([
+                'brands'=> $brands,
+                'key'   => $key,
+                ]);
 
-        return view('pages.sSearch')->with([
-            'brands'=> $brands,
-            'key'   => $key,
-            ]);
+        }
+
+        else{
+            //Fetching matching Brands
+            $brands = Brand::where('type_id', $id)->get();
+            $q = Type::where('id', $id)->first();
+
+            $key = $q->name;
+
+            return view('pages.sSearch')->with([
+                'brands'=> $brands,
+                'key'   => $key,
+                ]);   
+        }
+
+        
     }
 
     public function reviewSearch( Request $request)
