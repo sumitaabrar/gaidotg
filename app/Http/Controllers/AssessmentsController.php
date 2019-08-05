@@ -36,6 +36,7 @@ class AssessmentsController extends Controller
     
     public function create()
     {
+        
         $bId = auth()->user()->brand_id;
 
         $sb = Suggestion::where('brand_id', $bId)->count();

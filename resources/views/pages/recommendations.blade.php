@@ -231,6 +231,8 @@
 
 										@if( $ann->url != NULL)
 											<a href="{{ $ann->url }}" target="_blank">
+										@else
+											<a href="#" target="_blank">
 										@endif
 										
 										@if( $ann->image != NULL )
@@ -242,9 +244,9 @@
 												<p class="ann-desc">{{ $ann->body }}</p>
 											</div>
 										
-											@if( $ann->url != NULL)
-											</a>
-										@endif
+											
+										</a>
+										
 									@endforeach
 								@else
 									<p>No Announcements to show </p>
