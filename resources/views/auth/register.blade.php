@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="col-md-4 p-l-6 p-r-0">
-            <img src="assets/images/signup.png" alt="sign in" >     
+            <img src="assets/images/signup.png" alt="sign up" >     
     </div>
     </div>
 </div>

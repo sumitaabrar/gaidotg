@@ -40,17 +40,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-2">
+                            <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                   
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
+                                   <p>Not yet registered?
                                     @if (Route::has('register'))
-                                    <a class="btn btn-link" href="{{ route('register') }}">
-                                        {{ __('    Sign Up') }}
+                                    <a class="btn btn-link" href="{{ route('brand.pre-reg') }}">
+                                        {{ __('    Register Now') }}
                                     </a>
                                     @endif
                                     
