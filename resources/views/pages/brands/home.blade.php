@@ -175,16 +175,7 @@
                                                 {{ Form::text('name', $user->name, [ 'class' => 'form-control form-control-line' ]) }}
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            {{ Form::label('type', 'Type', [ 'class' => 'col-md-12' ]) }}
-                                            <div class="col-md-12">
-                                                {{ Form::radio('type', 'Fastfood') }}
-                                                {{ Form::radio('type', 'Bakery') }}
-                                                {{ Form::radio('type', 'Ice Cream') }}
-                                            </div>
-                                        </div>
-
+                                        
                                         <div class="form-group">
                                             {{ Form::label('website', 'Website', [ 'class' => 'col-md-12']) }}
                                             <div class="col-md-12">

@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Gaido | Login</title>    <!-- Site Title -->
+    <title>Gaido</title>    <!-- Site Title -->
     <link rel="shortcut icon" href="../img/fav.png">		<!-- Favicon-->
 
     <!-- Main Stylesheet -->

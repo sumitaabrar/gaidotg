@@ -19,8 +19,8 @@ class CreateBrandsTable extends Migration
             $table->string('logo')->default('img0.jpg');
             $table->string('cover_photo')->default('img0.jpg');
             $table->mediumText('description');
-            $table->string('website')->nullable;
-            $table->string('contact')->nullable;
+            $table->string('website')->nullable();
+            $table->string('contact')->nullable();
             $table->boolean('is_reg')->default(false);
             $table->timestamps();
         });

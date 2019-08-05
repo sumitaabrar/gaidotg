@@ -16,6 +16,7 @@ Route::get('/search', 'PagesController@gSearch')->name('gSearch');
 Route::post('/search', 'PagesController@search')->name('search');
 Route::get('/sSearch', 'PagesController@sSearch')->name('sSearch');
 Route::post('/sSearch', 'PagesController@searchBrand')->name('searchBrand');
+Route::post('/addBrand', 'PagesController@addBrand')->name('addBrand');
 
 Route::post('/test', 'PagesController@testStore')->name('test.store');
 
@@ -85,3 +86,11 @@ Route::get('/brand/rec', 'BrandHomeController@recommendation')->name('brand.rec'
 
 //Edit Brand Profile
 Route::match(['put', 'patch'], '/brand/{user}','BrandHomeController@update')->name('brand.update');
+
+//Pre register for brands
+Route::get('/brand/pre-reg', 'Auth\BrandRegisterController@index')->name('brand.pre-reg');
+Route::post('/brand/pre-reg', 'Auth\BrandRegisterController@storeBrand')->name('brand.pre-reg.store');
+
+//Register for brands
+Route::post('/brand/register', 'Auth\BrandRegisterController@register')->name('brand.register');
+

@@ -71,6 +71,8 @@
 			@include('inc.testModal')
 			
 			@include('inc.guideMeModal')
+
+			@include('inc.addBrandModal')
 			<!-- start footer Area 	
 			<footer class="page-footer-area">
 				<div class="container">
