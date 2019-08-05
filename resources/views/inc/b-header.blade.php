@@ -41,34 +41,23 @@
           <!-- Menu Items -->
           
           <li class="nav-item "> 
-            <a class="nav-link" href="{{ route('dis.index') }}"><span> Discussions </span>  
+            <a class="nav-link" href="{{ route('brand.dis') }}"><span> Discussions </span>  
               <i class="mdi mdi-hexagon-multiple navi"></i>
             </a>
           </li>
           <li class="nav-item "> 
-            <a class="nav-link" href="{{ route('rec.index') }}"><span> Recommendations </span>  
+            <a class="nav-link" href="{{ route('brand.rec') }}"><span> Recommendations </span>  
               <i class="mdi mdi-clipboard-check navi"></i>
             </a>
           </li>
           
           <!-- Authentication Links -->
-          @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">
-                  <span class="user-name">{{ __('Login') }}</span>
-                  <i class="mdi mdi-account-circle navi"></i>
-                </a>  
-            </li>
-            
-          @else
-            <!-- Profile -->
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false" >
-                    <span class="user-name">{{ Auth::user()->brand->name }} </span>
-                    <img src="../storage/images/users/brands/{{ Auth::user()->brand->logo}}" alt="user" class="profile-pic m-r-10" />
-                </a>  
-            </li>
-          @endguest
+          <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false" >
+                  <span class="user-name">{{ Auth::user()->brand->name}}</span>
+                  <img src="../storage/images/users/brands/{{ Auth::user()->brand->logo}}" alt="user" class="profile-pic m-r-10" />
+              </a>  
+          </li>
       </ul>
 
     </div>

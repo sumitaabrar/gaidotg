@@ -6386,7 +6386,7 @@ When click on sidebar toggler and also for tablet
   }
   .message-box .message-widget a .ann-img img {
     max-height: 100%;
-    max-width: 100%;
+    max-width: -webkit-fill-available;
   }
 
 

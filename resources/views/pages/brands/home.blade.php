@@ -47,7 +47,7 @@
                 <div class="card stickyPanel">
                     <div class="card-block bgg-info">
                         <h4 class="text-white card-title">Announcements</h4>
-                        <h6 class="card-subtitle text-white m-b-0 op-5">Check out our latest offers</h6>
+                        <h6 class="card-subtitle text-white m-b-0 op-5">List of all your Announcements</h6>
                     </div>
                     <div class="card-block">
                         <div class="message-box contact-box">
@@ -58,6 +58,8 @@
 
                                         @if( $ann->url != NULL)
                                             <a href="{{ $ann->url }}" target="_blank">
+                                        @else
+                                            <a href="#">
                                         @endif
                                         
                                         @if( $ann->image != NULL )
@@ -69,9 +71,7 @@
                                                 <p class="ann-desc">{{ $ann->body }}</p>
                                             </div>
                                         
-                                            @if( $ann->url != NULL)
-                                            </a>
-                                        @endif
+                                        </a>
                                     @endforeach
                                 @else
                                     <p>No Announcements to show </p>
@@ -91,11 +91,12 @@
                         <ul class="nav nav-tabs profile-tab" role="tablist">
                             <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Reviews</a> </li>
                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>                        
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">  
-                            <!--first tab    REVIEWS-->  
+                            <!--First Tab: REVIEWS-->  
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="card-block p-t-8">
                                     <div class="profiletimeline simpleFont">
@@ -128,7 +129,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--second tab   PROFILE-->
+                            <!--Second Tab: PROFILE-->
                             <div class="tab-pane" id="profile" role="tabpanel">
                                 <div class="card-block">
                                     <div class="row">
@@ -158,24 +159,77 @@
                                         <h5 class="m-t-30">{{ $out->name }}</h5>
                                         <p>{{ $out->location }}</p>
                                     @endforeach
-                                    
-                                    <!--
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    -->
-
                                 </div>
-                            </div>                            
+                            </div>   
+                            
+                            
+                            <!--Third Tab: SETTINGS-->
+                            <div class="tab-pane" id="settings" role="tabpanel">
+                                <div class="card-block">
+                                    {!!Form::open(['action' => ['BrandHomeController@update',Auth::user()->brand_id], 'method' => 'POST', 'class' => 'form-horizontal form-material', 'enctype' => 'multipart/form-data'])!!}
+                                        {{Form::hidden('_method', 'PUT')}}
+
+                                        <div class="form-group">
+                                            {{ Form::label('name', 'Name', [ 'class' => 'col-md-12' ]) }}
+                                            <div class="col-md-12">
+                                                {{ Form::text('name', $user->name, [ 'class' => 'form-control form-control-line' ]) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('type', 'Type', [ 'class' => 'col-md-12' ]) }}
+                                            <div class="col-md-12">
+                                                {{ Form::radio('type', 'Fastfood') }}
+                                                {{ Form::radio('type', 'Bakery') }}
+                                                {{ Form::radio('type', 'Ice Cream') }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('website', 'Website', [ 'class' => 'col-md-12']) }}
+                                            <div class="col-md-12">
+                                                {{ Form::text('website', $user->website, [ 'class' => 'form-control form-control-line' ]) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('contact', 'Contact', [ 'class' => 'col-md-12']) }}
+                                            <div class="col-md-12">
+                                                {{ Form::text('contact', $user->contact, [ 'class' => 'form-control form-control-line' ]) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('description', 'Description', [ 'class' => 'col-md-12']) }}
+                                            <div class="col-md-12">
+                                                {{ Form::textarea('description', $user->description, [ 'class' => 'form-control form-control-line' ]) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('logo', 'New Logo', [ 'class' => 'col-md-12']) }}                                
+                                            <div class = 'col-md-12'>
+                                                {{ Form::file('logo') }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ Form::label('cover', 'New Cover', [ 'class' => 'col-md-12']) }}                                
+                                            <div class = 'col-md-12'>
+                                                {{ Form::file('cover') }}
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                {{ Form::submit('Update Profile', [ 'class' => 'btn btn-success']) }}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

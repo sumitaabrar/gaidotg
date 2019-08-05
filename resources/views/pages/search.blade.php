@@ -33,6 +33,22 @@
 									<button type="submit" class="list-group-item list-group-item-action"><h5><i class="mdi mdi-play"></i>Bakery</h5></button>
 								{!!Form::close()!!}
 
+								{!!Form::open(['action' => 'PagesController@searchBrand', 'method' => 'POST' ])!!} {{Form::hidden('id', 6)}}								
+									<button type="submit" class="list-group-item list-group-item-action"><h5><i class="mdi mdi-play"></i>Ice cream Shop</h5></button>
+								{!!Form::close()!!}
+
+								{!!Form::open(['action' => 'PagesController@searchBrand', 'method' => 'POST' ])!!} {{Form::hidden('id', 8)}}								
+									<button type="submit" class="list-group-item list-group-item-action"><h5><i class="mdi mdi-play"></i>Steak</h5></button>
+								{!!Form::close()!!}
+
+								{!!Form::open(['action' => 'PagesController@searchBrand', 'method' => 'POST' ])!!} {{Form::hidden('id', 9)}}								
+									<button type="submit" class="list-group-item list-group-item-action"><h5><i class="mdi mdi-play"></i>Continental</h5></button>
+								{!!Form::close()!!}
+
+								{!!Form::open(['action' => 'PagesController@searchBrand', 'method' => 'POST' ])!!} {{Form::hidden('id', 10)}}								
+									<button type="submit" class="list-group-item list-group-item-action"><h5><i class="mdi mdi-play"></i>General</h5></button>
+								{!!Form::close()!!}
+
 							</div>
 
 						</div>
@@ -79,17 +95,16 @@
             <div class="row" id = "bOrg">
                 <div class="col-lg-12 col-xlg-12 col-md-12">  
                     <div class="card">
-                        <div class="card-block p-t-10 p-l-10">
+                        <div class="card-block p-t-10">
                             <h4>Business Organizations</h4>
                             <hr> 
                             @if(count($brands) > 0)
                                 @foreach($brands as $brand)
-                                    <div class="m-t-10 col-md-4 p-l-0 p-r-0">
+                                    <div class="m-t-10 col-md-4">
                                         <div class="col-md-5 col-xs-12 m-t-10">
-                                            <a href="/bOrg/{{$brand->id}}"><img src="storage/images/users/brands/{{$brand->logo}}" alt="brand" class="img-responsive radius"></a>
-                                            
+                                            <a href="/bOrg/{{$brand->id}}"><img src="storage/images/users/brands/{{$brand->logo}}" alt="brand" class="img-responsive radius"></a> 
                                         </div>
-                                        <div class="col-md-7 col-xs-12 p-l-0 p-r-0 ">
+                                        <div class="col-md-7 col-xs-12">
                                             <h5 style = "color:#04686b;"> {{ $brand->name }} </h5>
                                             <h6> {{ $brand->type->name }} </h6>
                                             <p> {{ Str::limit($brand->description, 20) }} <span><a href="/bOrg/{{$brand->id}}" class="link"> View Profile</a></span></p>

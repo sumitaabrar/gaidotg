@@ -81,8 +81,6 @@ class HomeController extends Controller
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', ''],
-            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
             'image' => 'image|nullable|max:1999'
         ]);
 
@@ -90,11 +88,6 @@ class HomeController extends Controller
 
         
         $u->name = $request->name;
-        $u->email = $request->email;
-
-        if($request->password != NULL){
-            $u->password = Hash::make($request->password);
-        }
 
         //Handle Image Upload
         if($request->hasFile('image')){
