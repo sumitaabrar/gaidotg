@@ -29,6 +29,12 @@ class Brand extends Model
         return $this->hasMany('App\Rating');
     }
 
+    //Creating 1-* reationship with Ranking. Each user can have multiple rankings.
+    public function ranking()
+    {
+        return $this->hasMany('App\Ranking');
+    }
+
     //Creating 1-* reationship with Category. Each brand belongs to a signle category
     public function category()
     {

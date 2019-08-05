@@ -41,7 +41,7 @@ class BrandHomeController extends Controller
         $emojioneClient->imagePathPNG = 'https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/';
         Emojione::setClient($emojioneClient);
 
-        $id = auth()->user()->id;
+        $id = auth()->user()->brand_id;
 
         $assess = Assessment::where('brand_id', $id)->orderBy('created_at', 'desc')->take(1)->get();
         $allOut = Outlet::where('brand_id', $id)->get();

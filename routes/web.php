@@ -70,6 +70,8 @@ Route::match(['put', 'patch'], '/home/{user}','HomeController@update')->name('ho
 //Brand Report
 Route::get('/brand/report', 'AssessmentsController@index')->name('brand.report');
 Route::get('/brand/reportGen', 'AssessmentsController@create')->name('brand.report.gen');
+Route::get('/brand/rankGen', 'AssessmentsController@createRanking')->name('brand.ranking.gen');
+
 
 //Brand Announcements
 Route::get('/brand/announce', 'AnnouncementsController@index')->name('brand.ann');
