@@ -16,7 +16,7 @@
                 </li>
 
                 <li> 
-                    <a class="waves-effect waves-dark" href="{{ route('brand.ann') }}" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Announcements</span></a>
+                    <a class="waves-effect waves-dark" href="#annModal" data-toggle="modal" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Announcements</span></a>
                 </li>
                 
             </ul>

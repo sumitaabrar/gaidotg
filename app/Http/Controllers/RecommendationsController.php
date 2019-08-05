@@ -63,28 +63,28 @@ class RecommendationsController extends Controller
             'image' => 'image|nullable|max:1999',
             ]);
     
-            //Handle Image Upload
-            if($request->hasFile('image')){
-                //Get Filename with Extension
-                $fileNameWuthExt = $request->file('image')->getClientOriginalName();
-                //Get just the Filename
-                $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
-                //Get just the Extension
-                $ext = $request->file('image')->getClientOriginalExtension();
-                //Filename that will be stored
-                $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
-                //Upload image
-                $path = $request->file('image')->storeAs('public/images/posts', $fileNameToStore);
-            }
-            else{
-                $fileNameToStore = 'img0.jpg';
-            }
 
         $rec = new Recommendation;
         $rec->user_id = auth()->user()->id;
         $recBody = Emojione::toShort($request->recommendation);
         $rec->body = $recBody;
-        $rec->image = $fileNameToStore;
+        
+        //Handle Image Upload
+        if($request->hasFile('image')){
+            //Get Filename with Extension
+            $fileNameWuthExt = $request->file('image')->getClientOriginalName();
+            //Get just the Filename
+            $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
+            //Get just the Extension
+            $ext = $request->file('image')->getClientOriginalExtension();
+            //Filename that will be stored
+            $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
+            //Upload image
+            $path = $request->file('image')->storeAs('public/images/posts', $fileNameToStore);
+
+            $rec->image = $fileNameToStore;
+        }
+
         $rec->is_open = true;
 
         $rec->save();

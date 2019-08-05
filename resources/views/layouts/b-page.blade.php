@@ -61,6 +61,7 @@
 
 				</div>
 
+				@include('inc.annModal')
 				<!-- footer -->
 				<footer class="footer"> © 2017 Material Pro Admin by wrappixel.com </footer>
 
@@ -120,40 +121,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
 
 		
-		<script>
-			$("#review").emojioneArea({
-				pickerPosition: "bottom",
-				search: false, 
-				tones: false,
-				saveEmojisAs: "shortname",
-				attributes: {
-					spellcheck : true,
-				}
-			});
-
-			$("#dis").emojioneArea({
-				pickerPosition: "bottom",
-				search: false, 
-				tones: false,
-				saveEmojisAs: "shortname",
-				attributes: {
-					spellcheck : true,
-				}
-			});
-
-			$("#rec").emojioneArea({
-				pickerPosition: "bottom",
-				search: false, 
-				tones: false,
-				saveEmojisAs: "shortname",
-				attributes: {
-					spellcheck : true,
-				}
-			});
-
-
-
-		</script>
 
 
 	</body>

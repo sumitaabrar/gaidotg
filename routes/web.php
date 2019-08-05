@@ -75,4 +75,13 @@ Route::get('/brand/rankGen', 'AssessmentsController@createRanking')->name('brand
 
 
 //Brand Announcements
-Route::get('/brand/announce', 'AnnouncementsController@index')->name('brand.ann');
+Route::resource('/brand/announce', 'AnnouncementsController');
+
+//Brand Discussion View
+Route::get('/brand/dis', 'BrandHomeController@discussion')->name('brand.dis');
+
+//Brand Recommendation View
+Route::get('/brand/rec', 'BrandHomeController@recommendation')->name('brand.rec');
+
+//Edit Brand Profile
+Route::match(['put', 'patch'], '/brand/{user}','BrandHomeController@update')->name('brand.update');

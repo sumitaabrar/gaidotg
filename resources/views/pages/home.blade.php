@@ -165,28 +165,16 @@
                                     {{ Form::text('name', $user->name, [ 'class' => 'form-control form-control-line' ]) }}
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                {{ Form::label('email', 'Email', [ 'class' => 'col-md-12']) }}
-                                <div class="col-md-12">
-                                    {{ Form::email('email', $user->email, [ 'class' => 'form-control form-control-line' ]) }}
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                {{ Form::label('password', 'New Password', [ 'class' => 'col-md-12']) }}                                
-                                <div class = 'col-md-12'>
-                                    {{ Form::password('password',[ 'class' => 'form-control form-control-line']) }}
-                                </div>
-                            </div>
-
+                            <br>
                             <div class="form-group">
                                 {{ Form::label('image', 'New Profile Picture', [ 'class' => 'col-md-12']) }}                                
+                                <br>
                                 <div class = 'col-md-12'>
+                                    <br>
                                     {{ Form::file('image') }}
                                 </div>
                             </div>
-                           
+                            
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     {{ Form::submit('Update Profile', [ 'class' => 'btn btn-success']) }}

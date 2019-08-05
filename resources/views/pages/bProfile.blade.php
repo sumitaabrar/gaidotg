@@ -259,21 +259,6 @@
                                         <h5 class="m-t-30">{{ $out->name }}</h5>
                                         <p>{{ $out->location }}</p>
                                     @endforeach
-                                    
-                                    <!--
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    <a href="hydri.html">
-                                        <h5 class="m-t-30">DHA Phase 2 <span class="pull-right">4 <small> <i class="mdi mdi-star"></i></small></span></h5>
-                                        <p>C-123, Block H, Hydri, Karachi.</p>
-                                    </a>
-                                    -->
 
                                 </div>
                             </div>                            

@@ -74,6 +74,12 @@ class DiscussionsController extends Controller
             'image' => 'image|nullable|max:1999',
         ]);
 
+        $dis = new Discussion;
+
+        $dis->user_id = auth()->user()->id;
+        $disBody = Emojione::toShort($request->discussion);
+        $dis->body = $disBody;
+
         //Handle Image Upload
         if($request->hasFile('image')){
             //Get Filename with Extension
@@ -86,16 +92,11 @@ class DiscussionsController extends Controller
             $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
             //Upload image
             $path = $request->file('image')->storeAs('public/images/posts', $fileNameToStore);
-        }
-        else{
-            $fileNameToStore = 'img0.jpg';
+
+            $dis->image = $fileNameToStore;
         }
 
-        $dis = new Discussion;
-        $dis->user_id = auth()->user()->id;
-        $disBody = Emojione::toShort($request->discussion);
-        $dis->body = $disBody;
-        $dis->image = $fileNameToStore;
+        
         $dis->score = 0;
         $dis->is_open = true;
 

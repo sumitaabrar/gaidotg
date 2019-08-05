@@ -38,24 +38,41 @@ class AnnouncementsController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validate($request, [
-            'discussion' => 'required'
+        $this->validate($request, [
+            'ann_title' => 'required',
+            'ann' =>'required',
+            'image' => 'image|nullable|max:1999',
         ]);
 
-        $dis = new Discussion;
-        $dis->user_id = auth()->user()->id;
+        //Handle Image Upload
+        if($request->hasFile('image')){
+            //Get Filename with Extension
+            $fileNameWuthExt = $request->file('image')->getClientOriginalName();
+            //Get just the Filename
+            $filename = pathinfo($fileNameWuthExt, PATHINFO_FILENAME);
+            //Get just the Extension
+            $ext = $request->file('image')->getClientOriginalExtension();
+            //Filename that will be stored
+            $fileNameToStore = auth()->user()->id.time().'_'.$filename.'.'.$ext;
+            //Upload image
+            $path = $request->file('image')->storeAs('public/images/ann', $fileNameToStore);
+        }
+        else{
+            $fileNameToStore = 'img0.jpg';
+        }
 
+        $a = new Announcement;
+        $a->brand_id = auth()->user()->brand_id;
+        $a->title = $request->ann_title;
+        $a->body = $request->ann;
+        $a->image = $fileNameToStore;
 
-        $disBody = Emojione::toShort($request->discussion);
+        if($request->ann_url)
+            $a->url = $request->ann_url;
 
-        $dis->body = $disBody;
-        $dis->image = $request->image;
-        $dis->score = 0;
-        $dis->is_open = true;
+        $a->save();
 
-        $dis->save();
-
-        return(redirect('/dis')->with('success','Discussion has been added')); */
+        return(redirect()->back()->with('success','Announcement has been added'));
     }
 
     /**

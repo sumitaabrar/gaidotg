@@ -60,11 +60,17 @@
                             <div class="card p-t-10 p-l-20">
                                 <div class="card-block">
                                     <h5>This month's review Analysis</h5>
+<<<<<<< HEAD
                                     @if($a != NULL)
                                         <div class="p-l-30"><div class="card-block">
                                             <img src="../storage/images/senti_graph/{{$a->score_img}}" alt="graph" style="width:400px" />
                                         </div></div>
                                     @endif
+=======
+                                    <div class="p-l-30"><div class="card-block">
+                                        <img src="../storage/images/senti_graph/img1.png" alt="graph" style="width:400px" />
+                                    </div></div>
+>>>>>>> 34a4729361570dd3a2ffaef620a05716e17d113a
                                 </div>
                             </div>
                         </div>
