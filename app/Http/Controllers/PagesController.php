@@ -153,4 +153,33 @@ class PagesController extends Controller
 
         return(redirect()->back());
     }
+
+
+    public function addBrand(Request $request)
+    {
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'type' => 'required',
+        ]);
+
+        $tId = $request->type;
+        $t = Type::where('id', $tId)->get()->first();
+        $sc = $t->subcategory_id;
+        $c = $t->subcategory->category_id;
+
+        $brand = new Brand;
+
+        $brand->name = $request->name;
+        $brand->description = "This is an auto generated Profile";
+        $brand->is_reg = 0;        
+        $brand->type_id = $tId;
+        $brand->subcategory_id = $sc;
+        $brand->category_id = $c;
+
+        $brand->save();
+
+        $bId = $brand->id;
+
+        return(redirect('/bOrg/'.$bId));
+    }
 }

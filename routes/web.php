@@ -16,6 +16,7 @@ Route::get('/search', 'PagesController@gSearch')->name('gSearch');
 Route::post('/search', 'PagesController@search')->name('search');
 Route::get('/sSearch', 'PagesController@sSearch')->name('sSearch');
 Route::post('/sSearch', 'PagesController@searchBrand')->name('searchBrand');
+Route::post('/addBrand', 'PagesController@addBrand')->name('addBrand');
 
 Route::post('/test', 'PagesController@testStore')->name('test.store');
 
