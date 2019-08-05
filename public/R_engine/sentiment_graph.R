@@ -13,7 +13,7 @@ con2 = dbConnect(MySQL() , user = 'root' , password = ''
 dbListTables(con2)
 myQuery2 <- paste("SELECT score FROM reviews WHERE brand_id=",args,";")
 result2 <- dbGetQuery(con2,myQuery2)
-
+dbDisconnect(con2)
 #negative positive count
 pos <- length(which(result2$score > 0))
 zero<-length(which(result2$score == 0))

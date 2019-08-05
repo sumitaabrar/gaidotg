@@ -23,7 +23,8 @@ Route::get('/product','PagesController@product')->name('product.list');
 Route::get('/place','PagesController@place')->name('place.list');
 Route::post('/product', 'PagesController@reviewSearch')->name('reviewSearch');
 
-Route::get('/displayRec','PagesController@displayRec');
+Route::post('/displayRec', 'DisplayRecController@display')->name('get.rec');
+Route::get('/displayRec', 'DisplayRecController@index')->name('display.rec');
 
 //Route::resource('preferences', 'DisplayRecController');
 Route::resource('bOrg', 'BrandsController');

@@ -14,6 +14,7 @@ dbListTables(con)
 
 myQuery <- paste("SELECT rating, count(*) AS 'number_of_users' FROM ratings WHERE brand_id=",args," GROUP BY rating;")
 result <- dbGetQuery(con,myQuery)
+dbDisconnect(con)
 
 nas <- Sys.time()
 imgname <- toString(nas)

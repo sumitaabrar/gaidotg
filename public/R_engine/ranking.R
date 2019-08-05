@@ -26,4 +26,6 @@ names(rdf2)[1] <- "brand_id"
 names(rdf2)[2] <- "ranking"
 rdf2$created_at <- format(Sys.time())
 rdf2$updated_at <- format(Sys.time())
-dbWriteTable(con2, name="rankings", value=rdf2,row.names=FALSE,append=TRUE)
+dbWriteTable(con2, name="rankings", value=rdf2,row.names=FALSE,overwrite = TRUE,append=FALSE)
+
+dbDisconnect(con2)
