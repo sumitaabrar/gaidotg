@@ -25,7 +25,11 @@
                 </li>
 
                 <li> 
-                    <a class="waves-effect waves-dark" href="#guidemeModal" data-toggle="modal"  aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                    @if(!Auth::guest())
+                        <a class="waves-effect waves-dark" href="#guidemeModal" data-toggle="modal"  aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                    @else
+                        <a class="waves-effect waves-dark" href="#signinModal" data-toggle="modal"  aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Guide Me</span></a>
+                    @endif
                 </li>
                 
             </ul>

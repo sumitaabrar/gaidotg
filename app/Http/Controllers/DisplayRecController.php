@@ -13,6 +13,11 @@ use App\Rating;
 
 class DisplayRecController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+  
   public function index(){
 
     $str_arr = explode (" ", $_GET['arr']);  
