@@ -54,17 +54,19 @@
                                     @endforeach
                                 @endif
 
-                                <div class="m-t-10 col-md-4 p-l-0 p-r-0">
-                                    <div class="col-md-5 col-xs-12 m-t-10">
-                                        <a href="#"><img src="assets/images/add.png" alt="add" class="img-responsive radius"></a>
-                                        
+                                @if(!Auth::guest())
+                                    <div class="m-t-10 col-md-4 p-l-0 p-r-0">
+                                        <div class="col-md-5 col-xs-12 m-t-10">
+                                            <a href="#"><img src="assets/images/add.png" alt="add" class="img-responsive radius"></a>
+                                            
+                                        </div>
+                                        <div class="col-md-7 col-xs-12 p-l-0 p-r-0 ">
+                                            <h5> Couldn't Find what you were looking for? </h5>
+                                            <h6> We would be happy to increase our database </h6>
+                                            <p><span><a href="#addBrandModal" class="link" data-toggle = "modal"> Add New</a></span></p>
+                                        </div>
                                     </div>
-                                    <div class="col-md-7 col-xs-12 p-l-0 p-r-0 ">
-                                        <h5> Couldn't Find what you were looking for? </h5>
-                                        <h6> We would be happy to increase our database </h6>
-                                        <p><span><a href="#addBrandModal" class="link" data-toggle = "modal"> Add New</a></span></p>
-                                    </div>
-                                </div>
+                                @endif
 
                             </div>
                         </div>
