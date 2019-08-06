@@ -20,19 +20,6 @@
             <i class="mdi mdi-menu"></i>
           </a> 
         </li>
-
-        <!-- Search -->
-        <li>
-          {!!Form::open(['action' => 'PagesController@search', 'method' => 'POST' ])!!}
-          <div class="single-widget input-group mb-3 " id="mc_embed_signup">
-            {{Form::text('key', '' , [ 'class' => 'form-control', 'placeholder' => 'Search', 'onfocus' => 'this.placeholder = \'\'', 'onblur' => 'this.placeholder = \'Search\'', 'aria-label' => 'Search', 'aria-describedby' => 'searchBtn' ]) }}
-            <div class="input-group-append">
-              {{ Form::button('<i class="ti-search" aria-hidden="true"></i>', [ 'class' => 'click-btn btn btn-default', 'type' => 'submit', 'id' => 'searchBtn' ]) }}
-            </div>
-          </div>
-          {!!Form::close()!!}
-        </li>
-
         
       </ul>
 
